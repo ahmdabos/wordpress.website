@@ -1,0 +1,638 @@
+﻿.home-banner {
+    position: relative;
+    height: 384px;
+    overflow: hidden;
+    >div {
+        height: 100%;
+    }
+    video{ 
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .main-banner {
+        position: relative;
+        background-color: $brandSecondary;
+        .owl-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            .owl-dot {
+                width: 14px;
+                height: 14px;
+                border: solid 2px $white;
+                border-radius: 100%;
+                &.active {
+                    background-color: $white;
+                }
+            }
+        }
+
+        .item {
+            height: 410px;
+            position: relative;
+        }
+
+
+
+
+        .banner-img {
+            min-width: 100%;
+            min-height: 100%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.2;
+        }
+
+        .banner-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 40px 0;
+            color: $white;
+            height: 100%;
+            .banner-content {
+                max-width: 540px;
+                z-index: 3;
+                position: relative;
+            }
+            h1 {
+                text-transform: uppercase;
+            }
+
+            // &::after {
+            //     content: '';
+            //     width: 100%;
+            //     height: 100%;
+            //     background-color: $brandPrimary;
+            //     opacity: 0.8;
+            //     position: absolute;
+            //     left: 50%;
+            //     top: 50%;
+            //     transform: translate(-50%, -50%);
+            //     z-index: 1;
+            // }
+    
+  
+
+        }
+
+
+
+
+
+
+    }
+
+    .particle-network-animation {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: none;
+    }
+
+
+
+
+
+
+}
+
+
+.ambition-focus{
+    overflow: hidden;
+    position: relative; 
+    .focus-wrap {
+        width: 100%;
+        position: relative;
+        
+        .title-wrap {
+            max-width: 550px;
+        }
+
+    }
+    .focus-title {
+        color: $white;
+        height: 100%;
+        &::after {
+            content: '';
+            position: absolute;
+            left: -13px;
+            top: 0;
+            width: calc(100% + 100%);
+            height: 100%;
+            z-index: -1;
+            background-color: $brandPrimary;
+        }
+    }
+
+}
+
+.chambers-list {
+    background-color: $white;
+    .chambers-card {
+        display: flex;
+        .wrap {
+            .logos {
+                img {
+                    width: 244px;
+                }
+            }
+            .action-links {
+                margin-top: 20px;
+            }
+        }
+        &.center {
+            justify-content: center;
+        }
+        &.right {
+            justify-content: flex-end;
+        }
+    }
+}
+
+.news-sec {
+    padding: 80px 0;
+
+    .news-show {
+        margin-top: 40px;
+        .news-card  {
+            &.left {
+                height: 100%;
+            }
+        }
+    }
+}
+
+.event-sec {
+    padding: 80px 0;
+    background-color: $white;
+    .event-show {
+        margin-top: 40px;
+        .event-list {
+            .owl-dots {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 40px;
+                gap: 15px;
+                .owl-dot {
+                    width: 10px;
+                    height: 10px;
+                    background-color: $brandTertiary;
+                    border-radius: 100%;
+                    &.active {
+                        background-color: $brandSecondary;
+                    }
+                }
+            }
+        }
+        .event-card  {
+            margin: 10px 5px;
+        }
+    }
+}
+
+.social-sec {
+    padding: 80px 0;
+
+    .feeds-show {
+        margin-top: 40px;
+
+        .feeds-card {
+            background-color: $lightGray;
+            box-shadow: 0px 0px 10px 0 $black01;
+            .feed-head {
+                background-color: $white;
+                padding: 25px 30px;
+                h5 {
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    text-transform: none;
+                    gap: 15px;
+                }
+            }
+
+            .feed-show {
+                height: 320px;
+                padding: 30px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                .feeds-item {
+                    margin-bottom: 30px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &.twitter-card {
+                .feed-head {
+                    h5 {
+                        i {
+                            color: $twitter;
+                        }
+                    }
+                }
+
+                .feed-show { 
+                    .twitter-feeds {
+                        .feed-user {
+                            display: flex;
+                            align-content: center;
+                            gap: 15px;
+                            .icon {
+                                a {
+                                    width: 54px;
+                                    height: 54px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    border-radius: 100%;
+                                    background-color: $bgColor;
+                                    img {
+                                        max-width: 100%;
+                                    }
+                                }
+                            }
+
+                            .content {
+                                p {
+                                    
+                                    &.name {
+                                        color: $brandPrimary;
+                                        font-size: 1.125rem;
+                                        a {
+                                            color: $brandPrimary;
+                                        }
+                                    }
+
+                                    &.user-name {
+                                        color: $lightGrayV2;
+                                        a {
+                                            color: $lightGrayV2;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .feed-content {
+                            .date {
+                                margin-top: 20px;
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+                                i {
+                                    color: $brandSecondary;
+                                }
+                            }
+
+                            .content {
+                                margin-top: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.youtube-card {
+                .feed-head {
+                    h5 {
+                        i {
+                            color: $youtube;
+                        }
+                    }
+                }
+
+                .feed-show { 
+                    .youtube-feeds {
+                        position: relative;
+                        .img-view {
+                            height: 240px;
+                            overflow: hidden;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            img {
+                                min-width: 100%;
+                                min-height: 100%;
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                            &::after {
+                                content: '';
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                background: rgb(2,55,100);
+                                background: linear-gradient(0deg, rgba(2,55,100,0.7) 0%, rgba(2,55,100,0) 100%);
+                            }
+                            .icon {
+                                width: 65px;
+                                height: 65px;
+                                border-radius: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 1.85rem;
+                                color: $white;
+                                background-color: $white04;
+                                position: relative;
+                                z-index: 2;
+                            }
+                        }
+
+                        .feeds-info {
+                            position: absolute;
+                            padding: 20px;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            .date {
+                                color: $white04;
+                                margin-bottom: 10px;
+                            }
+                            h5 {
+                                margin:0;
+                                text-decoration: none;
+                                a {
+                                    color: $white;
+            
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            .img-view {
+
+                                &::after {
+                                    background: rgb(0,121,214);
+                                    background: linear-gradient(0deg, rgba(0, 121, 214, 0.7) 0%, rgba(2,55,100,0) 100%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.instagram-card {
+                .feed-head {
+                    h5 {
+                        i {
+                            color: inherit;
+
+                            @supports (--css: variables) {
+                              background: var(--text-instagram);
+                              color: transparent;
+                              -webkit-background-clip: text;
+                              background-clip: text;
+                            }
+                        }
+                    }
+                }
+
+                .feed-show { 
+                    .instagram-feeds {
+                        position: relative;
+                        .img-view {
+                            height: 240px;
+                            overflow: hidden;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            img {
+                                max-height: 100%;
+                                min-height: 100%;
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                            &::after {
+                                content: '';
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                background: rgb(2,55,100);
+                                background: linear-gradient(0deg, rgba(2,55,100,0.7) 0%, rgba(2,55,100,0) 100%);
+                            }
+                            .icon {
+                                width: 65px;
+                                height: 65px;
+                                border-radius: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 1.85rem;
+                                color: $white;
+                                background-color: $white04;
+                                position: relative;
+                                z-index: 2;
+                            }
+                        }
+
+                        .feeds-info {
+                            position: absolute;
+                            padding: 20px;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            .date {
+                                color: $white04;
+                                margin-bottom: 10px;
+                            }
+                            h5 {
+                                margin:0;
+                                text-decoration: none;
+                                a {
+                                    color: $white;
+            
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            .img-view {
+
+                                &::after {
+                                    background: rgb(0,121,214);
+                                    background: linear-gradient(0deg, rgba(0, 121, 214, 0.7) 0%, rgba(2,55,100,0) 100%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1399px) {
+
+}
+
+@media screen and (max-width: 1199px) {
+
+}
+
+@media screen and (max-width: 991px) {
+    .home-banner {
+        height: 250px;
+    }
+    .home-about {
+        min-height: auto;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        .banner-wrap {
+            display: flex;
+            justify-content: flex-start;
+            .banner-content {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .banner-img {
+            width: 100%;
+            height: auto;
+            position: relative;
+            img {
+                min-width: auto;
+                min-height: auto;
+                width: calc(100% - 10%);
+                position: relative;
+                left: auto;
+                top: auto;
+                transform: none;
+            }
+        }
+    }
+
+    .ambition-focus {
+        .column-reverse {
+            flex-direction: column-reverse;
+        }
+        .focus-wrap {
+            &::after {
+                left: 50%;
+                transform: translateX(-50%);
+                border-left: none;
+                border-top: solid 1px $white;
+            }
+ 
+        }
+    }
+
+    .chambers-list {
+        .chambers-card {
+            display: flex;
+            .wrap {
+                .logos {
+                    img {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+
+    .news-sec {
+        padding: 40px 0;
+    
+        .news-show {
+            margin-top: 30px;
+            .column-reverse {
+                flex-direction: column-reverse;
+            }
+            
+            .news-card  {
+                &.left {
+                    height: auto;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    .event-sec {
+        padding: 40px 0;
+        .event-show {
+            margin-top: 30px;
+        }
+    }
+
+    .social-sec {
+        padding: 40px 0;
+        .feeds-show {
+            margin-top: 30px;
+
+            .feeds-card {
+                .feed-head {
+                    padding: 20px 20px;
+                }
+    
+                .feed-show {
+                    padding: 20px;
+                }
+    
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    .chambers-list {
+        .chambers-card {
+            margin: 20px 0;
+            justify-content: center;
+            .wrap {
+                .logos {
+                    img {
+                        max-width: 250px;
+                        width: 100%;
+                    }
+                }
+            }
+            &.center {
+                justify-content: center;
+            }
+            &.right {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .home-about {
+        .banner-img {
+            img {
+                width: calc(100% - 5%);
+            }
+        }
+    }
+
+}

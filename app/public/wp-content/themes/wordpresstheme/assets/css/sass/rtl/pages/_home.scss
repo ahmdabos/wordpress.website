@@ -1,0 +1,21 @@
+﻿.ar {
+    
+    .ambition-focus{
+        .focus-wrap {
+            &::after {
+                right: 0;
+                left: auto;
+                border-left: none;
+                border-right: solid 1px $white;
+            }
+        }
+    }
+
+
+
+    @media screen and (max-width: 991px) {
+
+    }
+    
+
+}

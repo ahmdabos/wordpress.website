@@ -1,0 +1,80 @@
+﻿.ar {
+    .sub-page {
+        h4 {
+            font-size: 1.5rem;
+          
+          }
+          h5 {
+            font-size: 1.2rem;
+            font-weight: 400;
+          }
+          h6 {
+            font-size: 0.875em;
+          
+          }
+
+          
+    }
+
+    .static-page {
+
+      
+      .dc-chairman {
+
+          .chairman-wrap {
+              .chairman-content {
+                  .title-wrap {
+                      max-width: 572px;
+                  }
+              }
+          }
+      
+          .chairman-img {
+              right: auto;
+              left: 0;
+          }
+      }
+      
+
+      
+      
+      .dc-board-members {
+          .board-members-wrap {
+              .board-members-content {
+                  .board-members-list {
+                      li {
+                          font-weight: 500;
+                      }
+                  }
+      
+
+      
+              }
+          }
+          .member-img {
+              left: auto;
+              right: 0;
+          }
+      }
+
+    }
+
+    @media screen and (max-width: 991px) {
+
+      .static-page {
+        .dc-members {
+          .members-wrap {
+              .members-content {
+                  &.content-wrap {
+                      &::after {
+                          border-right: none;
+                      }
+
+                  }
+              }
+          }
+        }
+      }
+ 
+  }
+}
