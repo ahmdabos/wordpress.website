@@ -4,29 +4,18 @@ include 'languages/language-' . $lang . '.php';
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="<?php echo get_template_directory_uri() ?>/assets/images/favicon.png" type="image/x-icon">
     <?php wp_head(); ?>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NHWWPG');</script>
-    <!-- End Google Tag Manager -->
 </head>
 <body <?php body_class($lang); ?>>
-
 <header data-aos="fade-down" data-aos-duration="700" data-aos-delay="700">
     <div class="container">
         <div class="wrap">
-
             <div class="main-menu">
                 <?php
                 if ($lang == 'en') {
@@ -46,7 +35,9 @@ include 'languages/language-' . $lang . '.php';
                                         <ul class="menu-items">
                                             <?php foreach ($menuitems as $smenu) { ?>
                                                 <?php if ($smenu->menu_item_parent == $menu->ID) { ?>
-                                                    <li class="second"><a href="<?php echo $smenu->url ?>"><?php echo $smenu->title ?></a></li>
+                                                    <li class="second"><a
+                                                            href="<?php echo $smenu->url ?>"><?php echo $smenu->title ?></a>
+                                                    </li>
                                                 <?php }
                                             } ?>
                                         </ul>
@@ -70,7 +61,8 @@ include 'languages/language-' . $lang . '.php';
             <div class="dc-right">
                 <a href="<?php $otherLangSwitcher = (pll_current_language() == 'en') ? 'ar' : 'en';
                 $langSwitcher = pll_the_languages(array('raw' => 1));
-                echo $langSwitcher[$otherLangSwitcher]['url']; ?>" class="ar" title="<?php _t('go_to_language'); ?>">  <?php _t('lang_switcher'); ?> <i class="fi-glob"></i></a>
+                echo $langSwitcher[$otherLangSwitcher]['url']; ?>" class="ar"
+                   title="<?php _t('go_to_language'); ?>">  <?php _t('lang_switcher'); ?> <i class="fi-glob"></i></a>
             </div>
         </div>
     </div>

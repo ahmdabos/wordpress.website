@@ -1,37 +1,26 @@
 <?php
-
-defined('ABSPATH') or die('Nope, not accessing this');
-
-/*
-Plugin Name: Locations
-Plugin URI:  https://google.com
-Description: Offices location listing.
-Version:     1.2.0
-Author:      Ahmad Abbous
-Author URI:  http://google.com
-License:     GPL2
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-*/
-
-class wp_simple_location
+class WP_Simple_Location
 {
-
-    //properties
+    // Properties
     private $wp_location_trading_hour_days = array();
 
-    //magic function (triggered on initialization)
+    // Magic function (triggered on initialization)
     public function __construct()
     {
-        add_action('init', array($this, 'set_location_trading_hour_days')); //sets the default trading hour days (used by the content type)
-        add_action('init', array($this, 'register_location_content_type')); //register location content type
-        add_action('add_meta_boxes', array($this, 'add_location_meta_boxes')); //add meta boxes
-        add_action('save_post_wp_locations', array($this, 'save_location')); //save location
-        add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts_and_styles')); //admin scripts and styles
-        add_action('wp_enqueue_scripts', array($this, 'enqueue_public_scripts_and_styles')); //public scripts and styles
-        add_filter('the_content', array($this, 'prepend_location_meta_to_content')); //gets our meta data and dispayed it before the content
-        register_activation_hook(__FILE__, array($this, 'plugin_activate')); //activate hook
-        register_deactivation_hook(__FILE__, array($this, 'plugin_deactivate')); //deactivate hook
+        $this->setup_hooks();
+    }
 
+    private function setup_hooks()
+    {
+        add_action('init', array($this, 'set_location_trading_hour_days'));
+        add_action('init', array($this, 'register_location_content_type'));
+        add_action('add_meta_boxes', array($this, 'add_location_meta_boxes'));
+        add_action('save_post_wp_locations', array($this, 'save_location'));
+        add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts_and_styles'));
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_public_scripts_and_styles'));
+        add_filter('the_content', array($this, 'prepend_location_meta_to_content'));
+        register_activation_hook(__FILE__, array($this, 'plugin_activate'));
+        register_deactivation_hook(__FILE__, array($this, 'plugin_deactivate'));
     }
 
     //set the default trading hour days (used in our admin backend)
@@ -50,6 +39,7 @@ class wp_simple_location
             )
         );
     }
+
     //register the location content type
     public function register_location_content_type()
     {
@@ -89,6 +79,7 @@ class wp_simple_location
         //register post type
         register_post_type('wp_locations', $args);
     }
+
     //adding meta boxes for the location content type*/
     public function add_location_meta_boxes()
     {
@@ -181,18 +172,18 @@ class wp_simple_location
         flush_rewrite_rules();
     }
 
-    public function prepend_location_meta_to_content($content){
+    public function prepend_location_meta_to_content($content)
+    {
 
         global $post, $post_type;
 
         //display meta only on our locations (and if its a single location)
-        if($post_type == 'wp_locations' && is_singular('wp_locations')){
+        if ($post_type == 'wp_locations' && is_singular('wp_locations')) {
 
             //collect variables
             $wp_location_id = $post->ID;
-            $wp_location_phone = get_post_meta($post->ID,'wp_location_phone',true);
-            $wp_location_email = get_post_meta($post->ID,'wp_location_email',true);
-
+            $wp_location_phone = get_post_meta($post->ID, 'wp_location_phone', true);
+            $wp_location_email = get_post_meta($post->ID, 'wp_location_email', true);
 
 
             //display
@@ -201,36 +192,36 @@ class wp_simple_location
             $html .= '<section class="meta-data">';
 
             //hook for outputting additional meta data (at the start of the form)
-            do_action('wp_location_meta_data_output_start',$wp_location_id);
+            do_action('wp_location_meta_data_output_start', $wp_location_id);
 
             $html .= '<p>';
             //phone
-            if(!empty($wp_location_phone)){
+            if (!empty($wp_location_phone)) {
                 $html .= '<b>Location Phone</b> ' . $wp_location_phone . '</br>';
             }
             //email
-            if(!empty($wp_location_email)){
+            if (!empty($wp_location_email)) {
                 $html .= '<b>Location Email</b> ' . $wp_location_email . '</br>';
             }
             //address
-            if(!empty($wp_location_address)){
+            if (!empty($wp_location_address)) {
                 $html .= '<b>Location Address</b> ' . $wp_location_address . '</br>';
             }
             $html .= '</p>';
 
             //location
-            if(!empty($this->wp_location_trading_hour_days)){
+            if (!empty($this->wp_location_trading_hour_days)) {
                 $html .= '<p>';
                 $html .= '<b>Location Trading Hours </b></br>';
-                foreach($this->wp_location_trading_hour_days as $day_key => $day_value){
-                    $trading_hours = get_post_meta($post->ID, 'wp_location_trading_hours_' . $day_key , true);
+                foreach ($this->wp_location_trading_hour_days as $day_key => $day_value) {
+                    $trading_hours = get_post_meta($post->ID, 'wp_location_trading_hours_' . $day_key, true);
                     $html .= '<span class="day">' . $day_key . '</span><span class="hours">' . $trading_hours . '</span></br>';
                 }
                 $html .= '</p>';
             }
 
             //hook for outputting additional meta data (at the end of the form)
-            do_action('wp_location_meta_data_output_end',$wp_location_id);
+            do_action('wp_location_meta_data_output_end', $wp_location_id);
 
             $html .= '</section>';
             $html .= $content;
@@ -238,127 +229,25 @@ class wp_simple_location
             return $html;
 
 
-        }else{
+        } else {
             return $content;
         }
     }
-    //main function for displaying locations (used for our shortcodes and widgets)
-    public function get_locations_output($arguments = ""){
 
-        //default args
-        $default_args = array(
-            'location_id'   => '',
-            'number_of_locations'   => -1
-        );
-
-        //update default args if we passed in new args
-        if(!empty($arguments) && is_array($arguments)){
-            //go through each supplied argument
-            foreach($arguments as $arg_key => $arg_val){
-                //if this argument exists in our default argument, update its value
-                if(array_key_exists($arg_key, $default_args)){
-                    $default_args[$arg_key] = $arg_val;
-                }
-            }
-        }
-
-        //find locations
-        $location_args = array(
-            'post_type'     => 'wp_locations',
-            'posts_per_page'=> $default_args['number_of_locations'],
-            'post_status'   => 'publish'
-        );
-        //if we passed in a single location to display
-        if(!empty($default_args['location_id'])){
-            $location_args['include'] = $default_args['location_id'];
-        }
-
-        //output
-        $html = '';
-        $locations = get_posts($location_args);
-        //if we have locations
-        if($locations){
-            $html .= '<article class="location_list cf">';
-            //foreach location
-            foreach($locations as $location){
-                $html .= '<section class="location">';
-                //collect location data
-                $wp_location_id = $location->ID;
-                $wp_location_title = get_the_title($wp_location_id);
-                $wp_location_thumbnail = get_the_post_thumbnail($wp_location_id,'thumbnail');
-                $wp_location_content = apply_filters('the_content', $location->post_content);
-                if(!empty($wp_location_content)){
-                    $wp_location_content = strip_shortcodes(wp_trim_words($wp_location_content, 40, '...'));
-                }
-                $wp_location_permalink = get_permalink($wp_location_id);
-                $wp_location_phone = get_post_meta($wp_location_id,'wp_location_phone',true);
-                $wp_location_email = get_post_meta($wp_location_id,'wp_location_email',true);
-
-                //apply the filter before our main content starts
-                //(lets third parties hook into the HTML output to output data)
-                $html = apply_filters('wp_location_before_main_content', $html);
-
-                //title
-                $html .= '<h2 class="title">';
-                $html .= '<a href="' . $wp_location_permalink . '" title="view location">';
-                $html .= $wp_location_title;
-                $html .= '</a>';
-                $html .= '</h2>';
-
-
-                //image & content
-                if(!empty($wp_location_thumbnail) || !empty($wp_location_content)){
-
-                    $html .= '<p class="image_content">';
-                    if(!empty($wp_location_thumbnail)){
-                        $html .= $wp_location_thumbnail;
-                    }
-                    if(!empty($wp_location_content)){
-                        $html .=  $wp_location_content;
-                    }
-
-                    $html .= '</p>';
-                }
-
-                //phone & email output
-                if(!empty($wp_location_phone) || !empty($wp_location_email)){
-                    $html .= '<p class="phone_email">';
-                    if(!empty($wp_location_phone)){
-                        $html .= '<b>Phone: </b>' . $wp_location_phone . '</br>';
-                    }
-                    if(!empty($wp_location_email)){
-                        $html .= '<b>Email: </b>' . $wp_location_email;
-                    }
-                    $html .= '</p>';
-                }
-
-                //apply the filter after the main content, before it ends
-                //(lets third parties hook into the HTML output to output data)
-                $html = apply_filters('wp_location_after_main_content', $html);
-
-                //readmore
-                $html .= '<a class="link" href="' . $wp_location_permalink . '" title="view location">View Location</a>';
-                $html .= '</section>';
-            }
-            $html .= '</article>';
-            $html .= '<div class="cf"></div>';
-        }
-
-        return $html;
-    }
     //triggered when adding or editing a location
-    public function save_location($post_id){
+    public function save_location($post_id)
+    {
 
         //check for nonce
-        if(!isset($_POST['wp_location_nonce_field'])){
+        if (!isset($_POST['wp_location_nonce_field'])) {
             return $post_id;
         }
         //verify nonce
-        if(!wp_verify_nonce($_POST['wp_location_nonce_field'], 'wp_location_nonce')){
+        if (!wp_verify_nonce($_POST['wp_location_nonce_field'], 'wp_location_nonce')) {
             return $post_id;
         }
         //check for autosave
-        if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
             return $post_id;
         }
 
@@ -373,36 +262,31 @@ class wp_simple_location
         update_post_meta($post_id, 'wp_location_address', $wp_location_address);
 
         //search for our trading hour data and update
-        foreach($_POST as $key => $value){
+        foreach ($_POST as $key => $value) {
             //if we found our trading hour data, update it
-            if(preg_match('/^wp_location_trading_hours_/', $key)){
+            if (preg_match('/^wp_location_trading_hours_/', $key)) {
                 update_post_meta($post_id, $key, $value);
             }
         }
 
         //location save hook
         //used so you can hook here and save additional post fields added via 'wp_location_meta_data_output_end' or 'wp_location_meta_data_output_end'
-        do_action('wp_location_admin_save',$post_id, $_POST);
+        do_action('wp_location_admin_save', $post_id, $_POST);
 
     }
+
     //enqueus scripts and stles on the back end
-    public function enqueue_admin_scripts_and_styles(){
+    public function enqueue_admin_scripts_and_styles()
+    {
         wp_enqueue_style('wp_location_admin_styles', plugin_dir_url(__FILE__) . '/css/wp_location_admin_styles.css');
     }
 
 //enqueues scripts and styled on the front end
-    public function enqueue_public_scripts_and_styles(){
-        wp_enqueue_style('wp_location_public_styles', plugin_dir_url(__FILE__). '/css/wp_location_public_styles.css');
+    public function enqueue_public_scripts_and_styles()
+    {
+        wp_enqueue_style('wp_location_public_styles', plugin_dir_url(__FILE__) . '/css/wp_location_public_styles.css');
 
     }
 
+
 }
-
-
-//include shortcodes
-include(plugin_dir_path(__FILE__) . 'inc/wp_location_shortcode.php');
-//include widgets
-include(plugin_dir_path(__FILE__) . 'inc/wp_location_widget.php');
-
-
-new wp_simple_location;

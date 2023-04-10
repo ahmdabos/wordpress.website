@@ -5,7 +5,6 @@
 
 get_header();
 ?>
-
     <section class="home-banner" data-aos="fade-up" data-aos-duration="700" data-aos-delay="800">
         <div class="main-banner owl-carousel owl-theme">
 
