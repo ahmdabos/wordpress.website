@@ -1,4 +1,5 @@
 <?php
+
 class WP_Simple_Location
 {
     // Properties
@@ -185,7 +186,6 @@ class WP_Simple_Location
             $wp_location_phone = get_post_meta($post->ID, 'wp_location_phone', true);
             $wp_location_email = get_post_meta($post->ID, 'wp_location_email', true);
 
-
             //display
             $html = '';
 
@@ -222,12 +222,9 @@ class WP_Simple_Location
 
             //hook for outputting additional meta data (at the end of the form)
             do_action('wp_location_meta_data_output_end', $wp_location_id);
-
             $html .= '</section>';
             $html .= $content;
-
             return $html;
-
 
         } else {
             return $content;
@@ -278,15 +275,14 @@ class WP_Simple_Location
     //enqueus scripts and stles on the back end
     public function enqueue_admin_scripts_and_styles()
     {
-        wp_enqueue_style('wp_location_admin_styles', plugin_dir_url(__FILE__) . '/css/wp_location_admin_styles.css');
+        wp_enqueue_style('wp_location_admin_styles', plugin_dir_url(__FILE__) . '/css/wp-location-admin-styles.css');
     }
 
-//enqueues scripts and styled on the front end
+    //enqueues scripts and styled on the front end
     public function enqueue_public_scripts_and_styles()
     {
-        wp_enqueue_style('wp_location_public_styles', plugin_dir_url(__FILE__) . '/css/wp_location_public_styles.css');
+        wp_enqueue_style('wp_location_public_styles', plugin_dir_url(__FILE__) . '/css/wp-location-public-styles.css');
 
     }
-
 
 }
