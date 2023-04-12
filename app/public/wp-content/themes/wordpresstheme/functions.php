@@ -1,10 +1,9 @@
 <?php
-$requires = ['Base.php', 'Start.php', 'CustomPostType.php', 'CustomTaxonomy.php'];
-foreach ($requires as $require) {
-    require get_template_directory() . '/inc/' . $require;
-}
 
-use Functions\{Base, Start, CustomPostType, CustomTaxonomy};
+use Functions\Base;
+use Functions\Start;
+use Functions\CustomPostType;
+use Functions\CustomTaxonomy;
 
 $customPostTypesList = array(
     array(
@@ -13,14 +12,6 @@ $customPostTypesList = array(
         'slug' => 'events',
         'menu_position' => 19,
         'supports' => ['title', 'thumbnail', 'revisions', 'page-attributes', 'editor'],
-        'taxonomies' => []
-    ),
-    array(
-        'singular_name' => 'event',
-        'plural_name' => 'events',
-        'slug' => 'events',
-        'menu_position' => 19,
-        'supports' => ['title', 'thumbnail', 'revisions', 'page-attributes', 'excerpt', 'editor'],
         'taxonomies' => []
     ),
     array(

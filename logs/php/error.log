@@ -1,689 +1,296 @@
-[10-Apr-2023 10:06:47 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
-[10-Apr-2023 10:06:47 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
-[10-Apr-2023 10:06:47 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 39
-[10-Apr-2023 10:06:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:71
+[12-Apr-2023 13:43:56 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
+[12-Apr-2023 13:43:56 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
+[12-Apr-2023 13:43:56 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:43:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:62
 Stack trace:
 #0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
 #1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
 #2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
+#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(2): get_header()
 #4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
 #5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
 #6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
 #7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 71
-[10-Apr-2023 10:06:48 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
-[10-Apr-2023 10:06:48 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
-[10-Apr-2023 10:06:48 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 39
-[10-Apr-2023 10:06:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:71
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 62
+[12-Apr-2023 13:44:00 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
+[12-Apr-2023 13:44:00 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
+[12-Apr-2023 13:44:00 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:44:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:62
 Stack trace:
 #0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
 #1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
 #2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
+#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(2): get_header()
 #4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
 #5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
 #6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
 #7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 71
-[10-Apr-2023 10:06:49 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
-[10-Apr-2023 10:06:49 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
-[10-Apr-2023 10:06:49 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 39
-[10-Apr-2023 10:06:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:71
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 62
+[12-Apr-2023 13:44:14 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
+[12-Apr-2023 13:44:14 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
+[12-Apr-2023 13:44:14 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:44:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:62
 Stack trace:
 #0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
 #1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
 #2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
+#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(2): get_header()
 #4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
 #5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
 #6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
 #7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 71
-[10-Apr-2023 10:06:49 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
-[10-Apr-2023 10:06:49 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
-[10-Apr-2023 10:06:49 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 39
-[10-Apr-2023 10:06:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:71
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 62
+[12-Apr-2023 13:44:44 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
+[12-Apr-2023 13:44:44 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
+[12-Apr-2023 13:44:44 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:44:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:62
 Stack trace:
 #0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
 #1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
 #2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
+#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(2): get_header()
 #4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
 #5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
 #6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
 #7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 71
-[10-Apr-2023 10:06:49 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
-[10-Apr-2023 10:06:49 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
-[10-Apr-2023 10:06:49 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 39
-[10-Apr-2023 10:06:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:71
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 62
+[12-Apr-2023 13:44:44 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
+[12-Apr-2023 13:44:44 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 3
+[12-Apr-2023 13:44:44 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:44:44 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:62
 Stack trace:
 #0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
 #1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
 #2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
+#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(2): get_header()
 #4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
 #5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
 #6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
 #7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 71
-[10-Apr-2023 10:09:29 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:29 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:29 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 62
+[12-Apr-2023 13:45:06 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:45:06 UTC] PHP Warning:  Undefined array key "en" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:45:06 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:45:26 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:45:26 UTC] PHP Warning:  Undefined array key "en" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:45:26 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:45:36 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:45:36 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:45:36 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:45:39 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:45:39 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:45:39 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:45:43 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:45:43 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:45:43 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:09 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:46:09 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:09 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:14 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:46:14 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:14 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:15 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:46:15 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:15 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:15 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:46:15 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:15 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:27 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:46:27 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:27 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:33 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:46:33 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:33 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:42 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:46:42 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:42 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:42 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:46:42 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:42 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:44 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:46:44 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:44 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:44 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:46:44 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:46:44 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:47:51 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 28
+[12-Apr-2023 13:47:51 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:47:51 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:47:57 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:47:57 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:03 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:03 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:21 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:21 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:22 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:22 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:22 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:22 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:54 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:54 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:54 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:48:54 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:49:00 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:49:00 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:49:07 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:49:07 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:49:15 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:49:15 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:49:21 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:49:21 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:49:52 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 13:49:52 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 64
+[12-Apr-2023 14:11:39 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:51 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:09:52 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:52 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:52 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:09:52 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:52 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:52 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:09:54 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:54 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:54 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:09:54 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:54 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:54 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:09:54 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:54 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:54 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:09:55 UTC] PHP Warning:  include(languages/language-en_US.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:55 UTC] PHP Warning:  include(): Failed opening 'languages/language-en_US.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 4
-[10-Apr-2023 10:09:55 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:09:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function pll_current_language() in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php:72
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once()
-#1 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
-#2 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
-#3 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(2): get_header()
-#4 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#6 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#7 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 72
-[10-Apr-2023 10:11:02 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 40
-[10-Apr-2023 10:11:02 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 74
-[10-Apr-2023 10:11:02 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 74
-[10-Apr-2023 10:11:45 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 29
-[10-Apr-2023 10:11:45 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 63
-[10-Apr-2023 10:11:45 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 63
-[10-Apr-2023 10:11:45 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 29
-[10-Apr-2023 10:11:45 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 63
-[10-Apr-2023 10:11:45 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 63
-[10-Apr-2023 10:12:56 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 63
-[10-Apr-2023 10:12:56 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 63
-[10-Apr-2023 10:13:32 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 63
-[10-Apr-2023 10:13:32 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 63
-[10-Apr-2023 10:13:34 UTC] PHP Warning:  Undefined array key "ar" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 63
-[10-Apr-2023 10:13:34 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 63
-[10-Apr-2023 10:23:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:33
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 33
-[10-Apr-2023 10:23:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:33
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 33
-[10-Apr-2023 10:23:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:33
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 33
-[10-Apr-2023 10:25:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:33
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 33
-[10-Apr-2023 10:25:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:33
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 33
-[10-Apr-2023 10:25:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:33
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 33
-[10-Apr-2023 10:25:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:33
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 33
-[10-Apr-2023 10:25:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:33
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 33
-[10-Apr-2023 10:25:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:33
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 33
-[10-Apr-2023 10:26:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:26:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:26:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:26:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:26:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:26:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:26:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:27:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:27:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:27:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:27:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:27:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:30:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:30:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 10:30:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_locations_output() on null in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php:34
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-includes\shortcodes.php(355): wp_location_shortcode->location_shortcode_output('', '', 'wp_locations')
-#1 [internal function]: do_shortcode_tag(Array)
-#2 D:\wordpress.website\app\public\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(wp_loc...', 'do_shortcode_ta...', '[wp_locations]\r...')
-#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): do_shortcode('[wp_locations]\r...')
-#4 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]\r...', Array)
-#5 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]\r...')
-#6 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
-#7 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
-#8 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
-#9 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#10 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\inc\wp_location_shortcode.php on line 34
-[10-Apr-2023 11:02:28 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-simple-location.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 16
-[10-Apr-2023 11:02:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-simple-location.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:16
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
 #3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
 #4 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 16
-[10-Apr-2023 11:04:29 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:04:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:17
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:11:39 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\wordpress.website\app\public\wp-includes\class-wp-recovery-mode-email-service.php on line 367
+[12-Apr-2023 14:11:39 UTC] PHP Warning:  Trying to access array offset on value of type bool in D:\wordpress.website\app\public\wp-includes\class-wp-recovery-mode-email-service.php on line 368
+[12-Apr-2023 14:12:32 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
 #3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
 #4 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:06:30 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:06:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:17
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:12:32 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
 #3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
 #4 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:08:31 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:08:31 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:17
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:12:39 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
 #3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
 #4 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:10:32 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:10:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:17
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:14:33 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
 #3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
 #4 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:12:33 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:12:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:17
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:14:33 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
 #3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
 #4 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:13:34 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:13:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:17
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:14:39 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
 #3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
 #4 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:15:35 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:15:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:17
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:16:34 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
 #3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
 #4 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:16:01 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:16:01 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-shortcode.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:17
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:16:34 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
-#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
-#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
-#3 D:\wordpress.website\app\public\wp-blog-header.php(13): require_once('D:\\wordpress.we...')
-#4 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#5 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 17
-[10-Apr-2023 11:17:36 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-widget.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 18
-[10-Apr-2023 11:17:36 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-widget.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:18
-Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
 #3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
 #4 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 18
-[10-Apr-2023 11:18:57 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-widget.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 18
-[10-Apr-2023 11:18:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-widget.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:18
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:16:39 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
-#3 D:\wordpress.website\app\public\wp-blog-header.php(13): require_once('D:\\wordpress.we...')
-#4 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#5 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 18
-[10-Apr-2023 11:18:57 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-widget.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 18
-[10-Apr-2023 11:18:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin/inc/wp-location-widget.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php:18
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:18:35 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-settings.php(453): include_once()
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
 #1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
 #2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
-#3 D:\wordpress.website\app\public\wp-blog-header.php(13): require_once('D:\\wordpress.we...')
-#4 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
-#5 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\wp_location_plugin\wp_location_plugin.php on line 18
-[10-Apr-2023 11:42:39 UTC] PHP Parse error:  Unclosed '{' on line 48 in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 73
-[10-Apr-2023 11:44:40 UTC] PHP Parse error:  Unclosed '{' on line 48 in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 80
-[10-Apr-2023 11:46:41 UTC] PHP Parse error:  Unclosed '{' on line 48 in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 80
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:18:35 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:18:40 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:20:35 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:20:35 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:20:40 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:22:36 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:22:36 UTC] PHP Fatal error:  Uncaught Error: Class "Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:35
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 35
+[12-Apr-2023 14:26:32 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5
+[12-Apr-2023 14:26:32 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5
+[12-Apr-2023 14:28:33 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5
+[12-Apr-2023 14:28:33 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5
+[12-Apr-2023 14:30:34 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5
+[12-Apr-2023 14:30:34 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5
+[12-Apr-2023 14:32:35 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5
+[12-Apr-2023 14:32:35 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5

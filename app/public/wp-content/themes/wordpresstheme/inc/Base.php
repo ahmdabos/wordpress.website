@@ -1,8 +1,5 @@
 <?php
-
 namespace Functions;
-use WP_Session_Tokens;
-
 class Base
 {
     public function register()
