@@ -294,3 +294,36 @@ Stack trace:
 [12-Apr-2023 14:30:34 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5
 [12-Apr-2023 14:32:35 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5
 [12-Apr-2023 14:32:35 UTC] PHP Parse error:  syntax error, unexpected token ".", expecting end of file in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 5
+[12-Apr-2023 14:34:37 UTC] PHP Fatal error:  Uncaught Error: Class "Functions\Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:28
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 28
+[12-Apr-2023 14:34:37 UTC] PHP Fatal error:  Uncaught Error: Class "Functions\Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:28
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 28
+[12-Apr-2023 14:34:41 UTC] PHP Fatal error:  Uncaught Error: Class "Functions\Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:28
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
+#4 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 28
+[12-Apr-2023 14:34:43 UTC] PHP Fatal error:  Uncaught Error: Class "Functions\Base" not found in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php:28
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-settings.php(591): include()
+#1 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#2 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#3 D:\wordpress.website\app\public\wp-blog-header.php(13): require_once('D:\\wordpress.we...')
+#4 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#5 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 28

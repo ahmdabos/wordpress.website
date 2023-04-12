@@ -1,9 +1,10 @@
 <?php
+$requires = ['Base', 'Start', 'CustomPostType', 'CustomTaxonomy'];
+foreach ($requires as $require) {
+    require get_template_directory() . '/inc/' . $require . '.php';
+}
 
-use Functions\Base;
-use Functions\Start;
-use Functions\CustomPostType;
-use Functions\CustomTaxonomy;
+use Functions\{Base, Start, CustomPostType, CustomTaxonomy};
 
 $customPostTypesList = array(
     array(
