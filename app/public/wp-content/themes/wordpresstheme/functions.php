@@ -11,6 +11,7 @@ $customPostTypesList = array(
         'singular_name' => 'slider',
         'plural_name' => 'sliders',
         'slug' => 'events',
+        'publicly_queryable'=>false,
         'menu_position' => 19,
         'supports' => ['title', 'thumbnail', 'revisions', 'page-attributes', 'editor'],
         'taxonomies' => []
@@ -19,6 +20,7 @@ $customPostTypesList = array(
         'singular_name' => 'news',
         'plural_name' => 'news',
         'slug' => 'news',
+        'publicly_queryable'=>true,
         'menu_position' => 19,
         'supports' => ['title', 'thumbnail', 'revisions', 'page-attributes', 'excerpt', 'editor'],
         'taxonomies' => []
@@ -34,5 +36,3 @@ $base->register();
 $start->register();
 $customPostType->createCustomPostType($customPostTypesList);
 $customTaxonomy->createCustomTaxonomy($customTaxonomyList);
-
-

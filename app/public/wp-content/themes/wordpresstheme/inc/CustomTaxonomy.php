@@ -12,7 +12,6 @@ class CustomTaxonomy
         $this->customTaxonomies = $customTaxonomies;
         add_action('init', array($this, 'setCustomTaxonomy'), 0);
     }
-
     public function setCustomTaxonomy()
     {
         foreach ($this->customTaxonomies as $ct) {

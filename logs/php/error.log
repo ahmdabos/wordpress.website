@@ -327,3 +327,68 @@ Stack trace:
 #4 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
 #5 {main}
   thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\functions.php on line 28
+[13-Apr-2023 08:19:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function remove_menu() on null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\Base.php:132
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): Functions\Base->remove_admin_items('')
+#1 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\wordpress.website\app\public\wp-admin\includes\menu.php(155): do_action('admin_menu', '')
+#4 D:\wordpress.website\app\public\wp-admin\menu.php(420): require_once('D:\\wordpress.we...')
+#5 D:\wordpress.website\app\public\wp-admin\admin.php(158): require('D:\\wordpress.we...')
+#6 D:\wordpress.website\app\public\wp-admin\index.php(10): require_once('D:\\wordpress.we...')
+#7 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\Base.php on line 132
+[13-Apr-2023 08:20:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function remove_menu() on null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\Base.php:132
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): Functions\Base->remove_admin_items('')
+#1 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#2 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\wordpress.website\app\public\wp-admin\includes\menu.php(155): do_action('admin_menu', '')
+#4 D:\wordpress.website\app\public\wp-admin\menu.php(420): require_once('D:\\wordpress.we...')
+#5 D:\wordpress.website\app\public\wp-admin\admin.php(158): require('D:\\wordpress.we...')
+#6 D:\wordpress.website\app\public\wp-admin\index.php(10): require_once('D:\\wordpress.we...')
+#7 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\Base.php on line 132
+[13-Apr-2023 08:28:31 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Base does not have a method "no_valid_user_no_rest" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters(false, Array)
+#1 D:\wordpress.website\app\public\wp-includes\user.php(3620): apply_filters('determine_curre...', false)
+#2 D:\wordpress.website\app\public\wp-includes\pluggable.php(70): _wp_get_current_user()
+#3 D:\wordpress.website\app\public\wp-includes\capabilities.php(873): wp_get_current_user()
+#4 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\Base.php(243): current_user_can('administrator')
+#5 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): Functions\Base->hide_admin_bar_for_none_admin_users('')
+#6 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#7 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 D:\wordpress.website\app\public\wp-settings.php(601): do_action('after_setup_the...')
+#9 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#10 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#11 D:\wordpress.website\app\public\wp-blog-header.php(13): require_once('D:\\wordpress.we...')
+#12 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#13 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[13-Apr-2023 08:28:31 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Base does not have a method "no_valid_user_no_rest" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters(false, Array)
+#1 D:\wordpress.website\app\public\wp-includes\user.php(3620): apply_filters('determine_curre...', false)
+#2 D:\wordpress.website\app\public\wp-includes\pluggable.php(70): _wp_get_current_user()
+#3 D:\wordpress.website\app\public\wp-includes\capabilities.php(873): wp_get_current_user()
+#4 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\Base.php(243): current_user_can('administrator')
+#5 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): Functions\Base->hide_admin_bar_for_none_admin_users('')
+#6 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#7 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 D:\wordpress.website\app\public\wp-settings.php(601): do_action('after_setup_the...')
+#9 D:\wordpress.website\app\public\wp-config.php(93): require_once('D:\\wordpress.we...')
+#10 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
+#11 D:\wordpress.website\app\public\wp-blog-header.php(13): require_once('D:\\wordpress.we...')
+#12 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#13 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[13-Apr-2023 08:35:21 UTC] PHP Warning:  Undefined array key "publicly_queryable" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\CustomPostType.php on line 46
+[13-Apr-2023 08:35:26 UTC] PHP Warning:  Undefined array key "publicly_queryable" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\CustomPostType.php on line 46
+[13-Apr-2023 08:35:28 UTC] PHP Warning:  Undefined array key "publicly_queryable" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\CustomPostType.php on line 46
+[13-Apr-2023 08:35:29 UTC] PHP Warning:  Undefined array key "publicly_queryable" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\CustomPostType.php on line 46
+[13-Apr-2023 08:35:29 UTC] PHP Warning:  Undefined array key "publicly_queryable" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\CustomPostType.php on line 46
+[13-Apr-2023 08:35:44 UTC] PHP Warning:  Undefined array key "publicly_queryable" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\CustomPostType.php on line 46
+[13-Apr-2023 08:35:59 UTC] PHP Warning:  Undefined array key "publicly_queryable" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\CustomPostType.php on line 46
+[13-Apr-2023 12:37:24 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 48
+[13-Apr-2023 12:37:24 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 48

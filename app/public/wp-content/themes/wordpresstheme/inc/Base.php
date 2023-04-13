@@ -8,7 +8,6 @@ class Base
         add_action('init', array($this, 'theme_setup'));
         //remove admin items
         add_action('admin_menu', array($this, 'remove_admin_items'));
-        //create widget area
         //custom excerpt read more text
         add_filter('excerpt_more', array($this, 'custom_excerpt_more'));
         //custom excerpt length
@@ -17,8 +16,6 @@ class Base
         add_filter('use_block_editor_for_post', '__return_false', 10);
         //style login page
         add_action('login_enqueue_scripts', array($this, 'style_login_page'));
-        //block the entire REST API for anyone not logged in
-        add_filter('determine_current_user', array($this, 'no_valid_user_no_rest'), 50);
         //remove Thank you message in the admin footer
         add_action('admin_init', array($this, 'remove_wp_thank_you'));
         //disable some apis
@@ -31,20 +28,15 @@ class Base
             }
             return $endpoints;
         });
-        //disable none singular posts
-        add_action('template_redirect', array($this, 'disable_none_singular_posts'));
         //remove posts from admin
         add_filter('comments_open', '__return_false');
         //change login logo url
         add_filter('login_headerurl', array($this, 'login_logo_url'));
-        //control body classes
-        add_filter('body_class', array($this, 'body_classes'));
         //disable login username autocomplete
         add_action('login_form', array($this, 'disable_login_username_auto_complete'));
         //hide consoles when inspect for non admin users
         add_action('admin_head', array($this, 'hide_console_none_admin'), 1);
         //hide wp version
-        remove_action('wp_head', 'wp_generator');
         add_filter('the_generator', array($this, 'hide_wp_version'));
         //hide wp update notification
         add_filter('pre_site_transient_update_core', array($this, 'hide_wp_update_notification'));
@@ -74,12 +66,12 @@ class Base
         add_filter('wp_sitemaps_enabled', '__return_false');
         //remove widget from dashboard
         add_action('wp_dashboard_setup', array($this, 'remove_dashboard_widgets') );
-
     }
 
     public function theme_setup()
     {
         if (function_exists('acf_add_options_page')) {
+
             acf_add_options_page(array(
                 'page_title' => 'Options',
                 'menu_title' => 'Options',
@@ -88,14 +80,10 @@ class Base
                 'redirect' => false
             ));
         }
-
         load_theme_textdomain('themetextdomain', get_template_directory() . '/languages');
         add_theme_support('automatic-feed-links');
         add_theme_support('title-tag');
         add_theme_support('post-thumbnails');
-
-
-
         register_nav_menus(array(
             'menu-1' => esc_html__('Primary'),
         ));
@@ -125,7 +113,6 @@ class Base
 
     public function remove_admin_items()
     {
-
         //remove comment from post detail
         remove_meta_box('commentsdiv', 'post', 'normal');
         //remove post link
@@ -134,9 +121,7 @@ class Base
         remove_menu_page('edit-comments.php');
         //remove wp version and logo
         if (!is_super_admin()) {
-            global $wp_admin_bar;
             remove_filter('update_footer', 'core_update_footer');
-            // $wp_admin_bar->remove_menu('wp-logo');
         }
     }
 
@@ -155,14 +140,11 @@ class Base
         <style type="text/css">
             body.login {
                 background: #fff;
-
             }
-
             body.login .wp-core-ui .button-primary {
                 background: #013764;
                 border-color: #013764;
             }
-
             body.login div#login h1 a {
                 width: 60%;
 
@@ -170,12 +152,9 @@ class Base
                 background-size: contain;
                 margin: 0 auto 0;
             }
-
             #loginform input[type="text"], .login form input[type="password"] {
-
                 border: 3px solid #013764;
             }
-
             #loginform {
                 background: #ffffff !important;
                 box-shadow: 3px 3px 8px #013764 !important;
@@ -184,15 +163,6 @@ class Base
 
     <?php }
 
-    public function no_valid_user_no_rest($user)
-    {
-        if (!$user) {
-            add_filter('rest_authentication_errors', '__return_false');
-            add_filter('rest_jsonp_enabled', '__return_false');
-        }
-        return $user;
-    }
-
     public function remove_wp_thank_you()
     {
         add_filter('admin_footer_text', function ($content) {
@@ -200,29 +170,9 @@ class Base
         }, 11);
     }
 
-    public function disable_none_singular_posts()
-    {
-        if (is_author()) {
-            wp_redirect(get_option('home'), 301);
-            exit;
-        }
-        if (is_singular(array('sliders', 'faqs'))) {
-            wp_redirect(get_option('home'), 301);
-            exit;
-        }
-    }
-
     public function login_logo_url()
     {
         return home_url();
-    }
-
-    public function body_classes($wp_classes)
-    {
-        if (is_front_page()) {
-            unset($wp_classes[array_search("page", $wp_classes)]);
-        }
-        return $wp_classes;
     }
 
     public function disable_login_username_auto_complete()
@@ -238,7 +188,7 @@ html;
 
     public function hide_console_none_admin()
     {
-        if (!current_user_can('administrator') && is_admin()) {
+        if (!current_user_can('administrator')) {
             ?>
             <script type="text/javascript">
                 console.log = function () {
@@ -303,7 +253,7 @@ html;
 
     public function change_login_error_message()
     {
-        return 'Something is wrong!';
+        return 'Wrong credential!';
     }
 
     public function remove_wp_ver_css_js($src)
@@ -312,8 +262,6 @@ html;
             $src = remove_query_arg('ver', $src);
         return $src;
     }
-
-
     public function remove_dashboard_widgets(){
         global $wp_meta_boxes;
         unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
@@ -327,19 +275,4 @@ html;
         unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
         remove_action('welcome_panel', 'wp_welcome_panel');
     }
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-

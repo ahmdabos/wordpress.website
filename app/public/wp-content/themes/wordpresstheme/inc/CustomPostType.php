@@ -43,7 +43,7 @@ class CustomPostType
                 'can_export' => true,
                 'has_archive' => false,
                 'exclude_from_search' => false,
-                'publicly_queryable' => true,
+                'publicly_queryable' => $this->cpt['publicly_queryable'],
                 'query_var' => true,
 
                 'capability_type' => 'post',
