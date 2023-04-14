@@ -84,17 +84,3 @@ class Start
         wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), time(), true);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

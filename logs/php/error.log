@@ -392,3 +392,15 @@ Stack trace:
 [13-Apr-2023 08:35:59 UTC] PHP Warning:  Undefined array key "publicly_queryable" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\inc\CustomPostType.php on line 46
 [13-Apr-2023 12:37:24 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 48
 [13-Apr-2023 12:37:24 UTC] PHP Warning:  foreach() argument must be of type array|object, bool given in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php on line 48
+[14-Apr-2023 11:32:45 UTC] Cron reschedule event error for hook: wp_scheduled_delete, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"daily","args":[],"interval":86400}
+[14-Apr-2023 11:33:58 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class WP_Simple_Location does not have a method "prepend_location_meta_to_content" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters('[wp_locations]', Array)
+#1 D:\wordpress.website\app\public\wp-includes\post-template.php(255): apply_filters('the_content', '[wp_locations]')
+#2 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page.php(21): the_content()
+#3 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#4 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#5 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#6 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[14-Apr-2023 11:39:16 UTC] PHP Warning:  Undefined array key "like_news_" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\single-wp_locations.php on line 6

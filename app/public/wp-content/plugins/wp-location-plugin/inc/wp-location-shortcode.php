@@ -12,7 +12,6 @@ class WP_Location_Shortcode {
     }
 
     public function location_shortcode_output($atts, $content = '', $tag) {
-        $wp_simple_location = new WP_Simple_Location();
         $default_args = array(
             'location_id' => '',
             'number_of_locations' => -1
@@ -52,13 +51,13 @@ class WP_Location_Shortcode {
         $wp_location_title = get_the_title($wp_location_id);
         $wp_location_thumbnail = get_the_post_thumbnail($wp_location_id, 'thumbnail');
         $wp_location_content = apply_filters('the_content', $location->post_content);
-        $wp_location_content = !empty($wp_location_content) ? strip_shortcodes(wp_trim_words($wp_location_content, 40, '...')) : '';
+        $wp_location_content = !empty($wp_location_content) ? wp_trim_words(strip_tags($wp_location_content), 40, '...') : '';
         $wp_location_permalink = get_permalink($wp_location_id);
         $wp_location_phone = get_post_meta($wp_location_id, 'wp_location_phone', true);
         $wp_location_email = get_post_meta($wp_location_id, 'wp_location_email', true);
 
         $html = '<section class="location">';
-        $html = apply_filters('wp_location_before_main_content', $html);
+        $html = apply_filters('wp_location_before_main_content', $html, $location);
 
         $html .= "<h2 class='title'><a href='{$wp_location_permalink}' title='view location'>{$wp_location_title}</a></h2>";
 
@@ -72,7 +71,7 @@ class WP_Location_Shortcode {
             $html .= "<p class='phone_email'>{$phone_html}{$email_html}</p>";
         }
 
-        $html = apply_filters('wp_location_after_main_content', $html);
+        $html = apply_filters('wp_location_after_main_content', $html, $location);
 
         $html .= "<a class='link' href='{$wp_location_permalink}' title='view location'>View Location</a>";
         $html .= '</section>';

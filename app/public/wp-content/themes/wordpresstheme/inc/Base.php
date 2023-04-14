@@ -1,4 +1,5 @@
 <?php
+
 namespace Functions;
 class Base
 {
@@ -65,7 +66,7 @@ class Base
         //disable default xml sitemaps
         add_filter('wp_sitemaps_enabled', '__return_false');
         //remove widget from dashboard
-        add_action('wp_dashboard_setup', array($this, 'remove_dashboard_widgets') );
+        add_action('wp_dashboard_setup', array($this, 'remove_dashboard_widgets'));
     }
 
     public function theme_setup()
@@ -141,10 +142,12 @@ class Base
             body.login {
                 background: #fff;
             }
+
             body.login .wp-core-ui .button-primary {
                 background: #013764;
                 border-color: #013764;
             }
+
             body.login div#login h1 a {
                 width: 60%;
 
@@ -152,9 +155,11 @@ class Base
                 background-size: contain;
                 margin: 0 auto 0;
             }
+
             #loginform input[type="text"], .login form input[type="password"] {
                 border: 3px solid #013764;
             }
+
             #loginform {
                 background: #ffffff !important;
                 box-shadow: 3px 3px 8px #013764 !important;
@@ -262,7 +267,9 @@ html;
             $src = remove_query_arg('ver', $src);
         return $src;
     }
-    public function remove_dashboard_widgets(){
+
+    public function remove_dashboard_widgets()
+    {
         global $wp_meta_boxes;
         unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
         unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
