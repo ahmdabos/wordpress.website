@@ -404,3 +404,5 @@ Stack trace:
 #6 {main}
   thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
 [14-Apr-2023 11:39:16 UTC] PHP Warning:  Undefined array key "like_news_" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\single-wp_locations.php on line 6
+[17-Apr-2023 06:25:09 UTC] Cron reschedule event error for hook: wp_update_user_counts, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"twicedaily","args":[],"interval":43200}
+[17-Apr-2023 06:25:14 UTC] Cron reschedule event error for hook: wp_version_check, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"twicedaily","args":[],"interval":43200}
