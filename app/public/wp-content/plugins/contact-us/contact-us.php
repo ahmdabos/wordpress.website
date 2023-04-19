@@ -8,7 +8,7 @@ Author: Ahmad
 function contact_form_shortcode() {
     ob_start();
     if (isset($_POST['submit'])) {
-        // Sanitize form data
+        // Sanitize form datal
         $name = sanitize_text_field($_POST['name']);
         $email = sanitize_email($_POST['email']);
         $message = sanitize_textarea_field($_POST['message']);

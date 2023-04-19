@@ -406,3 +406,16 @@ Stack trace:
 [14-Apr-2023 11:39:16 UTC] PHP Warning:  Undefined array key "like_news_" in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\single-wp_locations.php on line 6
 [17-Apr-2023 06:25:09 UTC] Cron reschedule event error for hook: wp_update_user_counts, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"twicedaily","args":[],"interval":43200}
 [17-Apr-2023 06:25:14 UTC] Cron reschedule event error for hook: wp_version_check, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"twicedaily","args":[],"interval":43200}
+[18-Apr-2023 06:53:19 UTC] Cron reschedule event error for hook: wp_update_user_counts, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"twicedaily","args":[],"interval":43200}
+[19-Apr-2023 11:05:59 UTC] PHP Warning:  file_get_contents(https://api.openai.com/v1/engines/davinci-codex/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 37
+[19-Apr-2023 11:07:51 UTC] PHP Warning:  file_get_contents(https://api.openai.com/v1/engines/davinci-codex/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 41
+[19-Apr-2023 11:10:18 UTC] PHP Warning:  file_get_contents(https://api.openai.com/v1/engines/davinci-codex/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 41
+[19-Apr-2023 11:11:11 UTC] PHP Warning:  file_get_contents(https://api.openai.com/v1/engines/davinci-codex/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 41
+[19-Apr-2023 11:28:27 UTC] PHP Warning:  Undefined variable $input_message in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 25
+[19-Apr-2023 11:28:27 UTC] PHP Warning:  Undefined variable $conversation in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 36
+[19-Apr-2023 11:28:56 UTC] PHP Warning:  Undefined variable $input_message in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 25
+[19-Apr-2023 11:28:56 UTC] PHP Warning:  Undefined variable $conversation in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 36
