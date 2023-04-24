@@ -21,86 +21,40 @@ if (have_posts()) :
                 </div>
                 <div class="page-content">
                     <div class="container">
-                        <style>
-                            .chat-container {
-                                max-width: 600px;
-                                margin: 0 auto;
-                                padding: 20px;
-                                background-color: #f8f8f8;
-                                border: 1px solid #ccc;
-                                border-radius: 5px;
-                            }
-                            .chat-messages {
-                                max-height: 300px;
-                                overflow-y: auto;
-                                margin-bottom: 10px;
-                            }
-                            .message {
-                                padding: 8px;
-                                margin-bottom: 10px;
-                                border-radius: 5px;
-                            }
-                            .user-message {
-                                background-color: #e0f7fa;
-                            }
-                            .bot-message {
-                                background-color: #fff9c4;
-                            }
-                        </style>
+                    <?php
+                    $api_key = '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';
+                   $url = 'https://api.openai.com/v1/chat/completions';
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Authorization' => 'Bearer ' . $api_key
+);
+$body = array(
+    'model' => 'davinci',
+    'prompt' => 'Hello, how are you?',
+    'temperature' => 0.7,
+    'max_tokens' => 50
+);
 
-                        <body>
-                        <div class="chat-container">
-                            <div class="chat-messages" id="chat-messages"></div>
-                            <form id="chat-form">
-                                <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required>
-                                <button type="submit">Send</button>
-                            </form>
-                        </div>
+$response = wp_remote_post($url, array(
+    'headers' => $headers,
+    'body' => json_encode($body)
+));
 
+if (is_wp_error($response)) {
+    echo 'An error occurred. Please try again.';
+} else {
+    $response_data = json_decode(wp_remote_retrieve_body($response), true);
+    var_dump($response_data);
+    if (isset($response_data['choices'][0]['text'])) {
+        $answer = $response_data['choices'][0]['text'];
 
-                        <script>
-                            jQuery(document).ready(function ($) {
-                                const chatForm = $('#chat-form');
-                                const userInput = $('#user-input');
-                                const chatMessages = $('#chat-messages');
+        echo trim($answer);
+    } else {
+        echo 'Error: Unable to generate text completion.';
+    }
+}
+?>
 
-                                const addMessage = (message, sender) => {
-                                    const messageElem = $('<div>').addClass(`message ${sender}-message`).text(message);
-                                    chatMessages.append(messageElem);
-                                    chatMessages.scrollTop(chatMessages[0].scrollHeight);
-                                };
-
-                                chatForm.on('submit', function (event) {
-                                    event.preventDefault();
-                                    const userMessage = userInput.val().trim();
-                                    if (!userMessage) return;
-
-                                    addMessage(userMessage, 'user');
-                                    userInput.val('');
-
-                                    $.ajax({
-                                        url: 'https://wordpress.website/wp-content/themes/wordpresstheme/chatgpt-api.php',
-                                        method: 'POST',
-                                        dataType: 'json',
-                                        contentType: 'application/json',
-                                        data: JSON.stringify({
-                                            message: userMessage,
-                                            conversation: $('#chat-messages').text() // Send the entire conversation history
-                                        }),
-                                        success: function (response) {
-                                            if (response.message) {
-                                                addMessage(response.message, 'bot');
-                                            } else {
-                                                addMessage('Error: Could not fetch the response.', 'bot');
-                                            }
-                                        },
-                                        error: function () {
-                                            addMessage('Error: Could not communicate with the server.', 'bot');
-                                        }
-                                    });
-                                });
-                            });
-                        </script>
                     </div>
                 </div>
             </section>

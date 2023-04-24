@@ -29,7 +29,7 @@ class Base
             }
             return $endpoints;
         });
-        //remove posts from admin
+        //remove comments from admin
         add_filter('comments_open', '__return_false');
         //change login logo url
         add_filter('login_headerurl', array($this, 'login_logo_url'));
@@ -117,7 +117,7 @@ class Base
         //remove comment from post detail
         remove_meta_box('commentsdiv', 'post', 'normal');
         //remove post link
-        remove_menu_page('edit.php');
+       // remove_menu_page('edit.php');
         //remove comment link
         remove_menu_page('edit-comments.php');
         //remove wp version and logo

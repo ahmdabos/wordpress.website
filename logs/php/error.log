@@ -419,3 +419,120 @@ Stack trace:
 [19-Apr-2023 11:28:27 UTC] PHP Warning:  Undefined variable $conversation in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 36
 [19-Apr-2023 11:28:56 UTC] PHP Warning:  Undefined variable $input_message in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 25
 [19-Apr-2023 11:28:56 UTC] PHP Warning:  Undefined variable $conversation in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 36
+[24-Apr-2023 05:08:13 UTC] Cron reschedule event error for hook: delete_expired_transients, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"daily","args":[],"interval":86400}
+[24-Apr-2023 05:22:41 UTC] PHP Warning:  file_get_contents(https://api.openai.com/v1/engine/davinci/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 39
+[24-Apr-2023 05:22:41 UTC] PHP Warning:  Attempt to read property "choices" on null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 43
+[24-Apr-2023 05:22:41 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 43
+[24-Apr-2023 05:22:41 UTC] PHP Warning:  Attempt to read property "text" on null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 43
+[24-Apr-2023 05:23:27 UTC] PHP Warning:  file_get_contents(https://api.openai.com/v1/engine/davinci/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 39
+[24-Apr-2023 05:23:27 UTC] PHP Warning:  Attempt to read property "choices" on null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 43
+[24-Apr-2023 05:23:27 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 43
+[24-Apr-2023 05:23:27 UTC] PHP Warning:  Attempt to read property "text" on null in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 43
+[24-Apr-2023 05:24:52 UTC] PHP Warning:  file_get_contents(https://api.openai.com/v1/engine/davinci/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 35
+[24-Apr-2023 05:28:06 UTC] PHP Warning:  file_get_contents(https://api.openai.com/v1/engine/davinci/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 35
+[24-Apr-2023 05:30:41 UTC] PHP Warning:  file_get_contents(https://api.openai.com/v1/sandbox/davinci/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 35
+[24-Apr-2023 05:36:55 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 9
+[24-Apr-2023 05:36:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php:9
+Stack trace:
+#0 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\chatgpt-api.php on line 9
+[24-Apr-2023 06:01:14 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-api-main\chatgpt.php on line 120
+[24-Apr-2023 06:01:14 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-api-main\chatgpt.php on line 120
+[24-Apr-2023 06:01:14 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-api-main\chatgpt.php on line 120
+[24-Apr-2023 06:01:26 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-api-main\chatgpt.php on line 120
+[24-Apr-2023 06:01:26 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-api-main\chatgpt.php on line 120
+[24-Apr-2023 06:01:26 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-api-main\chatgpt.php on line 120
+[24-Apr-2023 06:02:23 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-api-main\chatgpt.php on line 120
+[24-Apr-2023 06:02:23 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-api-main\chatgpt.php on line 120
+[24-Apr-2023 06:02:23 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-api-main\chatgpt.php on line 120
+[24-Apr-2023 06:08:21 UTC] PHP Warning:  require(D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:08:21 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php:24
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(2314): include_once()
+#1 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(661): plugin_sandbox_scrape('wpgpt-master/wp...')
+#2 D:\wordpress.website\app\public\wp-admin\plugins.php(58): activate_plugin('wpgpt-master/wp...', 'http://wordpres...', false)
+#3 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:08:28 UTC] PHP Warning:  require(D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:08:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php:24
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(2314): include_once()
+#1 D:\wordpress.website\app\public\wp-admin\plugins.php(192): plugin_sandbox_scrape('wpgpt-master/wp...')
+#2 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:08:28 UTC] PHP Warning:  require(D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:08:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php:24
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(2314): include_once()
+#1 D:\wordpress.website\app\public\wp-admin\plugins.php(192): plugin_sandbox_scrape('wpgpt-master/wp...')
+#2 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:08:58 UTC] PHP Warning:  require(D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:08:58 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php:24
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(2314): include_once()
+#1 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(661): plugin_sandbox_scrape('wpgpt-master/wp...')
+#2 D:\wordpress.website\app\public\wp-admin\plugins.php(58): activate_plugin('wpgpt-master/wp...', 'http://wordpres...', false)
+#3 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:09:05 UTC] PHP Warning:  require(D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:09:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php:24
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(2314): include_once()
+#1 D:\wordpress.website\app\public\wp-admin\plugins.php(192): plugin_sandbox_scrape('wpgpt-master/wp...')
+#2 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:09:05 UTC] PHP Warning:  require(D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:09:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master//vendor/autoload.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php:24
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(2314): include_once()
+#1 D:\wordpress.website\app\public\wp-admin\plugins.php(192): plugin_sandbox_scrape('wpgpt-master/wp...')
+#2 {main}
+  thrown in D:\wordpress.website\app\public\wp-content\plugins\wpgpt-master\wpgpt.php on line 24
+[24-Apr-2023 06:12:11 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 57
+[24-Apr-2023 06:12:11 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 57
+[24-Apr-2023 06:12:11 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 57
+[24-Apr-2023 06:13:38 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 57
+[24-Apr-2023 06:13:38 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 57
+[24-Apr-2023 06:13:38 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 57
+[24-Apr-2023 06:13:42 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 57
+[24-Apr-2023 06:13:42 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 57
+[24-Apr-2023 06:13:42 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 57
+[24-Apr-2023 06:14:13 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:14:13 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:14:13 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:14:35 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:14:35 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:14:35 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:17:05 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:17:05 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:17:05 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:19:01 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:19:01 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:19:01 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:19:02 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:19:02 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:19:02 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:21:29 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:21:29 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:21:29 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:23:14 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:23:14 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:23:14 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:23:36 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:23:36 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:23:36 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 58
+[24-Apr-2023 06:39:15 UTC] PHP Parse error:  syntax error, unexpected token "{", expecting "]" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 47
+[24-Apr-2023 06:40:08 UTC] PHP Warning:  Undefined array key "choices" in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 64
+[24-Apr-2023 06:40:08 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 64
+[24-Apr-2023 06:40:08 UTC] PHP Warning:  Trying to access array offset on value of type null in D:\wordpress.website\app\public\wp-content\plugins\chatgpt-wordpress-main\chatgpt-client.php on line 64
+[24-Apr-2023 08:11:20 UTC] PHP Warning:  include_once(footer.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\ChatGPT\dashboard.php on line 120
+[24-Apr-2023 08:11:20 UTC] PHP Warning:  include_once(): Failed opening 'footer.php' for inclusion (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\ChatGPT\dashboard.php on line 120
+[24-Apr-2023 08:13:21 UTC] PHP Parse error:  Unclosed '{' on line 77 in D:\wordpress.website\app\public\wp-content\plugins\ChatGPT\dashboard.php on line 88
+[24-Apr-2023 08:15:22 UTC] PHP Parse error:  Unclosed '{' on line 77 in D:\wordpress.website\app\public\wp-content\plugins\ChatGPT\dashboard.php on line 88
+[24-Apr-2023 08:16:32 UTC] PHP Parse error:  Unclosed '{' on line 77 in D:\wordpress.website\app\public\wp-content\plugins\ChatGPT\dashboard.php on line 88
