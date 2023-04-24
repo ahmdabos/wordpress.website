@@ -1,5 +1,6 @@
 <?php
-function chatgpt_content_writer_settings() {
+function chatgpt_content_writer_settings()
+{
     global $wpdb;
 
     $table_name = $wpdb->prefix . 'chatgpt_content_writer';
@@ -16,7 +17,7 @@ function chatgpt_content_writer_settings() {
         $temperatureValue = sanitize_text_field($_POST['temperatureValue']);
         $apiToken = sanitize_text_field($_POST['apiToken']);
         $maxTokens = sanitize_text_field($_POST['maxTokens']);
-        $selectLanguage = sanitize_text_field($_POST['selectLanguage']);
+
 
         if ($results) { // Update settings
             $id = $results[0]->id;
@@ -26,7 +27,6 @@ function chatgpt_content_writer_settings() {
                     'api_token' => $apiToken,
                     'temperature' => $temperatureValue,
                     'max_tokens' => $maxTokens,
-                    'language' => $selectLanguage,
                 ),
                 array(
                     'id' => $id,
@@ -40,7 +40,6 @@ function chatgpt_content_writer_settings() {
                     'api_token' => $apiToken,
                     'temperature' => $temperatureValue,
                     'max_tokens' => $maxTokens,
-                    'language' => $selectLanguage,
                 ),
                 array('%s', '%s', '%s', '%s')
             );
@@ -50,29 +49,32 @@ function chatgpt_content_writer_settings() {
 
     chatgpt_settings_form($getApiToken, $getTemperature, $getMaxTokens);
 }
+function chatgpt_settings_form($apiToken, $temperature, $maxTokens)
+{
+    ?>
+    <form method="post">
+        <br>
+        <div class="mb-3">
+            <label class="form-label">ChatGPT API:</label>
+            <input type="text" id="apiToken" name="apiToken" class="form-control"
+                   value="<?php echo esc_attr($apiToken); ?>"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Temperature<b
+                    id="temperatureTextValue"><?php echo esc_html($temperature); ?></b></label><br>
 
-function chatgpt_settings_form($apiToken, $temperature, $maxTokens) {
-?>
-<form method="post">
-    <br>
-    <div class="mb-3">
-        <label class="form-label">ChatGPT API:</label>
-        <input type="text" id="apiToken" name="apiToken" class="form-control"
-               value="<?php echo esc_attr($apiToken); ?>"/>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Temperature<b
-                id="temperatureTextValue"><?php echo esc_html($temperature); ?></b></label><br>
-
-        <input onchange="updateTemperature();" type="range" class="form-range" min="0" max="1" step="0.1"
-               id="temperatureValue" name="temperatureValue" value="<?php echo esc_attr($temperature); ?>">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Max Tokens</label>
-        <input type="number" id="maxTokens" name="maxTokens" class="form-control"
-               value="<?php echo esc_attr($maxTokens); ?>"/>
-    </div>
-    <button type="submit" name="submit" class="btn btn-primary">Save Settings</button>
-</form>
+            <input onchange="updateTemperature();" type="range" class="form-range" min="0" max="1" step="0.1"
+                   id="temperatureValue" name="temperatureValue" value="<?php echo esc_attr($temperature); ?>">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Max Tokens</label>
+            <input type="number" id="maxTokens" name="maxTokens" class="form-control"
+                   value="<?php echo esc_attr($maxTokens); ?>"/>
+        </div>
+        <button type="submit" name="submit" class="btn btn-primary">Save Settings</button>
+    </form>
     <?php
+}
+function chatgpt_content_writer_render_settings(){
+    chatgpt_content_writer_settings();
 }
