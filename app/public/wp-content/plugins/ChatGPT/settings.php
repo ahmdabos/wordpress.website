@@ -2,9 +2,6 @@
 function chatgpt_content_writer_settings() {
     global $wpdb;
 
-    // Include header
-    chatgpt_render_header();
-
     $table_name = $wpdb->prefix . 'chatgpt_content_writer';
 
     // Fetch settings from database

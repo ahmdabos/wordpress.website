@@ -2,9 +2,6 @@
 function chatgpt_content_writer_dashboard() {
     global $wpdb;
 
-    // Include header
-    chatgpt_render_header();
-
     $table_name = $wpdb->prefix . 'chatgpt_content_writer';
     $results = $wpdb->get_results("SELECT * FROM $table_name");
     $api_token = $results[0]->api_token;
