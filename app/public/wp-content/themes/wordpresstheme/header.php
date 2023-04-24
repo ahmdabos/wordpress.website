@@ -10,25 +10,8 @@ include 'languages/language-' . $lang . '.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="<?php echo get_template_directory_uri() ?>/assets/images/favicon.png" type="image/x-icon">
     <?php wp_head(); ?>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NHWWPG');</script>
-    <!-- End Google Tag Manager -->
 </head>
 <body data-gr-c-s-loaded="true" <?php body_class($lang); ?>>
-<div class="loader-wrapper">
-    <div class="loader">
-        <div class="preloader_inner">0</div>
-    </div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-</div>
 <header data-aos="fade-down" data-aos-duration="700" data-aos-delay="700">
     <div class="container">
         <div class="wrap">
@@ -65,13 +48,6 @@ include 'languages/language-' . $lang . '.php';
                     }
                     ?>
                 </ul>
-                <div class="burger-nav burger-icons">
-                    <div>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
             </div>
 
             <div class="dc-right">

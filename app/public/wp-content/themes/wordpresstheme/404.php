@@ -1,7 +1,6 @@
-<?php
-get_header();
-?>
-    <h1><?php _t('404_page_not_found'); ?>.</h1>
-    <p><a href="<?php echo home_url(); ?>"> Home page</a></p>
-<?php
-get_footer();
+<?php get_header(); ?>
+
+<h1>404 - Page Not Found</h1>
+<?php get_search_form(); ?>
+
+<?php get_footer(); ?>
