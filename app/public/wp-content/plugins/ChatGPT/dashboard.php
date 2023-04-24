@@ -47,6 +47,7 @@ function chatgpt_fetch_generated_text($api_token, $text, $temperature, $max_toke
     );
     curl_setopt_array($curl, $options);
     $response = curl_exec($curl);
+    //var_dump($response);
     $httpcode = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
     if (200 == $httpcode) {
         $json_array = json_decode($response, true);
