@@ -9,11 +9,10 @@
 
 defined('ABSPATH') || exit;
 
-function chatgpt_content_writer_render_settings() {
-    require_once plugin_dir_path( __FILE__ ) . 'settings.php';
-}
+require_once plugin_dir_path(__FILE__) . 'settings.php';
 
-function chatgpt_content_writer_init(){
+function chatgpt_content_writer_init()
+{
     add_action('admin_menu', 'chatgpt_content_writer_register_menu_pages');
     add_action('plugins_loaded', 'chatgpt_content_writer_create_database_table');
     add_action('admin_enqueue_scripts', 'chatgpt_enqueue_styles_scripts');
@@ -21,7 +20,8 @@ function chatgpt_content_writer_init(){
     add_action('wp_ajax_chatgpt_generate_content', 'chatgpt_ajax_generate_content');
 }
 
-function chatgpt_enqueue_styles_scripts($hook){
+function chatgpt_enqueue_styles_scripts($hook)
+{
     if ('post.php' !== $hook && 'post-new.php' !== $hook) {
         return;
     }
@@ -30,17 +30,24 @@ function chatgpt_enqueue_styles_scripts($hook){
     wp_enqueue_script('chatgpt-custom-js');
 }
 
-function chatgpt_add_meta_box(){
-    add_meta_box('chatgpt-meta-box', 'ChatGPT Content Generator', 'chatgpt_meta_box_callback', 'post');
+function chatgpt_add_meta_box()
+{
+    $custom_post_types = get_post_types(array('public' => true, '_builtin' => false));
+    array_push($custom_post_types, 'post');
+
+    foreach ($custom_post_types as $post_type) {
+        add_meta_box('chatgpt-meta-box', 'ChatGPT', 'chatgpt_meta_box_callback', $post_type);
+    }
 }
 
-function chatgpt_meta_box_callback(){
+
+function chatgpt_meta_box_callback()
+{
     ?>
     <div class="mb-3">
-        <label class="form-label">Text to be asked to Chat GPT</label>
-        <textarea class="form-control" id="chatGptText" name="chatGptText" rows="3"></textarea>
+        <textarea class="form-control" id="chatGptText" style="width:100%" name="chatGptText" rows="3"></textarea>
     </div>
-    <button type="button" id="generateContent" class="btn btn-secondary">Generate Content</button>
+    <button type="button" id="generateContent" class="button button-primary button-large">Generate Content</button>
     <br><br>
     <?php
 }
@@ -53,7 +60,6 @@ function chatgpt_ajax_generate_content()
 
     $text = sanitize_text_field($_POST['text']);
 
-    // Fetch plugin settings
     global $wpdb;
     $table_name = $wpdb->prefix . 'chatgpt_content_writer';
     $results = $wpdb->get_results("SELECT * FROM $table_name");
@@ -69,7 +75,8 @@ function chatgpt_ajax_generate_content()
     }
 }
 
-function chatgpt_fetch_generated_text($api_token, $text, $temperature, $max_tokens){
+function chatgpt_fetch_generated_text($api_token, $text, $temperature, $max_tokens)
+{
     $header = array(
         'Authorization: Bearer ' . $api_token,
         'Content-type: application/json; charset=utf-8',
@@ -100,7 +107,8 @@ function chatgpt_fetch_generated_text($api_token, $text, $temperature, $max_toke
     return '';
 }
 
-function chatgpt_content_writer_register_menu_pages(){
+function chatgpt_content_writer_register_menu_pages()
+{
     add_menu_page(
         'Chat GPT',
         'Chat GPT',
@@ -112,7 +120,8 @@ function chatgpt_content_writer_register_menu_pages(){
     );
 }
 
-function chatgpt_content_writer_create_database_table(){
+function chatgpt_content_writer_create_database_table()
+{
     global $wpdb;
 
     $table_name = $wpdb->prefix . 'chatgpt_content_writer';

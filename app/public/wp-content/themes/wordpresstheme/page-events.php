@@ -8,6 +8,3 @@ get_header();
 Events listing
 
 <?php get_footer(); ?>
-
-
-

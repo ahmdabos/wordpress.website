@@ -76,5 +76,5 @@ function chatgpt_settings_form($apiToken, $temperature, $maxTokens)
     <?php
 }
 function chatgpt_content_writer_render_settings(){
-    chatgpt_content_writer_settings();
+   // chatgpt_content_writer_settings();
 }
