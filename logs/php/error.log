@@ -921,3 +921,5 @@ Stack trace:
 [24-Apr-2023 13:12:37 UTC] PHP Warning:  Undefined array key "selectLanguage" in D:\wordpress.website\app\public\wp-content\plugins\ChatGPT\index.php on line 228
 [24-Apr-2023 13:13:31 UTC] PHP Warning:  Undefined array key "selectLanguage" in D:\wordpress.website\app\public\wp-content\plugins\ChatGPT\index.php on line 228
 [25-Apr-2023 06:40:54 UTC] PHP Fatal error:  Cannot redeclare chatgpt_content_writer_render_settings() (previously declared in D:\wordpress.website\app\public\wp-content\plugins\ChatGPT\index.php:13) in D:\wordpress.website\app\public\wp-content\plugins\ChatGPT\settings.php on line 78
+[28-Apr-2023 11:13:35 UTC] Cron reschedule event error for hook: wp_update_themes, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"twicedaily","args":[],"interval":43200}
+[01-May-2023 11:08:43 UTC] Cron reschedule event error for hook: wp_privacy_delete_old_export_files, Error code: could_not_set, Error message: The cron event list could not be saved., Data: {"schedule":"hourly","args":[],"interval":3600}
