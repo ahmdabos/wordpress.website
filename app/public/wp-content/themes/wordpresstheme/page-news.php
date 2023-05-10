@@ -25,9 +25,12 @@ if (have_posts()) :
                             <div class="row" id="listing"></div>
                             <div class="pagination-wrapper">
                                 <ul class="list-item">
-                                    <li class="prev control left"><a href="javascript:void(0)" id="previous-item"><i class="fi-arrow-l"></i> <span><?php _t('previous'); ?></span></a></li>
-                                    <li><span class="page-number"><span class="current-page"></span> <?php _t('of'); ?> <span id="total-pages"> <?php _t('pages'); ?></span></span></li>
-                                    <li class="next control right"><a href="javascript:void(0)" id="next-item"><span><?php _t('next'); ?></span> <i class="fi-arrow-r"></i> </a></li>
+                                    <li class="prev control left"><a href="javascript:void(0)" id="previous-item"><i class="fi-arrow-l"></i>
+                                            <span><?php _t('previous'); ?></span></a></li>
+                                    <li><span class="page-number"><span class="current-page"></span> <?php _t('of'); ?> <span
+                                                id="total-pages"> <?php _t('pages'); ?></span></span></li>
+                                    <li class="next control right"><a href="javascript:void(0)" id="next-item"><span><?php _t('next'); ?></span> <i
+                                                class="fi-arrow-r"></i> </a></li>
                                 </ul>
                                 <span class="page-count"><?php _t('total_items'); ?> : <span id="total-items"></span>
                             </div>
@@ -48,14 +51,14 @@ if (have_posts()) :
                 noItems = 'No results found!';
                 read_more = 'Read more';
                 published_on = 'Published on';
-                var monthNames=["January", "February", "March", "April", "May", "June",
+                var monthNames = ["January", "February", "March", "April", "May", "June",
                     "July", "August", "September", "October", "November", "December"];
             } else {
                 lang = 'ar';
                 noItems = 'لم يتم العثور على نتائج!';
                 read_more = 'إقرأ المزيد';
                 published_on = 'تاريخ النشر ';
-                var monthNames=["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+                var monthNames = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
                     "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"];
             }
 
@@ -90,7 +93,7 @@ if (have_posts()) :
                                 '</div>' +
                                 '<div class="news-content">' +
                                 '<div class="top">' +
-                                '<div class="date"><span>' + published_on + ' ' + formatDate(value.date) + '</span></div>' +
+                                '<div class="date"><span>' + published_on + ' ' + value.date + '</span></div>' +
                                 '<h4 class="title"><a href="' + value.link + '">' + value.title.rendered + '</a></h4>' +
                                 '</div>' +
                                 '<div class="bottom">' +
@@ -139,24 +142,6 @@ if (have_posts()) :
             });
 
 
-            function formatDate(date)
-            {
-
-                var todayDate = new Date(date);
-                var date = todayDate.getDate().toString();
-                var month = todayDate.getMonth().toString();
-                var year = todayDate.getFullYear().toString();
-                var formattedMonth = (todayDate.getMonth() < 10) ? "0" + month : month;
-                var formattedDay = (todayDate.getDate() < 10) ? "0" + date : date;
-                return formattedDay + ' ' + monthNames[todayDate.getMonth()] + ' ' + year;
-            }
-
-
-
-
-
-
-
             function go_to_page(page_num) {
                 $('#enter-page-number').val(page_num);
                 page_num = parseInt(page_num);
@@ -191,7 +176,6 @@ if (have_posts()) :
             }
         });
     </script>
-
 
 <?php
 get_footer();

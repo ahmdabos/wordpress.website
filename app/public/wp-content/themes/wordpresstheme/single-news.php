@@ -16,8 +16,8 @@ if (isset($_POST['newsIdRemove'])) {
     }
 }
 ?>
-    <div class="static-page">
-        <section class="news-sec" data-aos="fade-up" data-aos-duration="900" data-aos-delay="800">
+
+        <section class="news-sec">
             <div class="page-head">
                 <div class="container">
                     <div class="breadcrumbs-wrap">
@@ -76,7 +76,7 @@ if (isset($_POST['newsIdRemove'])) {
                 </div>
             </div>
         </section>
-    </div>
+
     <script>
         jQuery(document).ready(function ($) {
             var newsId = $('.likeNews').data('newsid');

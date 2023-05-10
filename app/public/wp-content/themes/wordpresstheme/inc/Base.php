@@ -15,8 +15,6 @@ class Base
         add_filter('excerpt_length', array($this, 'custom_excerpt_length'));
         //use classic editor
         add_filter('use_block_editor_for_post', '__return_false', 10);
-        //style login page
-        add_action('login_enqueue_scripts', array($this, 'style_login_page'));
         //remove Thank you message in the admin footer
         add_action('admin_init', array($this, 'remove_wp_thank_you'));
         //disable some apis
@@ -117,7 +115,7 @@ class Base
         //remove comment from post detail
         remove_meta_box('commentsdiv', 'post', 'normal');
         //remove post link
-       // remove_menu_page('edit.php');
+        // remove_menu_page('edit.php');
         //remove comment link
         remove_menu_page('edit-comments.php');
         //remove wp version and logo
@@ -136,37 +134,6 @@ class Base
         return 50;
     }
 
-    public function style_login_page()
-    { ?>
-        <style type="text/css">
-            body.login {
-                background: #fff;
-            }
-
-            body.login .wp-core-ui .button-primary {
-                background: #013764;
-                border-color: #013764;
-            }
-
-            body.login div#login h1 a {
-                width: 60%;
-
-                background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png);
-                background-size: contain;
-                margin: 0 auto 0;
-            }
-
-            #loginform input[type="text"], .login form input[type="password"] {
-                border: 3px solid #013764;
-            }
-
-            #loginform {
-                background: #ffffff !important;
-                box-shadow: 3px 3px 8px #013764 !important;
-            }
-        </style>
-
-    <?php }
 
     public function remove_wp_thank_you()
     {
@@ -283,3 +250,9 @@ html;
         remove_action('welcome_panel', 'wp_welcome_panel');
     }
 }
+
+
+/*
+ act as an expert WordPress custom theme developer and recode my function.php file, to be best practice in terms of security, usability, readability
+ */
+

@@ -31,9 +31,9 @@ if (have_posts()) :
                                 'orderby' => 'menu_order',
                                 'post_status' => 'publish',
                             );
-                            $initiatives_list = new WP_Query($args);
-                            if ($initiatives_list->have_posts()) : ?>
-                                <?php while ($initiatives_list->have_posts()) : $initiatives_list->the_post(); ?>
+                            $pages_list = new WP_Query($args);
+                            if ($pages_list->have_posts()) : ?>
+                                <?php while ($pages_list->have_posts()) : $pages_list->the_post(); ?>
                                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                                         <div class="img-item-box-2">
                                             <a href="<?php the_permalink(); ?>" class="img-box">
