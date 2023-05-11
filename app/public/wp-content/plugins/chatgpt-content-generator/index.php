@@ -19,6 +19,8 @@ class ChatGPT_Content_Generator
     {
         add_action('admin_init', array($this, 'check_php_version'));
         add_action('plugins_loaded', array($this, 'run'));
+
+
     }
 
     public function check_php_version()

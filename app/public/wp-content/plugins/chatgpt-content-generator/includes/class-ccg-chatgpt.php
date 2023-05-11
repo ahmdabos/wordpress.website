@@ -14,6 +14,8 @@ Make sure the content is well-structured, and contains relevant keywords
 Write a concise excerpt that summarizes the article\'s main points
 Integrate general tips and strategies related to the article
 Select appropriate 3 tags and 2 categories related to the topic
+be sure to use easy english language that can be understand by non-native speakers
+be sure to use tone that online tools will not be able to recolonize the text is written by AI tools
 provide the answer using the following format:
 [title]article title here[/title]
 [excerpt]article excerpt here[/excerpt]
@@ -55,7 +57,7 @@ provide the answer using the following format:
             return array('status' => 'error', 'message' =>  $response->get_error_message());
         }
         $httpcode = wp_remote_retrieve_response_code($response);
-        var_dump($httpcode);
+
         if (200 == $httpcode) {
             $json_array = json_decode(wp_remote_retrieve_body($response), true);
             $choices = $json_array['choices'];

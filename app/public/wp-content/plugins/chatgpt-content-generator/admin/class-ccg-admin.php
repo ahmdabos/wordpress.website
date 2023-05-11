@@ -53,21 +53,25 @@ class CCG_Admin
                 event.preventDefault();
                 var submitButton = jQuery(this).find('input[type="submit"]');
                 submitButton.prop('disabled', true);
-                var pleaseWait = jQuery('<span>Please wait...</span>');
+                var pleaseWait = jQuery('<span> Please wait...</span>');
                 submitButton.after(pleaseWait);
                 jQuery.post(ajaxurl, {
                     action: 'ccg_create_post',
                     topics: jQuery('#topics').val()
-                }, function (response) {
-                    console.log(response);
-                    if (response.success) {
-                        add_admin_notice(response.data.message, false);
-                    } else {
-                        add_admin_notice('Error: ' + response.data, true);
-                    }
+                }, function (responses) {
                     submitButton.prop('disabled', false);
                     pleaseWait.remove();
+                    responses.forEach(function (response) {
+                        if (response.success) {
+                            add_admin_notice(response.message, false);
+                        } else {
+                            add_admin_notice('Error: ' + response.message, true);
+                        }
+                    });
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    console.log('AJAX error:', textStatus, errorThrown);
                 });
+
             });
         </script>
         <?php

@@ -25,11 +25,11 @@ class CCG_Generate_Content
         $generated_text = $this->chatgpt->generate_content_form_chatgpt($topic, $chatgpt_api_key, $chatgpt_temperature, $chatgpt_max_tokens);
 
         if ($generated_text["status"] == 'success') {
-            preg_match('/\[title\](.*?)\[\/title\]/s', $generated_text["text"], $title_matches);
-            preg_match('/\[details\](.*)/s', $generated_text["text"], $content_matches);
-            preg_match('/\[excerpt\](.*?)\[\/excerpt\]/s', $generated_text["text"], $excerpt_matches);
-            preg_match('/\[tags\](.*?)\[\/tags\]/s', $generated_text["text"], $tags_matches);
-            preg_match('/\[categories\](.*?)\[\/categories\]/s', $generated_text["text"], $categories_matches);
+            preg_match('/\[title\](.*?)\[\/title\]/s', $generated_text["content"], $title_matches);
+            preg_match('/\[details\](.*)/s', $generated_text["content"], $content_matches);
+            preg_match('/\[excerpt\](.*?)\[\/excerpt\]/s', $generated_text["content"], $excerpt_matches);
+            preg_match('/\[tags\](.*?)\[\/tags\]/s', $generated_text["content"], $tags_matches);
+            preg_match('/\[categories\](.*?)\[\/categories\]/s', $generated_text["content"], $categories_matches);
 
             $generated_title = $title_matches[1] ?? '';
             $generated_content = $content_matches[1] ?? '';
@@ -49,11 +49,11 @@ class CCG_Generate_Content
             $image_result = $this->image->fetch_image($unsplash_api_key, $pixabay_api_key, $query_term);
 
             if ($image_result['status'] === 'error') {
-                return $image_result;
+                return $image_result['message'];
 
             }
 
-            $generated_image_url = $image_result['image_url'];
+            $generated_image_url = $image_result['message'];
 
             $post_data = array(
                 'post_title' => $generated_title,
