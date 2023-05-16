@@ -68,7 +68,7 @@ class Base
         //remove widget from dashboard
         add_action('wp_dashboard_setup', array($this, 'remove_dashboard_widgets'));
         //limit login attempt
-        //add_filter('authenticate', array($this, 'limit_login_attempts'), 30, 3);
+        add_filter('authenticate', array($this, 'limit_login_attempts'), 30, 3);
     }
 
     public function theme_setup()

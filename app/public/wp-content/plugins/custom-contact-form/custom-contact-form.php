@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: Custom Contact Form
  * Description: A custom contact form plugin with admin listing and export features.
