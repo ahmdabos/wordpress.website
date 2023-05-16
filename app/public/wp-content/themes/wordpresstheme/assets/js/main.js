@@ -1,4 +1,3 @@
-
 jQuery(document).ready(function($) {
 
     var lang = '', next = '', prev = '', isRTL = false;
@@ -107,14 +106,6 @@ jQuery(document).ready(function($) {
             }
         }
     })
-
-
-
-
-
-
-
-
 
 
 })

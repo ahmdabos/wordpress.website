@@ -4,8 +4,8 @@ namespace Functions;
 
 class Start
 {
-    // Generate breadcrumbs
-    public static function mytheme_breadcrumbs()
+
+    public static function breadcrumbs()
     {
         global $post;
 
@@ -39,8 +39,7 @@ class Start
         echo '</ul>';
     }
 
-    // Custom pagination
-    public static function mytheme_pagination($pages = '', $range = 2)
+    public static function pagination($pages = '', $range = 2)
     {
         $showitems = ($range * 2) + 1;
 
@@ -82,7 +81,6 @@ class Start
         }
     }
 
-    // Register actions and enqueue scripts
     public function register()
     {
         //register css and js
@@ -114,6 +112,9 @@ class Start
         wp_enqueue_script('main');
     }
 
+
+
+
     public function style_login_page()
     { ?>
         <style type="text/css">
@@ -122,8 +123,8 @@ class Start
             }
 
             body.login .wp-core-ui .button-primary {
-                background: #013764;
-                border-color: #013764;
+                background: #316ea1;
+                border-color: #286191;
             }
 
             body.login div#login h1 a {
@@ -135,15 +136,17 @@ class Start
             }
 
             #loginform input[type="text"], .login form input[type="password"] {
-                border: 3px solid #013764;
+                border: 3px solid #2c5d86;
             }
 
             #loginform {
                 background: #ffffff !important;
-                box-shadow: 3px 3px 8px #013764 !important;
+                box-shadow: 3px 3px 8px #336793 !important;
             }
         </style>
 
     <?php }
+
+
 
 }

@@ -17,65 +17,66 @@ if (isset($_POST['newsIdRemove'])) {
 }
 ?>
 
-        <section class="news-sec">
-            <div class="page-head">
-                <div class="container">
-                    <div class="breadcrumbs-wrap">
-                        <ul class="breadcrumb-wrap">
+    <section class="news-sec">
+        <div class="page-head">
+            <div class="container">
+                <div class="breadcrumbs-wrap">
+                    <ul class="breadcrumb-wrap">
 
-                            <li><a href="<?php echo get_home_url() ?>"><?php _t('home'); ?></a></li>
-                            <li><a href="<?php if (get_locale() == 'en') {
-                                    echo get_permalink(312);
-                                } else {
-                                    echo get_permalink(383);
-                                } ?>"><?php _t('news'); ?></a></li>
-                            <li><?php the_title() ?></li>
-                        </ul>
-                    </div>
-                    <h2 class="main-title"><?php _t('news') ?></h2>
+                        <li><a href="<?php echo get_home_url() ?>"><?php _t('home'); ?></a></li>
+                        <li><a href="<?php if (get_locale() == 'en') {
+                                echo get_permalink(312);
+                            } else {
+                                echo get_permalink(383);
+                            } ?>"><?php _t('news'); ?></a></li>
+                        <li><?php the_title() ?></li>
+                    </ul>
                 </div>
+                <h2 class="main-title"><?php _t('news') ?></h2>
             </div>
-            <div class="page-content">
-                <div class="container">
-                    <h3 class="title"><?php the_title() ?></h3>
-                    <div class="news-details">
-                        <div class="details-card">
-                            <div class="news-img">
-                                <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title() ?>" title="<?php the_title() ?>"/>
+        </div>
+        <div class="page-content">
+            <div class="container">
+                <h3 class="title"><?php the_title() ?></h3>
+                <div class="news-details">
+                    <div class="details-card">
+                        <div class="news-img">
+                            <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title() ?>" title="<?php the_title() ?>"/>
+                        </div>
+                        <div class="news-content">
+                            <div class="top">
+                                <div class="date"><span><?php _t('published_on') ?>&nbsp;<?php echo get_the_date() ?></span></div>
+                                <p><?php the_content(); ?></p>
                             </div>
-                            <div class="news-content">
-                                <div class="top">
-                                    <div class="date"><span><?php _t('published_on') ?>&nbsp;<?php echo get_the_date() ?></span></div>
-                                    <p><?php the_content(); ?></p>
-                                </div>
-                                <div class="bottom">
-                                    <div class="card-action">
-                                        <ul>
-                                            <li>
-                                                <a href="javascript:void(0)" title="<?php _t('like') ?>" class="like likeNews" data-newsid="<?php echo get_the_ID() ?>"
-                                                   data-likesid="<?php echo get_field('news_likes'); ?>">
-                                                    <i class="fi-like"></i>
-                                                    <span><?php echo get_field('news_likes') ?> &nbsp;<?php _t('like') ?></span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-                                                        <a class="a2a_dd action sub secondary right" href="https://www.addtoany.com/share" title="<?php _t('share') ?>"><i
-                                                                    class="fi-share"></i><span><?php _t('share') ?></span> </a>
-                                                    </div>
-                                                    <script async src="https://static.addtoany.com/menu/page.js"></script>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            <div class="bottom">
+                                <div class="card-action">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:void(0)" title="<?php _t('like') ?>" class="like likeNews" data-newsid="<?php echo get_the_ID() ?>"
+                                               data-likesid="<?php echo get_field('news_likes'); ?>">
+                                                <i class="fi-like"></i>
+                                                <span><?php echo get_field('news_likes') ?> &nbsp;<?php _t('like') ?></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                                                    <a class="a2a_dd action sub secondary right" href="https://www.addtoany.com/share"
+                                                       title="<?php _t('share') ?>"><i
+                                                            class="fi-share"></i><span><?php _t('share') ?></span> </a>
+                                                </div>
+                                                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     <script>
         jQuery(document).ready(function ($) {

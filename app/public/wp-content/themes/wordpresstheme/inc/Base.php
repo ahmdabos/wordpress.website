@@ -1,6 +1,8 @@
 <?php
 
 namespace Functions;
+use WP_Error;
+
 class Base
 {
     public function register()
@@ -65,6 +67,8 @@ class Base
         add_filter('wp_sitemaps_enabled', '__return_false');
         //remove widget from dashboard
         add_action('wp_dashboard_setup', array($this, 'remove_dashboard_widgets'));
+        //limit login attempt
+        //add_filter('authenticate', array($this, 'limit_login_attempts'), 30, 3);
     }
 
     public function theme_setup()
@@ -133,7 +137,6 @@ class Base
     {
         return 50;
     }
-
 
     public function remove_wp_thank_you()
     {
@@ -249,10 +252,68 @@ html;
         unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
         remove_action('welcome_panel', 'wp_welcome_panel');
     }
+
+    public function limit_login_attempts($user, $username, $password)
+    {
+        // set the number of login attempts based on IP
+        $max_login_attempts = 5;
+
+        // get the IP
+        $client_ip = $_SERVER['REMOTE_ADDR'];
+        // get the transient
+        $login_attempts = get_transient('login_attempts_' . $client_ip);
+
+        // check if transient is set, which means a failed login attempt has been made
+        if ($login_attempts) {
+            $login_attempts = json_decode($login_attempts, true);
+
+            // check if login attempts exceeded max allowed
+            if ($login_attempts['attempts'] >= $max_login_attempts) {
+                $secs_to_wait = ($login_attempts['attempt_time'] + 60 * 60) - time();
+                if ($secs_to_wait > 0) {
+                    // if there's time left to wait, return an error message
+                    return new WP_Error('too_many_attempts', 'Too many failed login attempts. Please wait ' . round($secs_to_wait / 60) . ' minutes before trying again.');
+                }
+            }
+        }
+
+        // if we're here, it means no transient is set or it expired, so let's try to login
+        $user = get_user_by('login', $username);
+
+        if (!$user) {
+            // if no such user exists, increase the login attempts and set/update the transient
+            if (!$login_attempts) {
+                $login_attempts = array('attempts' => 1, 'attempt_time' => time());
+            } else {
+                $login_attempts['attempts']++;
+            }
+
+            set_transient('login_attempts_' . $client_ip, json_encode($login_attempts), 60 * 60);
+
+            return new WP_Error('invalid_username', 'Invalid username. Please try again.');
+        }
+
+        // if we're here, it means the user exists, so let's check the password
+        if (!wp_check_password($password, $user->user_pass, $user->ID)) {
+            // if the password is wrong, increase the login attempts and set/update the transient
+            if (!$login_attempts) {
+                $login_attempts = array('attempts' => 1, 'attempt_time' => time());
+            } else {
+                $login_attempts['attempts']++;
+            }
+
+            set_transient('login_attempts_' . $client_ip, json_encode($login_attempts), 60 * 60);
+
+            return new WP_Error('incorrect_password', 'Incorrect password. Please try again.');
+        }
+
+        // if we're here, it means the login is successful, so let's delete the transient
+        delete_transient('login_attempts_' . $client_ip);
+
+        return $user;
+    }
+
+
 }
 
-
-/*
- act as an expert WordPress custom theme developer and recode my function.php file, to be best practice in terms of security, usability, readability
- */
 

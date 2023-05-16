@@ -6,13 +6,25 @@ include 'languages/language-' . $lang . '.php';
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="<?php echo get_template_directory_uri() ?>/assets/images/favicon.png" type="image/x-icon">
+    <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon/site.webmanifest">
+    <?php
+    if (is_single() || is_page()) {
+        if (have_posts()) : while (have_posts()) : the_post();
+            $excerpt = get_the_excerpt();
+            echo '<meta name="description" content="' . $excerpt . '">';
+        endwhile; endif;
+        rewind_posts();
+    }
+    ?>
     <?php wp_head(); ?>
 </head>
-<body data-gr-c-s-loaded="true" <?php body_class($lang); ?>>
-<header data-aos="fade-down" data-aos-duration="700" data-aos-delay="700">
+<body <?php body_class($lang); ?>>
+<header>
     <div class="container">
         <div class="wrap">
             <div class="dc-logo">
@@ -35,7 +47,6 @@ include 'languages/language-' . $lang . '.php';
                                 return $item->menu_item_parent == $menu_item->ID;
                             });
                             if (!empty($submenu_items)) {
-
                                 echo ' <div class="sub-menu">
                                         <ul class="menu-items">';
                                 foreach ($submenu_items as $submenu_item) {
@@ -49,7 +60,6 @@ include 'languages/language-' . $lang . '.php';
                     ?>
                 </ul>
             </div>
-
             <div class="dc-right">
                 <a href="<?php $otherLangSwitcher = (pll_current_language() == 'en') ? 'ar' : 'en';
                 $langSwitcher = pll_the_languages(array('raw' => 1));

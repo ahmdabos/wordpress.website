@@ -35,3 +35,4 @@ $base->register();
 $start->register();
 $customPostType->createCustomPostType($customPostTypesList);
 $customTaxonomy->createCustomTaxonomy($customTaxonomyList);
+
