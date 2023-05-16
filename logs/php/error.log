@@ -1076,3 +1076,17 @@ Stack trace:
 [16-May-2023 12:38:37 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
 [16-May-2023 12:39:37 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
 [16-May-2023 12:41:38 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:43:39 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:45:40 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:47:41 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:49:42 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:51:43 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:53:44 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:54:55 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:54:55 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:55:45 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:56:09 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:56:09 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:56:46 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 12:58:47 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[16-May-2023 13:00:48 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16

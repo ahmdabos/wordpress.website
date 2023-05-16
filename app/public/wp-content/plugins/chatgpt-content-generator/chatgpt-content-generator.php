@@ -1,4 +1,5 @@
 <?php
+
 /*
 Plugin Name: ChatGPT Content Generator
 Description: A plugin to generate content for posts using GPT, Pixabay, and Unsplash.

@@ -68,52 +68,77 @@ function my_sitemap_plugin_template_redirect()
 
 // Generate the sitemap
 function my_sitemap_plugin_generate_sitemap() {
-    // Fetch posts, pages, and custom post types
-    $post_types = get_post_types(array('public' => true), 'names');
-    $exclude_types = array('post', 'page'); // Exclude default post types
+    // Initialize XML output
+    $xml = new DOMDocument('1.0', 'UTF-8');
+    $xml->formatOutput = true;
 
-    // Remove excluded types
-    $custom_post_types = array_diff($post_types, $exclude_types);
+    // Create the root <urlset> element
+    $urlset = $xml->createElement('urlset');
+    $urlset->setAttribute('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
+    $xml->appendChild($urlset);
 
-    // Fetch posts, pages, and custom post types
-    $args = array(
-        'post_type' => $custom_post_types,
+    // Fetch posts, pages, custom post types, and categories
+    $query_args = array(
+        'post_type' => array('post', 'page', 'your_custom_post_type'),
         'post_status' => 'publish',
         'posts_per_page' => -1,
     );
-    $query = new WP_Query($args);
+    $query = new WP_Query($query_args);
+
+    // Loop through each post and add it to the sitemap
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+
+            // Create <url> element
+            $url = $xml->createElement('url');
+
+            // Create <loc> element and set the URL
+            $loc = $xml->createElement('loc', get_permalink());
+            $url->appendChild($loc);
+
+            // Create <lastmod> element and set the last modified date
+            $lastmod = $xml->createElement('lastmod', get_the_modified_time('Y-m-d\TH:i:s\Z'));
+            $url->appendChild($lastmod);
+
+            // Create <changefreq> element and set the change frequency
+            $changefreq = $xml->createElement('changefreq', 'weekly');
+            $url->appendChild($changefreq);
+
+            // Add <url> element to <urlset>
+            $urlset->appendChild($url);
+        }
+    }
 
     // Fetch categories
     $categories = get_categories();
 
-    // Start outputting XML
-    header('Content-Type: application/xml; charset=utf-8');
-    echo '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
-    echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
-
-    // Output posts, pages, and custom post types
-    while ($query->have_posts()) {
-        $query->the_post();
-        $post_url = get_permalink();
-        $post_date = get_the_modified_date('Y-m-d\TH:i:sP');
-
-        echo '<url>' . PHP_EOL;
-        echo '<loc>' . $post_url . '</loc>' . PHP_EOL;
-        echo '<lastmod>' . $post_date . '</lastmod>' . PHP_EOL;
-        echo '</url>' . PHP_EOL;
-    }
-
-    // Output categories
+    // Loop through each category and add it to the sitemap
     foreach ($categories as $category) {
-        $category_url = get_category_link($category->term_id);
+        // Create <url> element
+        $url = $xml->createElement('url');
 
-        echo '<url>' . PHP_EOL;
-        echo '<loc>' . $category_url . '</loc>' . PHP_EOL;
-        echo '</url>' . PHP_EOL;
+        // Create <loc> element and set the URL
+        $loc = $xml->createElement('loc', get_category_link($category));
+        $url->appendChild($loc);
+
+        // Create <lastmod> element and set the last modified date (optional)
+        // $lastmod = $xml->createElement('lastmod', '2023-05-01');
+        // $url->appendChild($lastmod);
+
+        // Create <changefreq> element and set the change frequency (optional)
+        // $changefreq = $xml->createElement('changefreq', 'weekly');
+        // $url->appendChild($changefreq);
+
+        // Add <url> element to <urlset>
+        $urlset->appendChild($url);
     }
 
-    // End XML output
-    echo '</urlset>';
+    // Restore global post data
+    wp_reset_postdata();
+
+    // Output the XML
+    header('Content-Type: text/xml; charset=utf-8');
+    echo $xml->saveXML();
     exit;
 }
-

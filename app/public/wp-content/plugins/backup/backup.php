@@ -1,7 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Backup
- * Plugin URI: https://innovatingweb.com
+ * Plugin Name: Backup
  * Description: This plugin creates a backup of the WordPress database and files on a weekly basis.
  * Version: 1.0
  * Author: Ahmed Abbous
