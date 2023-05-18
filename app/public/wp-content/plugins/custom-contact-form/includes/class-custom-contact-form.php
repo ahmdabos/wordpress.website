@@ -5,8 +5,16 @@ if (!defined('ABSPATH')) {
 
 class Custom_Contact_Form
 {
+    private $smtp_host;
+    private $smtp_port;
+    private $smtp_username;
+    private $smtp_password;
+    private $email_template_user;
+    private $email_template_admin;
+
     public function __construct()
     {
+
         add_action('plugins_loaded', array($this, 'load_textdomain'));
         add_action('init', array($this, 'register_shortcodes'));
 
@@ -70,13 +78,78 @@ class Custom_Contact_Form
 
     public function send_user_email($form_data)
     {
-        // Replace this with your code for sending the email to the user
+
+        $to = $form_data['email'];
+        $subject = 'Thank you for contacting us';
+        $message = $this->format_email_template($form_data, $this->email_template_user); // replace $email_template_user with the actual option name
+
+        $headers[] = 'Content-Type: text/html; charset=UTF-8';
+        if (!empty($this->smtp_host) && !empty($this->smtp_port) && !empty($this->smtp_username) && !empty($this->smtp_password)) {
+            // use SMTP settings if available
+            $headers[] = 'From: ' . get_option('blogname') . ' <' . $this->smtp_username . '>';
+            $smtp_args = array(
+                'host' => $this->smtp_host,
+                'port' => $this->smtp_port,
+                'username' => $this->smtp_username,
+                'password' => $this->smtp_password,
+                'auth' => true,
+            );
+            add_filter('wp_mail_smtp_custom_options', function ($phpmailer) use ($smtp_args) {
+                foreach ($smtp_args as $key => $value) {
+                    $phpmailer->SMTP->{$key} = $value;
+                }
+                return $phpmailer;
+            });
+        } else {
+            // use default PHP mail function
+            $headers[] = 'From: ' . get_option('blogname');
+        }
+
+        wp_mail($to, $subject, $message, $headers);
     }
 
     public function send_admin_email($form_data)
     {
-        // Replace this with your code for sending the email to the admin
+        $to = 'admin@example.com'; // Replace with your email address
+        $subject = 'New contact form submission';
+        $message = $this->format_email_template($form_data, $this->email_template_admin); // replace $email_template_admin with the actual option name
+
+        $headers[] = 'Content-Type: text/html; charset=UTF-8';
+        if (!empty($this->smtp_host) && !empty($this->smtp_port) && !empty($this->smtp_username) && !empty($this->smtp_password)) {
+            // use SMTP settings if available
+            $headers[] = 'From: ' . get_option('blogname') . ' <' . $this->smtp_username . '>';
+            $smtp_args = array(
+                'host' => $this->smtp_host,
+                'port' => $this->smtp_port,
+                'username' => $this->smtp_username,
+                'password' => $this->smtp_password,
+                'auth' => true,
+            );
+            add_filter('wp_mail_smtp_custom_options', function ($phpmailer) use ($smtp_args) {
+                foreach ($smtp_args as $key => $value) {
+                    $phpmailer->SMTP->{$key} = $value;
+                }
+                return $phpmailer;
+            });
+        } else {
+            // use default PHP mail function
+            $headers[] = 'From: ' . get_option('blogname');
+        }
+
+        wp_mail($to, $subject, $message, $headers);
     }
+
+    private function format_email_template($form_data, $template_option_name)
+    {
+        $template = get_option($template_option_name, '');
+        // replace placeholders in the email template with actual form data
+        $placeholders = array('{name}', '{email}', '{phone}', '{message}');
+        $replacements = array($form_data['name'], $form_data['email'], $form_data['phone'], $form_data['message']);
+        $formatted_template = str_replace($placeholders, $replacements, $template);
+
+        return $formatted_template;
+    }
+
 
     public function create_table()
     {

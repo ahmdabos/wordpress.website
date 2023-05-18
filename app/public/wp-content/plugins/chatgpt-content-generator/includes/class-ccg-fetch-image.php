@@ -23,7 +23,7 @@ class CCG_Fetch_Image
         $json_array = json_decode($response_body, true);
 
         if (isset($json_array['hits']) && isset($json_array['hits'][0])) {
-            $image_url = $json_array['hits'][0]['largeImageURL'];
+            $image_url = $json_array['hits'][0]['webformatURL'];
             $image_id = $json_array['hits'][0]['id'];
 
             $image_exists = false;
@@ -68,7 +68,7 @@ class CCG_Fetch_Image
 
         if (isset($json_array['results']) && !empty($json_array['results'])) {
             $random_index = array_rand($json_array['results']);
-            $image_url = $json_array['results'][$random_index]['urls']['full'];
+            $image_url = $json_array['results'][$random_index]['urls']['regular'];
             $image_id = $json_array['results'][$random_index]['id'];
 
             $image_url = strtok($image_url, '?');

@@ -14,7 +14,7 @@ class Custom_Contact_Form_Submissions
         add_action('admin_init', array($this, 'export_to_excel'));
     }
 
-    public function add_submissions_menu()
+    public function add_submissions_menu(): void
     {
         add_submenu_page(
             'custom-contact-form',
@@ -26,9 +26,9 @@ class Custom_Contact_Form_Submissions
         );
     }
 
-    public function render_submissions_page()
+    public function render_submissions_page(): void
     {
-        // Render the submissions page
+        // Render the submission page
         require_once(plugin_dir_path(__FILE__) . '../templates/admin-submissions.php');
     }
 

@@ -21,7 +21,11 @@ class ChatGPT_Content_Generator
         add_action('admin_init', array($this, 'check_php_version'));
         add_action('plugins_loaded', array($this, 'run'));
 
-
+        if (version_compare(PHP_VERSION, '7.4.0', '>=')) {
+            $this->ccg_plugin = new CCG_Plugin();
+            register_activation_hook(__FILE__, array($this->ccg_plugin, 'activate'));
+            register_deactivation_hook(__FILE__, array($this->ccg_plugin, 'deactivate'));
+        }
     }
 
     public function check_php_version()
@@ -44,15 +48,14 @@ class ChatGPT_Content_Generator
         deactivate_plugins(plugin_basename(__FILE__));
     }
 
+
     public function run()
     {
         if (version_compare(PHP_VERSION, '7.4.0', '>=')) {
-            $ccg_plugin = new CCG_Plugin();
-            register_activation_hook(__FILE__, array($ccg_plugin, 'activate'));
-            register_deactivation_hook(__FILE__, array($ccg_plugin, 'deactivate'));
-            $ccg_plugin->start();
+            $this->ccg_plugin->start();
         }
     }
+
 }
 
 new ChatGPT_Content_Generator();

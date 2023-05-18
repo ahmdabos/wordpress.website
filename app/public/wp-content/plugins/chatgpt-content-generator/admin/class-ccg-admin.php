@@ -55,24 +55,33 @@ class CCG_Admin
                 submitButton.prop('disabled', true);
                 var pleaseWait = jQuery('<span> Please wait...</span>');
                 submitButton.after(pleaseWait);
-                jQuery.post(ajaxurl, {
-                    action: 'ccg_create_post',
-                    topics: jQuery('#topics').val()
-                }, function (responses) {
-                    submitButton.prop('disabled', false);
-                    pleaseWait.remove();
-                    responses.forEach(function (response) {
-                        if (response.success) {
-                            add_admin_notice(response.message, false);
-                        } else {
-                            add_admin_notice('Error: ' + response.message, true);
-                        }
+                fetch('<?php echo esc_url_raw(rest_url('ccg/v1/create_post/')); ?>', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-WP-Nonce': '<?php echo wp_create_nonce('wp_rest'); ?>'
+                    },
+                    body: JSON.stringify({
+                        topics: jQuery('#topics').val()
+                    })
+                })
+                    .then(response => response.json())
+                    .then(responses => {
+                        submitButton.prop('disabled', false);
+                        pleaseWait.remove();
+                        responses.forEach(function (response) {
+                            if (response.success) {
+                                add_admin_notice(response.message, false);
+                            } else {
+                                add_admin_notice('Error: ' + response.message, true);
+                            }
+                        });
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
                     });
-                }).fail(function (jqXHR, textStatus, errorThrown) {
-                    console.log('AJAX error:', textStatus, errorThrown);
-                });
-
             });
+
         </script>
         <?php
     }
