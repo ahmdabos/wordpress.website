@@ -13,18 +13,19 @@ class CCG_Create_Post
         $this->generate_content = $generate_content;
     }
 
-    public function create_post($topic)
+    public function create_post($topic,$index)
     {
         require_once(ABSPATH . 'wp-admin/includes/file.php');
         require_once(ABSPATH . 'wp-admin/includes/image.php');
         require_once(ABSPATH . 'wp-admin/includes/media.php');
 
-            $generated_data = $this->generate_content->generate_content($topic);
-            if ($generated_data['status'] == 'success') {
-                $generated_data = $generated_data["content"];
+        $generated_data = $this->generate_content->generate_content($topic,$index);
+        if ($generated_data['status'] == 'success') {
+            if ($generated_data['content']) {
+                $content_data = $generated_data["content"];
                 $category_ids = array();
-                if (isset($generated_data['post_categories'])) {
-                    foreach ($generated_data['post_categories'] as $category_name) {
+                if (isset($content_data['post_categories'])) {
+                    foreach ($content_data['post_categories'] as $category_name) {
                         $category = get_term_by('name', $category_name, 'category');
                         if (!$category) {
                             $new_category = wp_insert_term($category_name, 'category');
@@ -33,32 +34,32 @@ class CCG_Create_Post
                             $category_ids[] = $category->term_id;
                         }
                     }
-                    $post_date = date_i18n('Y-m-d H:i:s', strtotime('+' . 0 + 1 . ' day'));
+                    $post_date = date_i18n('Y-m-d H:i:s', strtotime('+' . $index + 1 . ' day'));
                     $post_data = array(
                         'post_status' => 'future',
                         'post_date' => $post_date,
                     );
-                    if (isset($generated_data['post_title'])) {
-                        $post_data['post_title'] = $generated_data['post_title'];
+                    if (isset($content_data['post_title'])) {
+                        $post_data['post_title'] = $content_data['post_title'];
                     }
-                    if (isset($generated_data['post_content'])) {
-                        $post_data['post_content'] = $generated_data['post_content'];
+                    if (isset($content_data['post_content'])) {
+                        $post_data['post_content'] = $content_data['post_content'];
                     }
-                    if (isset($generated_data['post_excerpt'])) {
-                        $post_data['post_excerpt'] = $generated_data['post_excerpt'];
+                    if (isset($content_data['post_excerpt'])) {
+                        $post_data['post_excerpt'] = $content_data['post_excerpt'];
                     }
                     if (!empty($category_ids)) {
                         $post_data['post_category'] = $category_ids;
                     }
 
                     $post_id = wp_insert_post($post_data);
-                    if (isset($generated_data['post_tags'])) {
-                        wp_set_post_tags($post_id, $generated_data['post_tags']);
+                    if (isset($content_data['post_tags'])) {
+                        wp_set_post_tags($post_id, $content_data['post_tags']);
                     }
 
-                    if (!empty($generated_data['post_image'])) {
+                    if (!empty($content_data['post_image'])) {
 
-                        $tmp = download_url($generated_data['post_image']);
+                        $tmp = download_url($content_data['post_image']);
 
                         if (is_wp_error($tmp)) {
                             return array(
@@ -67,7 +68,7 @@ class CCG_Create_Post
                             );
                         } else {
                             $file_array = array(
-                                'name' => basename($generated_data['post_image']) . '.jpg',
+                                'name' => basename($content_data['post_image']) . '.jpg',
                                 'tmp_name' => $tmp,
                             );
 
@@ -77,8 +78,7 @@ class CCG_Create_Post
                                 return array(
                                     'status' => 'error',
                                     'message' => 'Error setting featured image: ' . $attachment_id->get_error_message()
-                                );
-                                ;
+                                );;
                             } else {
                                 set_post_thumbnail($post_id, $attachment_id);
                             }
@@ -97,12 +97,18 @@ class CCG_Create_Post
                         );
                     }
                 }
-            } else {
+            }else {
                 return array(
                     'status' => 'error',
-                    'message' => $generated_data['message']
+                    'message' => 'ChatGPT content empty'
                 );
             }
+        } else {
+            return array(
+                'status' => 'error',
+                'message' => $generated_data['message']
+            );
+        }
 
     }
 }

@@ -35,8 +35,8 @@ class CCG_Public
 
             $responses = array();
 
-            foreach ($topics as $topic) {
-                $create_post_response = $create_post->create_post($topic);
+            foreach ($topics as $index => $topic) {
+                $create_post_response = $create_post->create_post($topic, $index);
                 if ($create_post_response['status'] === 'success') {
                     $responses[] = array('success' => true, 'message' => $create_post_response['message']);
                 } else {

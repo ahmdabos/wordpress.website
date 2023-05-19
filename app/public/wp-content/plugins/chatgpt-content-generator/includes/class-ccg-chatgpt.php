@@ -53,6 +53,7 @@ provide the answer using the following format:
             'timeout' => 180,
         );
         $response = wp_remote_post($chatgpt_url, $args);
+
         if (is_wp_error($response)) {
             return array('status' => 'error', 'message' =>  $response->get_error_message());
         }
