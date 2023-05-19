@@ -1,6 +1,7 @@
 <?php
 
 namespace Functions;
+
 use WP_Error;
 
 class Base
@@ -69,12 +70,13 @@ class Base
         add_action('wp_dashboard_setup', array($this, 'remove_dashboard_widgets'));
         //limit login attempt
         add_filter('authenticate', array($this, 'limit_login_attempts'), 30, 3);
+        //image optimizer
+        add_filter('wp_handle_upload', 'optimize_uploaded_images');
     }
 
     public function theme_setup()
     {
         if (function_exists('acf_add_options_page')) {
-
             acf_add_options_page(array(
                 'page_title' => 'Options',
                 'menu_title' => 'Options',
@@ -311,6 +313,42 @@ html;
         delete_transient('login_attempts_' . $client_ip);
 
         return $user;
+    }
+
+    public function optimize_uploaded_images($image)
+    {
+        $image_path = $image['file'];
+        $ext = pathinfo($image_path, PATHINFO_EXTENSION);
+
+        if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png') {
+            if (extension_loaded('imagick') || class_exists("Imagick")) {
+                $img = new Imagick($image_path);
+
+                if ($ext == 'png') {
+                    $img->setImageFormat('png8');
+                }
+
+                $img->optimizeImageLayers();
+                $img->stripImage();
+                $img->writeImage($image_path);
+                $img->clear();
+                $img->destroy();
+
+            } else if (extension_loaded('gd')) {
+                if ($ext == 'jpg' || $ext == 'jpeg') {
+                    $img = imagecreatefromjpeg($image_path);
+                    imagejpeg($img, $image_path, 80);
+                } else if ($ext == 'png') {
+                    $img = imagecreatefrompng($image_path);
+                    imagealphablending($img, false);
+                    imagesavealpha($img, true);
+                    imagepng($img, $image_path, 8);
+                }
+                imagedestroy($img);
+            }
+        }
+
+        return $image;
     }
 
 

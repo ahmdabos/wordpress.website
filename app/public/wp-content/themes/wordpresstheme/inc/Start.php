@@ -83,10 +83,13 @@ class Start
 
     public function register()
     {
-        //register css and js
-        add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
+
         //style login page
         add_action('login_enqueue_scripts', array($this, 'style_login_page'));
+        //register css and js
+        add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
+        //add defer to all resources
+        add_filter('script_loader_tag', array($this, 'add_defer_attribute'), 10, 2);
     }
 
     public function enqueueScripts()
@@ -112,7 +115,17 @@ class Start
         wp_enqueue_script('main');
     }
 
+    public function add_defer_attribute($tag, $handle)
+    {
+        $scripts_to_defer = array('jquery-custom', 'bootstrap', 'jquery-ui', 'owl-carousel', 'popper', 'main');
 
+        foreach ($scripts_to_defer as $defer_script) {
+            if ($defer_script === $handle) {
+                return str_replace(' src', ' defer="defer" src', $tag);
+            }
+        }
+        return $tag;
+    }
 
 
     public function style_login_page()
@@ -146,7 +159,6 @@ class Start
         </style>
 
     <?php }
-
 
 
 }
