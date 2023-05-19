@@ -11,7 +11,7 @@ Author URI: https://innovatingweb.com
 if (!defined('ABSPATH')) {
     exit;
 }
-
+require 'vendor/autoload.php';
 require_once plugin_dir_path(__FILE__) . 'includes/class-ccg-plugin.php';
 
 class ChatGPT_Content_Generator

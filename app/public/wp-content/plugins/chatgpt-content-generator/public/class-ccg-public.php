@@ -18,6 +18,7 @@ class CCG_Public
             'callback' => array($this, 'handle_create_post'),
         ));
     }
+
     public function handle_create_post(WP_REST_Request $request)
     {
         if (!wp_verify_nonce($request->get_header('X_WP_Nonce'), 'wp_rest')) {
@@ -36,53 +37,16 @@ class CCG_Public
 
             foreach ($topics as $topic) {
                 $create_post_response = $create_post->create_post($topic);
-
                 if ($create_post_response['status'] === 'success') {
                     $responses[] = array('success' => true, 'message' => $create_post_response['message']);
                 } else {
                     $responses[] = array('error' => false, 'message' => $create_post_response['message']);
                 }
             }
-
             return new WP_REST_Response($responses, 200);
 
         } else {
             return new WP_Error('no_topics', 'Topics not provided', array('status' => 400));
-        }
-    }
-
-
-
-    public function ajax_create_post()
-    {
-        if (isset($_POST['topics'])) {
-            $topics = wp_kses_post($_POST['topics']);
-            $topics = explode("\n", $topics);
-
-            $content = new CCG_ChatGPT();
-            $image = new CCG_Fetch_Image();
-            $full_content = new CCG_Generate_Content($content, $image);
-            $create_post = new CCG_Create_Post($full_content);
-
-            $responses = array();
-
-            foreach ($topics as $topic) {
-                $create_post_response = $create_post->create_post($topic);
-
-                if ($create_post_response['status'] === 'success') {
-                    $responses[] = array('success' => true, 'message' => $create_post_response['message']);
-                } else {
-                    $responses[] = array('error' => false, 'message' => $create_post_response['message']);
-                }
-
-            }
-
-
-            wp_send_json($responses);
-
-        }
-        else {
-            wp_send_json_error('Topics not provided');
         }
     }
 
