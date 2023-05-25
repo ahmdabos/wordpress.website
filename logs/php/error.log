@@ -2106,3 +2106,5 @@ Stack trace:
 [25-May-2023 14:21:03 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
 [25-May-2023 14:22:58 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
 [25-May-2023 14:23:03 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[25-May-2023 14:24:59 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
+[25-May-2023 14:25:04 UTC] PHP Warning:  Constant ABSPATH already defined in D:\wordpress.website\app\public\wp-config.php on line 16
