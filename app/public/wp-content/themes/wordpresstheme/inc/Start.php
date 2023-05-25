@@ -5,38 +5,53 @@ namespace Functions;
 class Start
 {
 
+    public function register()
+    {
+
+        //style login page
+        add_action('login_enqueue_scripts', array($this, 'style_login_page'));
+        //register css and js
+        add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
+        //add defer to all resources
+        add_filter('script_loader_tag', array($this, 'add_defer_attribute'), 10, 2);
+    }
+
     public static function breadcrumbs()
     {
         global $post;
+        $breadcrumbs = array();
 
-        if (get_locale() == 'en') {
-            $home = 'Home';
-        } else {
-            $home = 'الرئيسة';
-        }
+        $front_page_id = get_option('page_on_front');
+        $home = get_the_title($front_page_id);
 
-        echo '<ul class="breadcrumb-wrap">';
-        echo '<li><a href="' . esc_url(get_home_url()) . '">' . $home . '</a></li>';
+        $breadcrumbs[] = array(
+            'url' => esc_url(get_home_url()),
+            'title' => $home
+        );
 
         if ($post->post_parent) {
             $anc = get_post_ancestors($post->ID);
             $anc = array_reverse($anc);
 
-            if (!isset($parents)) {
-                $parents = null;
-            }
-
             foreach ($anc as $ancestor) {
-                $parents .= '<li><a href="' . esc_url(get_permalink($ancestor)) . '">' . get_the_title($ancestor) . '</a></li>';
+                $breadcrumbs[] = array(
+                    'url' => esc_url(get_permalink($ancestor)),
+                    'title' => get_the_title($ancestor)
+                );
             }
 
-            echo $parents;
-            echo '<li>' . get_the_title() . ' </li>';
+            $breadcrumbs[] = array(
+                'url' => null,
+                'title' => get_the_title()
+            );
         } else {
-            echo '<li>' . get_the_title() . ' </li>';
+            $breadcrumbs[] = array(
+                'url' => null,
+                'title' => get_the_title()
+            );
         }
 
-        echo '</ul>';
+        return $breadcrumbs;
     }
 
     public static function pagination($pages = '', $range = 2)
@@ -81,17 +96,6 @@ class Start
         }
     }
 
-    public function register()
-    {
-
-        //style login page
-        add_action('login_enqueue_scripts', array($this, 'style_login_page'));
-        //register css and js
-        add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
-        //add defer to all resources
-        add_filter('script_loader_tag', array($this, 'add_defer_attribute'), 10, 2);
-    }
-
     public function enqueueScripts()
     {
         wp_register_style('site', get_template_directory_uri() . '/assets/css/site.css', array(), time(), 'all');
@@ -127,14 +131,9 @@ class Start
         return $tag;
     }
 
-
     public function style_login_page()
     { ?>
-        <style type="text/css">
-            body.login {
-                background: #fff;
-            }
-
+        <style>
             body.login .wp-core-ui .button-primary {
                 background: #316ea1;
                 border-color: #286191;
@@ -142,7 +141,6 @@ class Start
 
             body.login div#login h1 a {
                 width: 60%;
-
                 background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png);
                 background-size: contain;
                 margin: 0 auto 0;

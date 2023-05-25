@@ -4,7 +4,7 @@
  * Plugin Name: Custom Contact Form
  * Description: A custom contact form plugin with admin listing and export features.
  * Version: 1.0
- * Author: Future Internet
+ * Author: Ahmed Abbous
  * Text Domain: custom-contact-form
  */
 
