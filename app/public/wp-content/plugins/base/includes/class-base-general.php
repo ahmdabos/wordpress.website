@@ -10,13 +10,13 @@ class Base_General
     public function __construct()
     {
         //theme setup
-        add_action('init', array($this, 'theme_setup'));
+        add_action('init', array($this, 'theme_setup'),1);
         //remove admin items
-        add_action('admin_menu', array($this, 'remove_admin_items'));
+        add_action('admin_menu', array($this, 'remove_admin_items'),1);
         //custom excerpt read more text
-        add_filter('excerpt_more', array($this, 'custom_excerpt_more'));
+        add_filter('excerpt_more', array($this, 'custom_excerpt_more'),1);
         //custom excerpt length
-        add_filter('excerpt_length', array($this, 'custom_excerpt_length'));
+        add_filter('excerpt_length', array($this, 'custom_excerpt_length'),1);
         //use classic editor
         add_filter('use_block_editor_for_post', '__return_false', 10);
         //remove Thank you message in the admin footer
@@ -42,11 +42,7 @@ class Base_General
         //hide wp version
         add_filter('the_generator', array($this, 'hide_wp_version'));
         //hide wp update notification
-        add_filter('pre_site_transient_update_core', array($this, 'hide_wp_update_notification'));
-        //hide plugins update notification
-        add_filter('pre_site_transient_update_plugins', array($this, 'hide_wp_update_notification'));
-        //hide themes update notification
-        add_filter('pre_site_transient_update_themes', array($this, 'hide_wp_update_notification'));
+        add_action('admin_init', array($this, 'hide_wp_update_notifications'));
         //disable visual tab on editor
         add_filter('user_can_richedit', array($this, 'disable_visual_tab_editor'));
         //ignore line break in wp editor
@@ -61,10 +57,7 @@ class Base_General
         add_action('admin_head', array($this, 'update_what_editor_role_can_see'));
         //change login error message
         add_filter('login_errors', array($this, 'change_login_error_message'));
-        //hide css files versions
-        add_filter('style_loader_src', array($this, 'remove_wp_ver_css_js'), 9999);
-        //hide js files versions
-        add_filter('script_loader_src', array($this, 'remove_wp_ver_css_js'), 9999);
+
         //disable default xml sitemaps
         add_filter('wp_sitemaps_enabled', '__return_false');
         //remove widget from dashboard
@@ -176,11 +169,9 @@ html;
         }
     }
 
-    public function hide_wp_update_notification()
-    {
-        global $wp_version;
+    public function hide_wp_update_notifications() {
         if (!current_user_can('administrator')) {
-            return (object)array('last_checked' => time(), 'version_checked' => $wp_version,);
+            remove_action('admin_notices', 'update_nag', 3);
         }
     }
 
@@ -232,13 +223,6 @@ html;
     public function change_login_error_message()
     {
         return 'Wrong credential!';
-    }
-
-    public function remove_wp_ver_css_js($src)
-    {
-        if (strpos($src, 'ver='))
-            $src = remove_query_arg('ver', $src);
-        return $src;
     }
 
     public function remove_dashboard_widgets()

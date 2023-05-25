@@ -1,4 +1,21 @@
 <?php
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+$customPostType = new Base_Custom_Post_type();
+$customPostTypesList = [
+   /* [
+        'singular_name' => 'slider',
+        'plural_name' => 'sliders',
+        'slug' => 'events',
+        'publicly_queryable' => false,
+        'menu_position' => 19,
+        'supports' => ['title', 'thumbnail', 'revisions', 'page-attributes', 'editor'],
+        'taxonomies' => []
+    ],*/
+];
+$customPostType->create_custom_post_type($customPostTypesList);
 
 class Base_Custom_Post_type
 {
@@ -62,25 +79,3 @@ class Base_Custom_Post_type
     }
 }
 
-$customPostType = new Base_Custom_Post_type();
-$customPostTypesList = [
-    [
-        'singular_name' => 'slider',
-        'plural_name' => 'sliders',
-        'slug' => 'events',
-        'publicly_queryable' => false,
-        'menu_position' => 19,
-        'supports' => ['title', 'thumbnail', 'revisions', 'page-attributes', 'editor'],
-        'taxonomies' => []
-    ],
-    [
-        'singular_name' => 'news',
-        'plural_name' => 'news',
-        'slug' => 'news',
-        'publicly_queryable' => true,
-        'menu_position' => 19,
-        'supports' => ['title', 'thumbnail', 'revisions', 'page-attributes', 'excerpt', 'editor'],
-        'taxonomies' => []
-    ]
-];
-$customPostType->create_custom_post_type($customPostTypesList);
