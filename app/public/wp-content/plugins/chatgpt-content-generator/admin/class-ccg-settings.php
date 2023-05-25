@@ -4,8 +4,6 @@ if (!defined('ABSPATH')) {
 }
 class CCG_Settings {
     public function register_settings() {
-        register_setting('ccg_settings', 'ccg_shutterstock_client_id');
-        register_setting('ccg_settings', 'ccg_shutterstock_client_secret');
         register_setting('ccg_settings', 'ccg_chatgpt_api_key');
         register_setting('ccg_settings', 'ccg_chatgpt_temperature');
         register_setting('ccg_settings', 'ccg_chatgpt_max_tokens');
@@ -56,14 +54,7 @@ class CCG_Settings {
                         <th scope="row">Pixabay API Key</th>
                         <td><input type="text" name="ccg_pixabay_api_key" value="<?php echo esc_attr(get_option('ccg_pixabay_api_key')); ?>" /></td>
                     </tr>
-                    <tr valign="top">
-                        <th scope="row">Shutterstock Client Id</th>
-                        <td><input type="text" name="ccg_shutterstock_client_id" value="<?php echo esc_attr(get_option('ccg_shutterstock_client_id')); ?>" /></td>
-                    </tr>
-                    <tr valign="top">
-                        <th scope="row">Shutterstock Client Secret</th>
-                        <td><input type="text" name="ccg_shutterstock_client_secret" value="<?php echo esc_attr(get_option('ccg_shutterstock_client_secret')); ?>" /></td>
-                    </tr>
+
                 </table>
                 <?php
                 submit_button();

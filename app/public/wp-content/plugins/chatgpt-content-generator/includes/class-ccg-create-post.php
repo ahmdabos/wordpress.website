@@ -20,6 +20,7 @@ class CCG_Create_Post
         require_once(ABSPATH . 'wp-admin/includes/media.php');
 
         $generated_data = $this->generate_content->generate_content($topic,$index);
+
         if ($generated_data['status'] == 'success') {
             if ($generated_data['content']) {
                 $content_data = $generated_data["content"];

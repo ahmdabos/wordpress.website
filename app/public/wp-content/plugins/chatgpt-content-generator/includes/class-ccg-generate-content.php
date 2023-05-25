@@ -16,8 +16,6 @@ class CCG_Generate_Content
 
     public function generate_content($topic)
     {
-        $shutterstock_client_id = get_option('ccg_shutterstock_client_id');
-        $shutterstock_client_secret = get_option('ccg_shutterstock_client_secret');
         $unsplash_api_key = get_option('ccg_unsplash_api_key');
         $pixabay_api_key = get_option('ccg_pixabay_api_key');
         $chatgpt_api_key = get_option('ccg_chatgpt_api_key');
@@ -48,11 +46,10 @@ class CCG_Generate_Content
                 $query_term = $generated_title;
             }
 
-            $image_result = $this->image->fetch_image($shutterstock_client_id,$shutterstock_client_secret,$unsplash_api_key, $pixabay_api_key, $query_term);
+            $image_result = $this->image->fetch_image($unsplash_api_key, $pixabay_api_key, $query_term);
 
             if ($image_result['status'] === 'error') {
-                return $image_result['message'];
-
+                return array('status' => 'error', 'message' => $image_result['message']);
             }
 
             $generated_image_url = $image_result['message'];

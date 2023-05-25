@@ -65,7 +65,7 @@ class Base_General
         //limit login attempt
         add_filter('authenticate', array($this, 'limit_login_attempts'), 30, 3);
         //image optimizer
-        add_filter('wp_handle_upload', 'optimize_uploaded_images');
+        add_filter('wp_handle_upload', array($this, 'optimize_uploaded_images'));
     }
 
     public function theme_setup()
