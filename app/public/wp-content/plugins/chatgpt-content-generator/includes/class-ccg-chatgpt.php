@@ -28,7 +28,6 @@ provide the answer using the following format:
         $header = array(
             'Authorization' => 'Bearer ' . $chatgpt_api_key,
             'Content-type' => 'application/json; charset=utf-8',
-
         );
         $params = json_encode(
             array(
@@ -55,7 +54,7 @@ provide the answer using the following format:
         $response = wp_remote_post($chatgpt_url, $args);
 
         if (is_wp_error($response)) {
-            return array('status' => 'error', 'message' =>  $response->get_error_message());
+            return array('status' => 'error', 'message' => $response->get_error_message());
         }
         $httpcode = wp_remote_retrieve_response_code($response);
 

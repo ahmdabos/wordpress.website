@@ -44,9 +44,9 @@ class Base_General
         //hide wp update notification
         add_action('admin_init', array($this, 'hide_wp_update_notifications'));
         //disable visual tab on editor
-        add_filter('user_can_richedit', array($this, 'disable_visual_tab_editor'));
+        //add_filter('user_can_richedit', array($this, 'disable_visual_tab_editor'));
         //ignore line break in wp editor
-        remove_filter('the_content', 'wpautop');
+        //remove_filter('the_content', 'wpautop');
         //hide admin bar for none admin users
         add_action('after_setup_theme', array($this, 'hide_admin_bar_for_none_admin_users'));
         //disable dashboard widgets
