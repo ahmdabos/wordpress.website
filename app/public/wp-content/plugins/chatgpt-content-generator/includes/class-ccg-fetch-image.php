@@ -9,10 +9,11 @@ class CCG_Fetch_Image
     {
         global $wpdb;
         $table_name = $wpdb->prefix . 'ccg_fetched_images';
-        $url = "https://pixabay.com/api/?key=" . $api_key . "&q=" . urlencode($query) . "&&image_type=photo&orientation=horizontal&pretty=true&safesearch=true";
+        $url = "https://pixabay.com/api/?key=" . $api_key . "&q=" . urlencode($query) . "&&image_type=photo&orientation=horizontal&pretty=true&safesearch=true&per_page=30"; // fetch 30 images at once
 
+        $fetched_image_ids = $wpdb->get_results("SELECT image_id, source FROM $table_name WHERE source = 'pixabay'", ARRAY_A);
+        $fetched_image_ids = array_column($fetched_image_ids, 'image_id'); // get only the ids for easier comparison
 
-        $fetched_image_ids = $wpdb->get_results("SELECT image_id, source FROM $table_name", ARRAY_A);
         $response = wp_remote_get($url);
 
         if (is_wp_error($response)) {
@@ -22,41 +23,41 @@ class CCG_Fetch_Image
         $response_body = wp_remote_retrieve_body($response);
         $json_array = json_decode($response_body, true);
 
-        if (isset($json_array['hits']) && isset($json_array['hits'][0])) {
-            $image_url = $json_array['hits'][0]['webformatURL'];
-            $image_id = $json_array['hits'][0]['id'];
+        if (isset($json_array['hits']) && !empty($json_array['hits'])) {
+            $filtered_results = array_filter($json_array['hits'], function($hit) use ($fetched_image_ids) {
+                // remove images that already exist in the database
+                return !in_array($hit['id'], $fetched_image_ids);
+            });
 
-            $image_exists = false;
-            foreach ($fetched_image_ids as $fetched_image) {
-                if ($fetched_image['image_id'] == $image_id && $fetched_image['source'] == 'pixabay') {
-                    $image_exists = true;
-                    break;
-                }
+            if (empty($filtered_results)) {
+                return array('status' => 'error', 'message' => 'All fetched images already exist in the database.');
             }
 
-            if ($image_exists) {
-                return array('status' => 'error', 'message' => 'null');
-            } else {
-                $wpdb->insert($table_name, array('url' => $image_url, 'image_id' => $image_id, 'source' => 'pixabay'));
+            // randomly select an image from the filtered results
+            $random_index = array_rand($filtered_results);
+            $selected_image = $filtered_results[$random_index];
 
-            }
+            $image_url = $selected_image['webformatURL'];
+            $image_id = $selected_image['id'];
+
+            $wpdb->insert($table_name, array('url' => $image_url, 'image_id' => $image_id, 'source' => 'pixabay'));
+
+            return array('status' => 'success', 'message' => $image_url);
         } else {
-            return array('status' => 'error', 'message' => 'null');
+            return array('status' => 'error', 'message' => 'Could not fetch image from Pixabay, returned null.');
         }
-
-
-        return array('status' => 'success', 'message' => $image_url);
-
     }
+
 
     public function fetch_unsplash_image($api_key, $query)
     {
         global $wpdb;
         $table_name = $wpdb->prefix . 'ccg_fetched_images';
-        $url = "https://api.unsplash.com/search/photos?query=" . urlencode($query) . "&client_id=" . $api_key . "&orientation=landscape&content_filter=high";
+        $url = "https://api.unsplash.com/search/photos?query=" . urlencode($query) . "&client_id=" . $api_key . "&orientation=landscape&content_filter=high&per_page=30"; // fetch 30 images at once
 
+        $fetched_image_ids = $wpdb->get_results("SELECT image_id, source FROM $table_name WHERE source = 'unsplash'", ARRAY_A);
+        $fetched_image_ids = array_column($fetched_image_ids, 'image_id'); // get only the ids for easier comparison
 
-        $fetched_image_ids = $wpdb->get_results("SELECT image_id, source FROM $table_name", ARRAY_A);
         $response = wp_remote_get($url);
 
         if (is_wp_error($response)) {
@@ -67,86 +68,37 @@ class CCG_Fetch_Image
         $json_array = json_decode($response_body, true);
 
         if (isset($json_array['results']) && !empty($json_array['results'])) {
-            $random_index = array_rand($json_array['results']);
-            $image_url = $json_array['results'][$random_index]['urls']['regular'];
-            $image_id = $json_array['results'][$random_index]['id'];
+            $filtered_results = array_filter($json_array['results'], function($result) use ($fetched_image_ids) {
+                // remove images that already exist in the database
+                return !in_array($result['id'], $fetched_image_ids);
+            });
+
+            if (empty($filtered_results)) {
+                return array('status' => 'error', 'message' => 'All fetched images already exist in the database.');
+            }
+
+            // randomly select an image from the filtered results
+            $random_index = array_rand($filtered_results);
+            $selected_image = $filtered_results[$random_index];
+
+            $image_url = $selected_image['urls']['regular'];
+            $image_id = $selected_image['id'];
 
             $image_url = strtok($image_url, '?');
 
-            $image_exists = false;
-            foreach ($fetched_image_ids as $fetched_image) {
-                if ($fetched_image['image_id'] == $image_id && $fetched_image['source'] == 'unsplash') {
-                    $image_exists = true;
-                    break;
-                }
-            }
+            $wpdb->insert($table_name, array('url' => $image_url, 'image_id' => $image_id, 'source' => 'unsplash'));
 
-            if ($image_exists) {
-                return array('status' => 'error', 'message' => 'null');
-
-            } else {
-                $wpdb->insert($table_name, array('url' => $image_url, 'image_id' => $image_id, 'source' => 'unsplash'));
-
-            }
+            return array('status' => 'success', 'message' => $image_url);
         } else {
-            return array('status' => 'error', 'message' => 'null');
+            return array('status' => 'error', 'message' => 'could not fetch image from unsplash, return null');
         }
-
-
-        return array('status' => 'success', 'message' => $image_url);
     }
 
-    public function fetch_shutterstock_image($client_id, $client_secret, $query)
-    {
-        global $wpdb;
-        $table_name = $wpdb->prefix . 'ccg_fetched_images';
 
-        $fetched_image_ids = $wpdb->get_results("SELECT image_id, source FROM $table_name", ARRAY_A);
 
-        $url = "https://api.shutterstock.com/v2/images/search?query=" . urlencode($query);
-
-        $client = new GuzzleHttp\Client();
-        $response = $client->request('GET', $url, [
-            'headers' => [
-                'Authorization' => 'Basic ' . base64_encode($client_id . ':' . $client_secret)
-            ]
-        ]);
-
-        if ($response->getStatusCode() !== 200) {
-            return array('status' => 'error', 'message' => 'Failed to fetch image from Shutterstock');
-        }
-
-        $body = $response->getBody();
-        $json_array = json_decode($body, true);
-
-        if (isset($json_array['data']) && isset($json_array['data'][0])) {
-            $image_url = $json_array['data'][0]['assets']['preview']['url'];
-            $image_id = $json_array['data'][0]['id'];
-
-            $image_exists = false;
-            foreach ($fetched_image_ids as $fetched_image) {
-                if ($fetched_image['image_id'] == $image_id && $fetched_image['source'] == 'shutterstock') {
-                    $image_exists = true;
-                    break;
-                }
-            }
-
-            if ($image_exists) {
-                return array('status' => 'error', 'message' => 'null');
-            } else {
-                $wpdb->insert($table_name, array('url' => $image_url, 'image_id' => $image_id, 'source' => 'shutterstock'));
-            }
-        } else {
-            return array('status' => 'error', 'message' => 'null');
-        }
-
-        return array('status' => 'success', 'message' => $image_url);
-    }
-
-    public function fetch_image($shutterstock_client_id, $shutterstock_client_secret, $unsplash_api_key, $pixabay_api_key, $query)
+    public function fetch_image($unsplash_api_key, $pixabay_api_key, $query)
     {
         $response = $this->fetch_pixabay_image($pixabay_api_key, $query);
-        //$response = $this->fetch_shutterstock_image($shutterstock_client_id, $shutterstock_client_secret, $query);
         if ($response['status'] == 'error') {
             $response = $this->fetch_unsplash_image($unsplash_api_key, $query);
         }

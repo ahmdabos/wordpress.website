@@ -1,4 +1,11 @@
 <?php
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+$customTaxonomy = new Base_Custom_Taxonomy();
+$customTaxonomyList = [];
+$customTaxonomy->createCustomTaxonomy($customTaxonomyList);
 
 class Base_Custom_Taxonomy
 {
@@ -41,6 +48,3 @@ class Base_Custom_Taxonomy
     }
 }
 
-$customTaxonomy = new Base_Custom_Taxonomy();
-$customTaxonomyList = [];
-$customTaxonomy->createCustomTaxonomy($customTaxonomyList);

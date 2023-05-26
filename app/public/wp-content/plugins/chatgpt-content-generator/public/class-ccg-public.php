@@ -43,6 +43,7 @@ class CCG_Public
                     $responses[] = array('error' => false, 'message' => $create_post_response['message']);
                 }
             }
+
             return new WP_REST_Response($responses, 200);
 
         } else {

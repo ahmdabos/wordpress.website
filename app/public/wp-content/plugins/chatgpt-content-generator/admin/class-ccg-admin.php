@@ -22,6 +22,7 @@ class CCG_Admin
 
         ?>
         <div class="wrap">
+
             <h1>ChatGPT Content Generator</h1>
             <div id="ccg-admin-notice"></div>
             <form id="ccg-form" method="post">
@@ -41,12 +42,14 @@ class CCG_Admin
                     <input type="submit" value="Generate Content" class="button button-primary">
                 </p>
             </form>
+
+
         </div>
         <script>
             function add_admin_notice(message, isError) {
                 const noticeClass = isError ? 'notice-error' : 'notice-success';
                 const noticeHtml = `<div class="notice ${noticeClass} is-dismissible"><p>${message}</p></div>`;
-                jQuery('#ccg-admin-notice').html(noticeHtml);
+                jQuery('#ccg-admin-notice').append(noticeHtml);
             }
 
             jQuery('#ccg-form').on('submit', function (event) {
@@ -69,12 +72,13 @@ class CCG_Admin
                     .then(responses => {
                         submitButton.prop('disabled', false);
                         pleaseWait.remove();
-                        responses.forEach(function (response) {
+                        responses.forEach(function (response,index) {
                             if (response.success) {
                                 add_admin_notice(response.message, false);
                             } else {
                                 add_admin_notice('Error: ' + response.message, true);
                             }
+
                         });
                     })
                     .catch((error) => {
