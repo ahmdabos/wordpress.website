@@ -1,19 +1,18 @@
 <?php
 
-namespace Functions;
-class CustomPostType
+class Base_Custom_Post_type
 {
     public $args = array();
     public $customPostTypes = array();
     public $cpt = array();
 
-    public function createCustomPostType(array $customPostType)
+    public function create_custom_post_type(array $customPostType)
     {
         $this->customPostTypes = $customPostType;
-        add_action('init', array($this, 'setCustomPostType'), 0);
+        add_action('init', array($this, 'set_custom_post_type'), 0);
     }
 
-    public function setCustomPostType()
+    public function set_custom_post_type()
     {
         foreach ($this->customPostTypes as $cpt) {
             $this->cpt = $cpt;
@@ -62,3 +61,26 @@ class CustomPostType
         }
     }
 }
+
+$customPostType = new Base_Custom_Post_type();
+$customPostTypesList = [
+    [
+        'singular_name' => 'slider',
+        'plural_name' => 'sliders',
+        'slug' => 'events',
+        'publicly_queryable' => false,
+        'menu_position' => 19,
+        'supports' => ['title', 'thumbnail', 'revisions', 'page-attributes', 'editor'],
+        'taxonomies' => []
+    ],
+    [
+        'singular_name' => 'news',
+        'plural_name' => 'news',
+        'slug' => 'news',
+        'publicly_queryable' => true,
+        'menu_position' => 19,
+        'supports' => ['title', 'thumbnail', 'revisions', 'page-attributes', 'excerpt', 'editor'],
+        'taxonomies' => []
+    ]
+];
+$customPostType->create_custom_post_type($customPostTypesList);

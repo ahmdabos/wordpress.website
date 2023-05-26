@@ -1,7 +1,6 @@
 <?php
 
-namespace Functions;
-class CustomTaxonomy
+class Base_Custom_Taxonomy
 {
     public $args = array();
     public $customTaxonomies = array();
@@ -41,3 +40,7 @@ class CustomTaxonomy
         };
     }
 }
+
+$customTaxonomy = new Base_Custom_Taxonomy();
+$customTaxonomyList = [];
+$customTaxonomy->createCustomTaxonomy($customTaxonomyList);

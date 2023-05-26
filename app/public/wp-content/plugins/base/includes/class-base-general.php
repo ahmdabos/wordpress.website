@@ -1,12 +1,13 @@
 <?php
 
-namespace Functions;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-use WP_Error;
-
-class Base
+class Base_General
 {
-    public function register()
+
+    public function __construct()
     {
         //theme setup
         add_action('init', array($this, 'theme_setup'));
@@ -36,7 +37,7 @@ class Base
         add_filter('login_headerurl', array($this, 'login_logo_url'));
         //disable login username autocomplete
         add_action('login_form', array($this, 'disable_login_username_auto_complete'));
-        //hide consoles when inspect for non admin users
+        //hide consoles when inspect for non-admin users
         add_action('admin_head', array($this, 'hide_console_none_admin'), 1);
         //hide wp version
         add_filter('the_generator', array($this, 'hide_wp_version'));
@@ -350,8 +351,6 @@ html;
 
         return $image;
     }
-
-
 }
 
-
+new Base_General();

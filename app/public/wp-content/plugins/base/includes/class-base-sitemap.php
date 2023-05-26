@@ -9,13 +9,12 @@ class Base_Sitemap
 
     public function __construct()
     {
-        register_activation_hook(__FILE__, array($this, 'my_sitemap_plugin_activate'));
-        register_deactivation_hook(__FILE__, array($this, 'my_sitemap_plugin_deactivate'));
-        add_filter('query_vars', array($this, 'my_sitemap_plugin_query_vars'));  // Reference method through $this
-        add_action('template_redirect', array($this, 'my_sitemap_plugin_template_redirect'));  // Reference method through $this
+        register_activation_hook(BASE_FILE_PATH, array($this, 'my_sitemap_plugin_activate'));
+        register_deactivation_hook(BASE_FILE_PATH, array($this, 'my_sitemap_plugin_deactivate'));
+        add_filter('query_vars', array($this, 'my_sitemap_plugin_query_vars'));
+        add_action('template_redirect', array($this, 'my_sitemap_plugin_template_redirect'));
 
     }
-
 
     public function my_sitemap_plugin_activate()
     {
@@ -39,7 +38,7 @@ class Base_Sitemap
         return $vars;
     }
 
-    function my_sitemap_plugin_template_redirect()
+    public function my_sitemap_plugin_template_redirect()
     {
         global $wp_query;
         if (!isset($wp_query->query_vars['my_sitemap_plugin'])) {
@@ -49,7 +48,7 @@ class Base_Sitemap
         exit;
     }
 
-    function my_sitemap_plugin_generate_sitemap()
+    public function my_sitemap_plugin_generate_sitemap()
     {
         $xml = new DOMDocument('1.0', 'UTF-8');
         $xml->formatOutput = true;
@@ -92,3 +91,4 @@ class Base_Sitemap
     }
 
 }
+new Base_Sitemap();

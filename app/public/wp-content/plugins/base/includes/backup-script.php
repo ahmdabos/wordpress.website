@@ -1,6 +1,5 @@
 <?php
 require_once(ABSPATH . 'wp-load.php');
-// Database info
 $db_host = DB_HOST;
 $db_name = DB_NAME;
 $db_user = DB_USER;
@@ -84,4 +83,3 @@ foreach ($files as $name => $file) {
 
 // Zip archive will be created only after closing object
 $zip->close();
-?>
