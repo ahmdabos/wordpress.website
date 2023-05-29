@@ -13,8 +13,6 @@ class Base_General
         add_action('init', array($this, 'theme_setup'),1);
         //remove admin items
         add_action('admin_menu', array($this, 'remove_admin_items'),1);
-        //custom excerpt read more text
-        add_filter('excerpt_more', array($this, 'custom_excerpt_more'),1);
         //custom excerpt length
         add_filter('excerpt_length', array($this, 'custom_excerpt_length'),1);
         //use classic editor
@@ -124,10 +122,6 @@ class Base_General
         }
     }
 
-    public function custom_excerpt_more()
-    {
-        return sprintf('<a href="%1$s" >%2$s</a>', get_permalink(get_the_ID()), '...');
-    }
 
     public function custom_excerpt_length()
     {
@@ -152,7 +146,6 @@ class Base_General
         <script>
             document.getElementById( "user_login" ).autocomplete = "off";
             document.getElementById( "user_pass" ).autocomplete = "off";
-            
         </script>
 html;
     }
