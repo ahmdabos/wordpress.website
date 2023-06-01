@@ -9,6 +9,7 @@ class CCG_Settings {
         register_setting('ccg_settings', 'ccg_chatgpt_max_tokens');
         register_setting('ccg_settings', 'ccg_unsplash_api_key');
         register_setting('ccg_settings', 'ccg_pixabay_api_key');
+        register_setting('ccg_settings', 'ccg_chatgpt_prompt');
     }
 
     public function create_settings_page() {
@@ -53,6 +54,10 @@ class CCG_Settings {
                     <tr valign="top">
                         <th scope="row">Pixabay API Key</th>
                         <td><input type="text" name="ccg_pixabay_api_key" value="<?php echo esc_attr(get_option('ccg_pixabay_api_key')); ?>" /></td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">chatGpt Prompt</th>
+                        <td><textarea type="text" name="ccg_chatgpt_prompt" rows="10" cols="100" ><?php echo esc_attr(get_option('ccg_chatgpt_prompt')); ?></textarea></td>
                     </tr>
 
                 </table>
