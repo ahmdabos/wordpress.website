@@ -13,7 +13,6 @@ if (!defined('ABSPATH')) {
 }
 try {
     require_once plugin_dir_path(__FILE__) . 'includes/class-base-general.php';
-    require_once plugin_dir_path(__FILE__) . 'includes/class-base-sitemap.php';
     //require_once plugin_dir_path(__FILE__) . 'includes/class-base-backup.php';
     require_once plugin_dir_path(__FILE__) . 'includes/class_base_custom_post_type.php';
     require_once plugin_dir_path(__FILE__) . 'includes/class_base_custom_taxonomy.php';

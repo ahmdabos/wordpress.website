@@ -57,7 +57,7 @@ class Base_General
         add_filter('login_errors', array($this, 'change_login_error_message'));
 
         //disable default xml sitemaps
-        add_filter('wp_sitemaps_enabled', '__return_false');
+        //add_filter('wp_sitemaps_enabled', '__return_false');
         //remove widget from dashboard
         add_action('wp_dashboard_setup', array($this, 'remove_dashboard_widgets'));
         //limit login attempt
