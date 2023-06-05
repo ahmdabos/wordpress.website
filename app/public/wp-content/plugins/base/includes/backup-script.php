@@ -4,7 +4,6 @@ $db_host = DB_HOST;
 $db_name = DB_NAME;
 $db_user = DB_USER;
 $db_pass = DB_PASSWORD;
-echo $db_user;
 // Create a new mysqli instance
 $mysqli = new mysqli($db_host, $db_user, $db_pass, $db_name);
 

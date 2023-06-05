@@ -1,9 +1,7 @@
 <?php
-
 if (!defined('ABSPATH')) {
     exit;
 }
-
 
 class Base_Backup
 {
@@ -44,7 +42,6 @@ class Base_Backup
 
     public function activate_the_wp_backup()
     {
-
         if (!wp_next_scheduled('the_wp_backup')) {
             wp_schedule_event(time(), 'every_interval_time', 'the_wp_backup');
         }

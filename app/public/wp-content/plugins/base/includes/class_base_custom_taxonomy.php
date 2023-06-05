@@ -4,7 +4,13 @@ if (!defined('ABSPATH')) {
 }
 
 $customTaxonomy = new Base_Custom_Taxonomy();
-$customTaxonomyList = [];
+$customTaxonomyList = [
+    /*[
+        'singular_name' => 'News Category',
+        'plural_name' => 'News Categories',
+        'post_type' => 'news',
+        'slug' => "news_category"],*/
+];
 $customTaxonomy->createCustomTaxonomy($customTaxonomyList);
 
 class Base_Custom_Taxonomy
@@ -18,6 +24,7 @@ class Base_Custom_Taxonomy
         $this->customTaxonomies = $customTaxonomies;
         add_action('init', array($this, 'setCustomTaxonomy'), 0);
     }
+
     public function setCustomTaxonomy()
     {
         foreach ($this->customTaxonomies as $ct) {

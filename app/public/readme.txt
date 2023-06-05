@@ -1,7 +1,4 @@
 =================SECURITY=====================
-All directories should be 755 or 750
-All files should be 644 or 640
-wp-config.php should be 600
 Update wp core,themes, Plugins
 Strong User Passwords
 User Role Management: Not everyone requires administrator access.

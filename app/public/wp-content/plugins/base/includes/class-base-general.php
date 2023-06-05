@@ -3,7 +3,6 @@
 if (!defined('ABSPATH')) {
     exit;
 }
-
 class Base_General
 {
 
@@ -34,7 +33,7 @@ class Base_General
         //change login logo url
         add_filter('login_headerurl', array($this, 'login_logo_url'));
         //disable login username autocomplete
-        add_action('login_form', array($this, 'disable_login_username_auto_complete'));
+        //add_action('login_form', array($this, 'disable_login_username_auto_complete'));
         //hide consoles when inspect for non-admin users
         add_action('admin_head', array($this, 'hide_console_none_admin'), 1);
         //hide wp version
@@ -47,17 +46,10 @@ class Base_General
         //remove_filter('the_content', 'wpautop');
         //hide admin bar for none admin users
         add_action('after_setup_theme', array($this, 'hide_admin_bar_for_none_admin_users'));
-        //disable dashboard widgets
-        add_action('wp_dashboard_setup', array($this, 'disable_dashboard_widgets'), 9999);
         //hide help tab in the admin dashboard
         add_action('admin_head', array($this, 'hide_help_tab_dashboard'));
-        //update what editor role can see
-        add_action('admin_head', array($this, 'update_what_editor_role_can_see'));
         //change login error message
         add_filter('login_errors', array($this, 'change_login_error_message'));
-
-        //disable default xml sitemaps
-        //add_filter('wp_sitemaps_enabled', '__return_false');
         //remove widget from dashboard
         add_action('wp_dashboard_setup', array($this, 'remove_dashboard_widgets'));
         //limit login attempt
@@ -122,7 +114,6 @@ class Base_General
         }
     }
 
-
     public function custom_excerpt_length()
     {
         return 50;
@@ -180,13 +171,6 @@ html;
         }
     }
 
-    public function disable_dashboard_widgets()
-    {
-        global $wp_meta_boxes;
-        $wp_meta_boxes['dashboard']['normal']['core'] = array();
-        $wp_meta_boxes['dashboard']['side']['core'] = array();
-    }
-
     public function hide_help_tab_dashboard()
     {
         if (is_admin()) {
@@ -194,18 +178,6 @@ html;
             #contextual-help-link-wrap { display: none !important; }
           </style>';
         }
-    }
-
-    public function update_what_editor_role_can_see()
-    {
-        $role_object = get_role('editor');
-        $role_object->add_cap('edit_theme_options');
-        if (current_user_can('editor')) {
-            remove_submenu_page('themes.php', 'themes.php');
-            remove_submenu_page('themes.php', 'widgets.php');
-        }
-        global $submenu;
-        unset($submenu['themes.php'][6]);
     }
 
     public function hide_wp_version()
@@ -235,61 +207,38 @@ html;
 
     public function limit_login_attempts($user, $username, $password)
     {
-        // set the number of login attempts based on IP
         $max_login_attempts = 5;
-
-        // get the IP
         $client_ip = $_SERVER['REMOTE_ADDR'];
-        // get the transient
         $login_attempts = get_transient('login_attempts_' . $client_ip);
-
-        // check if transient is set, which means a failed login attempt has been made
         if ($login_attempts) {
             $login_attempts = json_decode($login_attempts, true);
-
-            // check if login attempts exceeded max allowed
             if ($login_attempts['attempts'] >= $max_login_attempts) {
                 $secs_to_wait = ($login_attempts['attempt_time'] + 60 * 60) - time();
                 if ($secs_to_wait > 0) {
-                    // if there's time left to wait, return an error message
                     return new WP_Error('too_many_attempts', 'Too many failed login attempts. Please wait ' . round($secs_to_wait / 60) . ' minutes before trying again.');
                 }
             }
         }
-
-        // if we're here, it means no transient is set or it expired, so let's try to login
         $user = get_user_by('login', $username);
-
         if (!$user) {
-            // if no such user exists, increase the login attempts and set/update the transient
             if (!$login_attempts) {
                 $login_attempts = array('attempts' => 1, 'attempt_time' => time());
             } else {
                 $login_attempts['attempts']++;
             }
-
             set_transient('login_attempts_' . $client_ip, json_encode($login_attempts), 60 * 60);
-
             return new WP_Error('invalid_username', 'Invalid username. Please try again.');
         }
-
-        // if we're here, it means the user exists, so let's check the password
         if (!wp_check_password($password, $user->user_pass, $user->ID)) {
-            // if the password is wrong, increase the login attempts and set/update the transient
             if (!$login_attempts) {
                 $login_attempts = array('attempts' => 1, 'attempt_time' => time());
             } else {
                 $login_attempts['attempts']++;
             }
-
             set_transient('login_attempts_' . $client_ip, json_encode($login_attempts), 60 * 60);
-
             return new WP_Error('incorrect_password', 'Incorrect password. Please try again.');
         }
-
-        // if we're here, it means the login is successful, so let's delete the transient
         delete_transient('login_attempts_' . $client_ip);
-
         return $user;
     }
 

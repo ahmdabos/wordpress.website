@@ -11,8 +11,8 @@ class Start
         //style login page
         add_action('login_enqueue_scripts', array($this, 'style_login_page'));
         //register css and js
-        add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
-        //add defer to all resources
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_cripts'));
+        //add defer to all js
         add_filter('script_loader_tag', array($this, 'add_defer_attribute'), 10, 2);
     }
 
@@ -57,7 +57,6 @@ class Start
     public static function pagination($pages = '', $range = 2)
     {
         $showitems = ($range * 2) + 1;
-
         global $paged;
         if (empty($paged)) {
             $paged = 1;
@@ -96,7 +95,7 @@ class Start
         }
     }
 
-    public function enqueueScripts()
+    public function enqueue_scripts()
     {
         wp_register_style('site', get_template_directory_uri() . '/assets/css/site.css', array(), time(), 'all');
         wp_enqueue_style('site');
@@ -113,8 +112,6 @@ class Start
         wp_register_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery-custom'), time(), true);
         wp_enqueue_script('owl-carousel');
 
-        wp_register_script('popper', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery-custom'), time(), true);
-        wp_enqueue_script('popper');
         wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery-custom'), time(), true);
         wp_enqueue_script('main');
     }

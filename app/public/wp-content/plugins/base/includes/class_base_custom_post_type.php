@@ -61,7 +61,6 @@ class Base_Custom_Post_type
                 'exclude_from_search' => false,
                 'publicly_queryable' => $this->cpt['publicly_queryable'],
                 'query_var' => true,
-
                 'capability_type' => 'post',
                 'show_in_rest' => true,
                 'rewrite' => array(
@@ -70,11 +69,8 @@ class Base_Custom_Post_type
                     'pages' => true,
                     'feeds' => true,
                 ),
-
-
             );
             register_post_type($this->cpt['plural_name'], $this->args);
-
         }
     }
 }
