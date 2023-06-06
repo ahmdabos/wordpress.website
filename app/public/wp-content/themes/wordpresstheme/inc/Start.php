@@ -131,9 +131,10 @@ class Start
     public function style_login_page()
     { ?>
         <style>
-            body.login .wp-core-ui .button-primary {
-                background: #316ea1;
-                border-color: #286191;
+            .login .language-switcher{display:none !important;}
+            .login .button-primary {
+                background: #000000 !important;
+                border-color: #000000 !important;;
             }
 
             body.login div#login h1 a {
@@ -144,12 +145,12 @@ class Start
             }
 
             #loginform input[type="text"], .login form input[type="password"] {
-                border: 3px solid #2c5d86;
+                border: 3px solid #000000;
             }
 
             #loginform {
                 background: #ffffff !important;
-                box-shadow: 3px 3px 8px #336793 !important;
+                box-shadow: 3px 3px 8px #000000 !important;
             }
         </style>
 

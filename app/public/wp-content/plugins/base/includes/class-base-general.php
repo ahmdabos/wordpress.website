@@ -5,7 +5,6 @@ if (!defined('ABSPATH')) {
 }
 class Base_General
 {
-
     public function __construct()
     {
         //theme setup
@@ -56,6 +55,9 @@ class Base_General
         add_filter('authenticate', array($this, 'limit_login_attempts'), 30, 3);
         //image optimizer
         add_filter('wp_handle_upload', array($this, 'optimize_uploaded_images'));
+        //force admin in english
+        add_filter('locale', array($this, 'force_english_admin'));
+
     }
 
     public function theme_setup()
@@ -207,7 +209,7 @@ html;
 
     public function limit_login_attempts($user, $username, $password)
     {
-        $max_login_attempts = 5;
+        $max_login_attempts = 7;
         $client_ip = $_SERVER['REMOTE_ADDR'];
         $login_attempts = get_transient('login_attempts_' . $client_ip);
         if ($login_attempts) {
@@ -276,6 +278,13 @@ html;
         }
 
         return $image;
+    }
+
+    public function force_english_admin($locale) {
+        if (is_admin()) {
+            return 'en_US';
+        }
+        return $locale;
     }
 }
 
