@@ -1,5 +1,5 @@
 <?php
-$lang = get_locale();
+$lang = 'en';
 include 'languages/language-' . $lang . '.php';
 ?>
 <!doctype html>

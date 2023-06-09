@@ -3,16 +3,17 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+
 class Base_General
 {
     public function __construct()
     {
         //theme setup
-        add_action('init', array($this, 'theme_setup'),1);
+        add_action('init', array($this, 'theme_setup'), 1);
         //remove admin items
-        add_action('admin_menu', array($this, 'remove_admin_items'),1);
+        add_action('admin_menu', array($this, 'remove_admin_items'), 1);
         //custom excerpt length
-        add_filter('excerpt_length', array($this, 'custom_excerpt_length'),1);
+        add_filter('excerpt_length', array($this, 'custom_excerpt_length'), 1);
         //use classic editor
         add_filter('use_block_editor_for_post', '__return_false', 10);
         //remove Thank you message in the admin footer
@@ -53,10 +54,12 @@ class Base_General
         add_action('wp_dashboard_setup', array($this, 'remove_dashboard_widgets'));
         //limit login attempt
         add_filter('authenticate', array($this, 'limit_login_attempts'), 30, 3);
-        //image optimizer
-        add_filter('wp_handle_upload', array($this, 'optimize_uploaded_images'));
         //force admin in english
         add_filter('locale', array($this, 'force_english_admin'));
+        //disable users in sitemap
+        add_filter('wp_sitemaps_add_provider', array($this, 'exclude_users_from_sitemap'), 10, 2);
+
+
 
     }
 
@@ -155,7 +158,8 @@ html;
         }
     }
 
-    public function hide_wp_update_notifications() {
+    public function hide_wp_update_notifications()
+    {
         if (!current_user_can('administrator')) {
             remove_action('admin_notices', 'update_nag', 3);
         }
@@ -244,47 +248,20 @@ html;
         return $user;
     }
 
-    public function optimize_uploaded_images($image)
+    public function force_english_admin($locale)
     {
-        $image_path = $image['file'];
-        $ext = pathinfo($image_path, PATHINFO_EXTENSION);
-
-        if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'png') {
-            if (extension_loaded('imagick') || class_exists("Imagick")) {
-                $img = new Imagick($image_path);
-
-                if ($ext == 'png') {
-                    $img->setImageFormat('png8');
-                }
-
-                $img->optimizeImageLayers();
-                $img->stripImage();
-                $img->writeImage($image_path);
-                $img->clear();
-                $img->destroy();
-
-            } else if (extension_loaded('gd')) {
-                if ($ext == 'jpg' || $ext == 'jpeg') {
-                    $img = imagecreatefromjpeg($image_path);
-                    imagejpeg($img, $image_path, 80);
-                } else if ($ext == 'png') {
-                    $img = imagecreatefrompng($image_path);
-                    imagealphablending($img, false);
-                    imagesavealpha($img, true);
-                    imagepng($img, $image_path, 8);
-                }
-                imagedestroy($img);
-            }
-        }
-
-        return $image;
-    }
-
-    public function force_english_admin($locale) {
         if (is_admin()) {
             return 'en_US';
         }
         return $locale;
+    }
+
+    public function exclude_users_from_sitemap($provider, $name)
+    {
+        if ($name === 'users') {
+            return null;
+        }
+        return $provider;
     }
 }
 

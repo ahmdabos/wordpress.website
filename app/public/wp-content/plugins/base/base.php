@@ -16,6 +16,7 @@ try {
     //require_once plugin_dir_path(__FILE__) . 'includes/class-base-backup.php';
     require_once plugin_dir_path(__FILE__) . 'includes/class_base_custom_post_type.php';
     require_once plugin_dir_path(__FILE__) . 'includes/class_base_custom_taxonomy.php';
+    require_once plugin_dir_path(__FILE__) . 'includes/class_base_tinypng_compressor_webp_converter.php';
 } catch (Exception $e) {
     add_action('admin_notices', function () use ($e) {
         echo '<div class="notice notice-error is-dismissible"><p>Error loading dependencies: ' . $e->getMessage() . '</p></div>';
