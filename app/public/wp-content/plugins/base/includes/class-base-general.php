@@ -58,9 +58,6 @@ class Base_General
         add_filter('locale', array($this, 'force_english_admin'));
         //disable users in sitemap
         add_filter('wp_sitemaps_add_provider', array($this, 'exclude_users_from_sitemap'), 10, 2);
-
-
-
     }
 
     public function theme_setup()

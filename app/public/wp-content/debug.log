@@ -1,75 +1,405 @@
-
-
-
-
-
-[09-Jun-2023 12:52:19 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in D:\wordpress.website\app\public\wp-content\plugins\compress-images\compress-images.php:91
+[15-Jun-2023 10:26:34 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:26:34 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:26:34 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-content\plugins\compress-images\compress-images.php(84): TinyPNG_Compressor_WebP_Converter->compress_image('D:\\wordpress.we...')
-#1 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): TinyPNG_Compressor_WebP_Converter->compress_and_convert_image(Array, 'upload')
-#2 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
-#3 D:\wordpress.website\app\public\wp-admin\includes\file.php(1050): apply_filters('wp_handle_uploa...', Array, 'upload')
-#4 D:\wordpress.website\app\public\wp-admin\includes\file.php(1082): _wp_handle_upload(Array, Array, '2023-06-09 12:5...', 'wp_handle_uploa...')
-#5 D:\wordpress.website\app\public\wp-admin\includes\media.php(303): wp_handle_upload(Array, Array, '2023-06-09 12:5...')
-#6 D:\wordpress.website\app\public\wp-admin\includes\ajax-actions.php(2598): media_handle_upload('async-upload', NULL, Array)
-#7 D:\wordpress.website\app\public\wp-admin\async-upload.php(33): wp_ajax_upload_attachment()
-#8 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\compress-images\compress-images.php on line 91
-[09-Jun-2023 12:53:34 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in D:\wordpress.website\app\public\wp-content\plugins\compress-images\compress-images.php:91
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page-home.php(6): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:26:34 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:26:34 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:26:34 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-content\plugins\compress-images\compress-images.php(84): TinyPNG_Compressor_WebP_Converter->compress_image('D:\\wordpress.we...')
-#1 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): TinyPNG_Compressor_WebP_Converter->compress_and_convert_image(Array, 'upload')
-#2 D:\wordpress.website\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
-#3 D:\wordpress.website\app\public\wp-admin\includes\file.php(1050): apply_filters('wp_handle_uploa...', Array, 'upload')
-#4 D:\wordpress.website\app\public\wp-admin\includes\file.php(1082): _wp_handle_upload(Array, Array, '2023-06-09 12:5...', 'wp_handle_uploa...')
-#5 D:\wordpress.website\app\public\wp-admin\includes\media.php(303): wp_handle_upload(Array, Array, '2023-06-09 12:5...')
-#6 D:\wordpress.website\app\public\wp-admin\includes\ajax-actions.php(2598): media_handle_upload('async-upload', NULL, Array)
-#7 D:\wordpress.website\app\public\wp-admin\async-upload.php(33): wp_ajax_upload_attachment()
-#8 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\compress-images\compress-images.php on line 91
-[09-Jun-2023 13:06:45 UTC] PHP Fatal error:  Uncaught Error: Class "ComposerAutoloaderInitc01454ca3a1b856ccf5ef72861a011d0" not found in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\autoload.php:7
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:26:34 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:26:34 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:26:34 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-content\plugins\localization\localization.php(28): require()
-#1 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(2314): include_once('D:\\wordpress.we...')
-#2 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(661): plugin_sandbox_scrape('localization/lo...')
-#3 D:\wordpress.website\app\public\wp-admin\plugins.php(58): activate_plugin('localization/lo...', 'https://wordpre...', false)
-#4 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\autoload.php on line 7
-[09-Jun-2023 13:06:45 UTC] PHP Fatal error:  Uncaught Error: Class "ComposerAutoloaderInitc01454ca3a1b856ccf5ef72861a011d0" not found in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\autoload.php:7
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:43:42 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:43:42 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:43:42 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-content\plugins\localization\localization.php(28): require()
-#1 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(2314): include_once('D:\\wordpress.we...')
-#2 D:\wordpress.website\app\public\wp-admin\plugins.php(192): plugin_sandbox_scrape('localization/lo...')
-#3 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\autoload.php on line 7
-[09-Jun-2023 13:06:45 UTC] PHP Fatal error:  Uncaught Error: Class "ComposerAutoloaderInitc01454ca3a1b856ccf5ef72861a011d0" not found in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\autoload.php:7
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page-home.php(6): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:43:42 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:43:42 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:43:42 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-content\plugins\localization\localization.php(28): require()
-#1 D:\wordpress.website\app\public\wp-admin\includes\plugin.php(2314): include_once('D:\\wordpress.we...')
-#2 D:\wordpress.website\app\public\wp-admin\plugins.php(192): plugin_sandbox_scrape('localization/lo...')
-#3 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\autoload.php on line 7
-[09-Jun-2023 13:07:44 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
-[09-Jun-2023 13:07:44 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
-[09-Jun-2023 13:09:24 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public\wp-content\plugins\compress-images\vendor\autoload.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\base\includes\class_base_tinypng_compressor_webp_converter.php on line 9
-[09-Jun-2023 13:09:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public\wp-content\plugins\compress-images\vendor\autoload.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\base\includes\class_base_tinypng_compressor_webp_converter.php:9
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:43:42 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:43:42 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:43:42 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-content\plugins\base\includes\class_base_tinypng_compressor_webp_converter.php(45): TinyPNG_Compressor_WebP_Converter->__construct()
-#1 D:\wordpress.website\app\public\wp-content\plugins\base\base.php(19): require_once('D:\\wordpress.we...')
-#2 D:\wordpress.website\app\public\wp-settings.php(453): include_once('D:\\wordpress.we...')
-#3 D:\wordpress.website\app\public\wp-config.php(26): require_once('D:\\wordpress.we...')
-#4 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
-#6 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\base\includes\class_base_tinypng_compressor_webp_converter.php on line 9
-[09-Jun-2023 13:09:40 UTC] PHP Warning:  require_once(D:\wordpress.website\app\public/wp-content/plugins/compress-images/vendor/autoload.php): Failed to open stream: No such file or directory in D:\wordpress.website\app\public\wp-content\plugins\base\includes\class_base_tinypng_compressor_webp_converter.php on line 9
-[09-Jun-2023 13:09:40 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'D:\wordpress.website\app\public/wp-content/plugins/compress-images/vendor/autoload.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in D:\wordpress.website\app\public\wp-content\plugins\base\includes\class_base_tinypng_compressor_webp_converter.php:9
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:43:43 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:43:43 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:43:43 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
 Stack trace:
-#0 D:\wordpress.website\app\public\wp-content\plugins\base\includes\class_base_tinypng_compressor_webp_converter.php(45): TinyPNG_Compressor_WebP_Converter->__construct()
-#1 D:\wordpress.website\app\public\wp-content\plugins\base\base.php(19): require_once('D:\\wordpress.we...')
-#2 D:\wordpress.website\app\public\wp-settings.php(453): include_once('D:\\wordpress.we...')
-#3 D:\wordpress.website\app\public\wp-config.php(26): require_once('D:\\wordpress.we...')
-#4 D:\wordpress.website\app\public\wp-load.php(50): require_once('D:\\wordpress.we...')
-#5 D:\wordpress.website\app\public\wp-admin\admin-ajax.php(22): require_once('D:\\wordpress.we...')
-#6 {main}
-  thrown in D:\wordpress.website\app\public\wp-content\plugins\base\includes\class_base_tinypng_compressor_webp_converter.php on line 9
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page-home.php(6): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:43:43 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:43:43 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:43:43 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:43:43 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:43:43 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:43:43 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:43:43 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:43:43 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:43:43 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page-home.php(6): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:43:43 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:43:43 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:43:43 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:43:43 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:43:43 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:43:43 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:46:59 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:46:59 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:46:59 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page-home.php(6): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:46:59 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:46:59 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:46:59 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:46:59 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:46:59 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:46:59 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:47:21 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:47:21 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:47:21 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page-home.php(6): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:47:21 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:47:21 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:47:21 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:47:21 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:47:21 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:47:21 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\404.php(1): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308
+[15-Jun-2023 10:47:41 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:47:41 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 10:48:30 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 10:48:30 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 11:46:25 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 11:46:25 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 11:46:31 UTC] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in D:\wordpress.website\app\public\wp-content\plugins\localization\vendor\wpsyntex\polylang\include\class-polylang.php on line 98
+[15-Jun-2023 11:46:31 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://wordpress.org/documentation/article/debugging-in-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in D:\wordpress.website\app\public\wp-includes\functions.php on line 5865
+[15-Jun-2023 11:46:31 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Functions\Start does not have a method "enqueue_cripts" in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php:308
+Stack trace:
+#0 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#1 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 D:\wordpress.website\app\public\wp-includes\script-loader.php(2194): do_action('wp_enqueue_scri...')
+#3 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(308): wp_enqueue_scripts('')
+#4 D:\wordpress.website\app\public\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\wordpress.website\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 D:\wordpress.website\app\public\wp-includes\general-template.php(3049): do_action('wp_head')
+#7 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\header.php(24): wp_head()
+#8 D:\wordpress.website\app\public\wp-includes\template.php(783): require_once('D:\\wordpress.we...')
+#9 D:\wordpress.website\app\public\wp-includes\template.php(718): load_template('D:\\wordpress.we...', true, Array)
+#10 D:\wordpress.website\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#11 D:\wordpress.website\app\public\wp-content\themes\wordpresstheme\page-home.php(6): get_header()
+#12 D:\wordpress.website\app\public\wp-includes\template-loader.php(106): include('D:\\wordpress.we...')
+#13 D:\wordpress.website\app\public\wp-blog-header.php(19): require_once('D:\\wordpress.we...')
+#14 D:\wordpress.website\app\public\index.php(17): require('D:\\wordpress.we...')
+#15 {main}
+  thrown in D:\wordpress.website\app\public\wp-includes\class-wp-hook.php on line 308

@@ -1,5 +1,5 @@
 <?php
-class TinyPNG_Compressor_WebP_Converter
+class Base_Tinypng_Compressor_Webp_Converter
 {
     // TinyPNG API Key
     private $api_key = 'yxBjr148PBrQXYdG58l1C7649r8f5xRx';
@@ -23,8 +23,6 @@ class TinyPNG_Compressor_WebP_Converter
                 $extension = $converted->result()->extension();
                 $newFilePath = $fileinfo['dirname'] . '/' . $fileinfo['filename'] . '.' . $extension;
                 $converted->toFile($newFilePath);
-
-                // Remove the original file if it's different from the converted one
                 if ($newFilePath !== $filepath) {
                     unlink($filepath);
                 }
@@ -33,7 +31,6 @@ class TinyPNG_Compressor_WebP_Converter
                 $file['url'] = str_replace(WP_CONTENT_DIR, WP_CONTENT_URL, $newFilePath);
                 $file['type'] = 'image/' . $extension;
             } catch (\Tinify\Exception $e) {
-                // Handle the exception
                 error_log('Error during compression or conversion to WebP: ' . $e->getMessage());
             }
         }
@@ -42,4 +39,4 @@ class TinyPNG_Compressor_WebP_Converter
     }
 }
 
-new TinyPNG_Compressor_WebP_Converter();
+new Base_Tinypng_Compressor_Webp_Converter();

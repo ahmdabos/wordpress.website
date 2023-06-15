@@ -18,7 +18,6 @@ class Base_Custom_Taxonomy
     public $args = array();
     public $customTaxonomies = array();
     public $ct = array();
-
     public function createCustomTaxonomy(array $customTaxonomies)
     {
         $this->customTaxonomies = $customTaxonomies;
