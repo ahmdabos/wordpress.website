@@ -9,10 +9,8 @@ include 'languages/language-' . $lang . '.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php wp_title('|', true, 'right');
         bloginfo('name'); ?></title>
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-
+    <link href="<?php echo get_template_directory_uri() ?>/assets/img/favicon.png" rel="icon">
+    <link href="<?php echo get_template_directory_uri() ?>/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <?php
     if (is_single() || is_page()) {
         if (have_posts()) : while (have_posts()) : the_post();
@@ -26,11 +24,10 @@ include 'languages/language-' . $lang . '.php';
 </head>
 <body <?php body_class($lang); ?>>
 
-
 <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="logo d-flex align-items-center">
-            <h1>Website Title<span>.</span></h1>
+            <h1><?php bloginfo('name'); ?><span>.</span></h1>
         </a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
         <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
