@@ -95,7 +95,7 @@ class Polylang {
 	 */
 	public static function is_rest_request() {
 		// Handle pretty permalinks.
-		$home_path       = trim( wp_parse_url( home_url(), PHP_URL_PATH ), '/' );
+		$home_path       = trim( wp_parse_url( 'home_url()', PHP_URL_PATH ), '/' );
 		$home_path_regex = sprintf( '|^%s|i', preg_quote( $home_path, '|' ) );
 
 		$req_uri = trim( wp_parse_url( pll_get_requested_url(), PHP_URL_PATH ), '/' );
