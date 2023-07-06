@@ -1893,7 +1893,6 @@ section {
   display: inline-block;
   padding: 12px 40px;
   transition: 0.5s;
-  margin: 10px;
   color: #fff;
   border: 1px solid var(--color-primary);
 }
@@ -2645,7 +2644,6 @@ section {
 }
 
 .swiper-slide {
-  text-align: center;
   font-size: 18px;
   background: #fff;
   display: flex;

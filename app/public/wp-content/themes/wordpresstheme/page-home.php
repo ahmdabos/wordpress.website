@@ -25,7 +25,7 @@ get_header();
                     <div class="info d-flex align-items-center">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-12 text-center">
+                                <div class="col-lg-12">
                                     <h2 data-aos="fade-down"><?php echo esc_html(get_the_title()); ?></h2>
                                     <p data-aos="fade-up"><?php the_content(); ?></p>
                                     <a data-aos="fade-up" data-aos-delay="200" href="#" class="btn-get-started">Get Started</a>
@@ -35,19 +35,7 @@ get_header();
                     </div>
                 </div>
 
-                <div class="swiper-slide" style="background:#373f39;">
-                    <div class="info d-flex align-items-center">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-12 text-center">
-                                    <h2 data-aos="fade-down"><?php echo esc_html(get_the_title()); ?></h2>
-                                    <p data-aos="fade-up"><?php the_content(); ?></p>
-                                    <a data-aos="fade-up" data-aos-delay="200" href="#" class="btn-get-started">Get Started</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             <?php endwhile; ?>
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>

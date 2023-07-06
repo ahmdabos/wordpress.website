@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 
 $customPostType = new Base_Custom_Post_type();
 $customPostTypesList = [
-   /* [
+   [
         'singular_name' => 'slider',
         'plural_name' => 'sliders',
         'slug' => 'events',
@@ -13,7 +13,17 @@ $customPostTypesList = [
         'menu_position' => 19,
         'supports' => ['title', 'thumbnail', 'revisions', 'page-attributes', 'editor'],
         'taxonomies' => []
-    ],*/
+    ],
+    [
+        'singular_name' => 'news',
+        'plural_name' => 'news',
+        'slug' => 'events',
+        'publicly_queryable' => false,
+        'menu_position' => 19,
+        'supports' => ['title', 'thumbnail','excerpt', 'revisions', 'page-attributes', 'editor'],
+        'taxonomies' => []
+    ]
+
 ];
 $customPostType->create_custom_post_type($customPostTypesList);
 

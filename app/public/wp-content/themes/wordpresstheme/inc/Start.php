@@ -18,6 +18,7 @@ class Start
 
     public static function breadcrumbs()
     {
+
         global $post;
         $breadcrumbs = array();
 
@@ -100,7 +101,6 @@ class Start
 
         wp_register_style('bootstrap.min', get_template_directory_uri() . '/assets/vendor/bootstrap/css/bootstrap.min.css', array(), time(), 'all');
         wp_enqueue_style('bootstrap.min');
-
         wp_register_style('bootstrap-icons', get_template_directory_uri() . '/assets/vendor/bootstrap-icons/bootstrap-icons.css', array(), time(), 'all');
         wp_enqueue_style('bootstrap-icons');
         wp_register_style('all.min', get_template_directory_uri() . '/assets/vendor/fontawesome-free/css/all.min.css', array(), time(), 'all');
@@ -113,6 +113,7 @@ class Start
         wp_enqueue_style('swiper-bundle.min');
         wp_register_style('main', get_template_directory_uri() . '/assets/css/main.css', array(), time(), 'all');
         wp_enqueue_style('main');
+        wp_enqueue_script('jquery');
         wp_register_script('bootstrap.bundle.min', get_template_directory_uri() . '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js', array(), time(), true);
         wp_enqueue_script("bootstrap.bundle.min");
         wp_register_script('aos', get_template_directory_uri() . '/assets/vendor/aos/aos.js', array(), time(), true);

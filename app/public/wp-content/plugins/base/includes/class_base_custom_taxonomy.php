@@ -5,11 +5,11 @@ if (!defined('ABSPATH')) {
 
 $customTaxonomy = new Base_Custom_Taxonomy();
 $customTaxonomyList = [
-    /*[
+    [
         'singular_name' => 'News Category',
         'plural_name' => 'News Categories',
         'post_type' => 'news',
-        'slug' => "news_category"],*/
+        'slug' => "news_category"],
 ];
 $customTaxonomy->createCustomTaxonomy($customTaxonomyList);
 

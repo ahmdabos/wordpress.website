@@ -4,37 +4,39 @@ get_header();
  * Template Name: News
  */
 ?>
+<main id="main">
 
-<div class="static-page">
-    <section class="news-sec">
-        <div class="page-head">
-            <div class="container">
-                <div class="breadcrumbs-wrap">
-                    <?php \Functions\Start::breadcrumbs(); ?>
-                </div>
-                <h2 class="main-title"><?php the_title() ?></h2>
-            </div>
+    <div class="breadcrumbs d-flex align-items-center" style="background:#a65eff">
+        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+            <h2><?php the_title() ?></h2>
+            <?php \Functions\Start::breadcrumbs() ?>
         </div>
-        <div class="page-content">
-            <div class="container">
-                <div class="news-content box-f">
-                    <div class="row" id="listing"></div>
-                    <div class="pagination-wrapper">
-                        <ul class="list-item">
-                            <li class="prev control left"><a href="javascript:void(0)" id="previous-item"><i class="fi-arrow-l"></i>
-                                    <span><?php _t('previous'); ?></span></a></li>
-                            <li><span class="page-number"><span class="current-page"></span> <?php _t('of'); ?> <span
-                                        id="total-pages"> <?php _t('pages'); ?></span></span></li>
-                            <li class="next control right"><a href="javascript:void(0)" id="next-item"><span><?php _t('next'); ?></span> <i
-                                        class="fi-arrow-r"></i> </a></li>
-                        </ul>
-                        <span class="page-count"><?php _t('total_items'); ?> : <span id="total-items"></span>
-                    </div>
-                </div>
+    </div>
+
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div id="listing" class="row gy-4 posts-list"></div>
+
+            <div class="blog-pagination">
+                <ul class="justify-content-center">
+                    <li class=""><a href="javascript:void(0)" id="previous-item"><i class="fi-arrow-l"></i>
+                            <span>Previous</span></a></li>
+                    <li><span class="page-number"><span class="current-page"></span> of <span
+                                id="total-pages"> pages</span></span></li>
+                    <li class=""><a href="javascript:void(0)" id="next-item"><span>Next</span> <i
+                                class="fi-arrow-r"></i> </a></li>
+                </ul>
+                <span class="page-count">Total items : <span id="total-items"></span>
             </div>
+
+
         </div>
     </section>
-</div>
+
+</main>
+
+
 
 <?php get_footer(); ?>
 <script>
@@ -44,16 +46,11 @@ get_header();
             lang = 'en';
             noItems = 'No results found!';
             read_more = 'Read more';
-            published_on = 'Published on';
-            var monthNames = ["January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"];
         } else {
             lang = 'ar';
             noItems = 'لم يتم العثور على نتائج!';
             read_more = 'إقرأ المزيد';
-            published_on = 'تاريخ النشر ';
-            var monthNames = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
-                "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"];
+
         }
 
         getListing(page);
@@ -77,27 +74,19 @@ get_header();
                             featuredmedia = '';
                         }
                         content +=
-
-                            '<div class="col-lg-4 col-md-6 col-sm-12 mb-4">' +
-                            '<div class="news-card left">' +
-                            '<div class="news-img">' +
-                            '<a href="' + value.link + '">' +
-                            '<img src="' + featuredmedia + '" alt="' + value.title.rendered + '" title="' + value.title.rendered + '">' +
-                            '</a>' +
+                            '<div class="col-xl-4 col-md-6">' +
+                            '<div class="post-item position-relative h-100">' +
+                            '<div class="post-img position-relative overflow-hidden">' +
+                            '<img src="' + featuredmedia + '" class="img-fluid" alt="' + value.title.rendered + '" title="' + value.title.rendered + '">' +
                             '</div>' +
-                            '<div class="news-content">' +
-                            '<div class="top">' +
-                            '<div class="date"><span>' + published_on + ' ' + value.date + '</span></div>' +
-                            '<h4 class="title"><a href="' + value.link + '">' + value.title.rendered + '</a></h4>' +
-                            '</div>' +
-                            '<div class="bottom">' +
-                            '<div class="action-link">' +
-                            '<a href="' + value.link + '" class="action-box">' + read_more + '</a>' +
-                            '</div>' +
-                            '</div>' +
+                            '<div class="post-content d-flex flex-column">' +
+                            '<h3 class="post-title">' + value.title.rendered + '</h3>' +
+                            '<p>' + value.excerpt.rendered + '</p>' +
+                            '<a href="' + value.link + '" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>' +
                             '</div>' +
                             '</div>' +
                             '</div>';
+
                     });
                     $('#listing').html(content);
                     var show_per_page = 9;
