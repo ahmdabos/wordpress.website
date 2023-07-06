@@ -11,8 +11,8 @@ class Start
         //style login page
         add_action('login_enqueue_scripts', array($this, 'style_login_page'));
         //register css and js
-        add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
-        //add defer to all resources
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
+        //add defer to all js
         add_filter('script_loader_tag', array($this, 'add_defer_attribute'), 10, 2);
     }
 
@@ -57,7 +57,6 @@ class Start
     public static function pagination($pages = '', $range = 2)
     {
         $showitems = ($range * 2) + 1;
-
         global $paged;
         if (empty($paged)) {
             $paged = 1;
@@ -96,32 +95,43 @@ class Start
         }
     }
 
-    public function enqueueScripts()
+    public function enqueue_scripts()
     {
-        wp_register_style('site', get_template_directory_uri() . '/assets/css/site.css', array(), time(), 'all');
-        wp_enqueue_style('site');
 
-        wp_register_script('jquery-custom', get_template_directory_uri() . '/assets/js/jquery.min.js', array(), time(), true);
-        wp_enqueue_script("jquery-custom");
+        wp_register_style('bootstrap.min', get_template_directory_uri() . '/assets/vendor/bootstrap/css/bootstrap.min.css', array(), time(), 'all');
+        wp_enqueue_style('bootstrap.min');
 
-        wp_register_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery-custom'), time(), true);
-        wp_enqueue_script('bootstrap');
-
-        wp_register_script('jquery-ui', get_template_directory_uri() . '/assets/js/jquery-ui.js', array('jquery-custom'), time(), true);
-        wp_enqueue_script('jquery-ui');
-
-        wp_register_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery-custom'), time(), true);
-        wp_enqueue_script('owl-carousel');
-
-        wp_register_script('popper', get_template_directory_uri() . '/assets/js/popper.min.js', array('jquery-custom'), time(), true);
-        wp_enqueue_script('popper');
-        wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery-custom'), time(), true);
+        wp_register_style('bootstrap-icons', get_template_directory_uri() . '/assets/vendor/bootstrap-icons/bootstrap-icons.css', array(), time(), 'all');
+        wp_enqueue_style('bootstrap-icons');
+        wp_register_style('all.min', get_template_directory_uri() . '/assets/vendor/fontawesome-free/css/all.min.css', array(), time(), 'all');
+        wp_enqueue_style('all.min');
+        wp_register_style('aos', get_template_directory_uri() . '/assets/vendor/aos/aos.css', array(), time(), 'all');
+        wp_enqueue_style('aos');
+        wp_register_style('glightbox.min', get_template_directory_uri() . '/assets/vendor/glightbox/css/glightbox.min.css', array(), time(), 'all');
+        wp_enqueue_style('glightbox.min');
+        wp_register_style('swiper-bundle.min', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.css', array(), time(), 'all');
+        wp_enqueue_style('swiper-bundle.min');
+        wp_register_style('main', get_template_directory_uri() . '/assets/css/main.css', array(), time(), 'all');
+        wp_enqueue_style('main');
+        wp_register_script('bootstrap.bundle.min', get_template_directory_uri() . '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js', array(), time(), true);
+        wp_enqueue_script("bootstrap.bundle.min");
+        wp_register_script('aos', get_template_directory_uri() . '/assets/vendor/aos/aos.js', array(), time(), true);
+        wp_enqueue_script("aos");
+        wp_register_script('glightbox.min', get_template_directory_uri() . '/assets/vendor/glightbox/js/glightbox.min.js', array(), time(), true);
+        wp_enqueue_script("glightbox.min");
+        wp_register_script('isotope.pkgd.min', get_template_directory_uri() . '/assets/vendor/isotope-layout/isotope.pkgd.min.js', array(), time(), true);
+        wp_enqueue_script("isotope.pkgd.min");
+        wp_register_script('swiper-bundle.min', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.js', array(), time(), true);
+        wp_enqueue_script("swiper-bundle.min");
+        wp_register_script('purecounter_vanilla', get_template_directory_uri() . '/assets/vendor/purecounter/purecounter_vanilla.js', array(), time(), true);
+        wp_enqueue_script("purecounter_vanilla");
+        wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', array(), time(), true);
         wp_enqueue_script('main');
     }
 
     public function add_defer_attribute($tag, $handle)
     {
-        $scripts_to_defer = array('jquery-custom', 'bootstrap', 'jquery-ui', 'owl-carousel', 'popper', 'main');
+        $scripts_to_defer = array('bootstrap.bundle.min', 'aos', 'glightbox.min', 'isotope.pkgd.min', 'swiper-bundle.min', 'purecounter_vanilla', 'main');
 
         foreach ($scripts_to_defer as $defer_script) {
             if ($defer_script === $handle) {
@@ -134,9 +144,13 @@ class Start
     public function style_login_page()
     { ?>
         <style>
-            body.login .wp-core-ui .button-primary {
-                background: #316ea1;
-                border-color: #286191;
+            .login .language-switcher {
+                display: none !important;
+            }
+
+            .login .button-primary {
+                background: #000000 !important;
+                border-color: #000000 !important;;
             }
 
             body.login div#login h1 a {
@@ -147,12 +161,12 @@ class Start
             }
 
             #loginform input[type="text"], .login form input[type="password"] {
-                border: 3px solid #2c5d86;
+                border: 3px solid #000000;
             }
 
             #loginform {
                 background: #ffffff !important;
-                box-shadow: 3px 3px 8px #336793 !important;
+                box-shadow: 3px 3px 8px #000000 !important;
             }
         </style>
 

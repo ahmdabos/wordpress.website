@@ -2,12 +2,10 @@
 /**
  * Template Name: Home
  */
-
 get_header();
 ?>
-
-<section class="home-banner">
-    <div class="main-banner owl-carousel owl-theme">
+<div class="swiper hero">
+    <div class="swiper-wrapper">
         <?php
         $slider_args = array(
             'post_type' => 'sliders',
@@ -23,22 +21,39 @@ get_header();
             while ($slider_query->have_posts()) :
                 $slider_query->the_post();
                 ?>
-                <div class="item">
-                    <div class="banner-wrap">
+                <div class="swiper-slide" style="background:#3f3b37;">
+                    <div class="info d-flex align-items-center">
                         <div class="container">
-                            <div class="banner-content">
-                                <h1><?php echo esc_html(get_the_title()); ?></h1>
-                                <?php the_content(); ?>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-12 text-center">
+                                    <h2 data-aos="fade-down"><?php echo esc_html(get_the_title()); ?></h2>
+                                    <p data-aos="fade-up"><?php the_content(); ?></p>
+                                    <a data-aos="fade-up" data-aos-delay="200" href="#" class="btn-get-started">Get Started</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <img class="banner-img" src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" title="<?php echo esc_attr(get_the_title()); ?>"/>
+                </div>
+
+                <div class="swiper-slide" style="background:#373f39;">
+                    <div class="info d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-12 text-center">
+                                    <h2 data-aos="fade-down"><?php echo esc_html(get_the_title()); ?></h2>
+                                    <p data-aos="fade-up"><?php the_content(); ?></p>
+                                    <a data-aos="fade-up" data-aos-delay="200" href="#" class="btn-get-started">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             <?php endwhile; ?>
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>
     </div>
-</section>
+    <div class="swiper-pagination"></div>
+</div>
 <?php
 get_footer();
 ?>

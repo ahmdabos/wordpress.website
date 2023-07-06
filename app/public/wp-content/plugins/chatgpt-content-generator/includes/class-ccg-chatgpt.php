@@ -7,27 +7,30 @@ class CCG_ChatGPT
 {
     public function generate_content_form_chatgpt($topic, $chatgpt_api_key, $chatgpt_temperature, $chatgpt_max_tokens)
     {
-        $custom_prompt = '
-Write between 500 - 1000 words an informative and easy-to-understand, SEO-friendly article on ' . $topic . '. Include general tips and strategies related to the article if needed.
-Choose a clear and engaging title that reflects the main idea of the article
-Make sure the content is well-structured, and contains relevant keywords
-Write a concise excerpt that summarizes the article\'s main points
-Integrate general tips and strategies related to the article
-Select appropriate 3 tags and 2 categories related to the topic
-be sure to use easy english language that can be understand by non-native speakers
-be sure to use tone that online tools will not be able to recolonize the text is written by AI tools
-provide the answer using the following format:
-[title]article title here[/title]
-[excerpt]article excerpt here[/excerpt]
-[tags]article tags here comma separated[/tags]
-[categories]article categories here comma separated[/categories]
-[details]article details here';
+        $custom_prompt = 'for' . $topic . ',';
+
+        $chatgpt_prompt = get_option('ccg_chatgpt_prompt');
+        if ($chatgpt_prompt) {
+            $custom_prompt .= $chatgpt_prompt;
+        } else {
+            $custom_prompt .= '
+Write a comprehensible, SEO-friendly article between 500 - 1000 words . Your writing should be in simple English and should not reveal any signs of AI generation. Include necessary tips and strategies relevant to the topic. The audience for this article includes entrepreneurs, business owners, and professional expertise. Craft an engaging and representative title, a brief synopsis of the article, and choose up to three suitable tags and two categories. The final content should be formatted as follows:
+[title]Article Title[/title]
+[excerpt]Article Summary[/excerpt]
+[tags]Article Tags, comma-separated[/tags]
+[categories]Article Categories, comma-separated[/categories]
+[details]Article Details, use HTML tags such as p, heading, ul, span.
+Ensure to incorporate keywords and phrases that are relevant to the topic and the audiences interests for better SEO.
+The tone of the article should be professional yet accessible, to appeal to a wide audience including business owners and entrepreneurs.';
+        }
+
 
         $chatgpt_url = 'https://api.openai.com/v1/chat/completions';
         $model = 'gpt-3.5-turbo';
         $header = array(
             'Authorization' => 'Bearer ' . $chatgpt_api_key,
             'Content-type' => 'application/json; charset=utf-8',
+
         );
         $params = json_encode(
             array(
@@ -44,6 +47,7 @@ provide the answer using the following format:
                 'model' => $model,
                 'temperature' => $chatgpt_temperature,
                 'max_tokens' => $chatgpt_max_tokens,
+
             )
         );
         $args = array(
