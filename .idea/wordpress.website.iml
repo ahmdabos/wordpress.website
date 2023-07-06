@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="dubaichamberdigital.website" />
     <orderEntry type="module" module-name="dubaichambers.website" />
+    <orderEntry type="module" module-name="adbaiz-html-files" />
   </component>
 </module>
