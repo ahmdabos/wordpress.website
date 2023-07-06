@@ -134,28 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-
-
-
-
-
-  new Swiper(".mySwiper", {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
+  new Swiper(".hero", {
     pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+      el: ".swiper-pagination",
+      clickable: true,
     },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
   });
 
 
